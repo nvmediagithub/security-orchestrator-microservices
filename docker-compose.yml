@@ -1,0 +1,203 @@
+version: '3.8'
+
+services:
+  # Database Services
+  postgres:
+    image: postgres:15-alpine
+    container_name: security-orchestrator-postgres
+    environment:
+      POSTGRES_DB: security_orchestrator
+      POSTGRES_USER: security_user
+      POSTGRES_PASSWORD: security_password
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./infrastructure/docker/init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - security-network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U security_user -d security_orchestrator"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  redis:
+    image: redis:7-alpine
+    container_name: security-orchestrator-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - security-network
+    command: redis-server --appendonly yes
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  rabbitmq:
+    image: rabbitmq:3-management-alpine
+    container_name: security-orchestrator-rabbitmq
+    environment:
+      RABBITMQ_DEFAULT_USER: security_user
+      RABBITMQ_DEFAULT_PASS: security_password
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    volumes:
+      - rabbitmq_data:/var/lib/rabbitmq
+    networks:
+      - security-network
+    healthcheck:
+      test: ["CMD", "rabbitmq-diagnostics", "ping"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # Monitoring Services
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: security-orchestrator-prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./infrastructure/docker/monitoring/prometheus.yml:/etc/prometheus/prometheus.yml
+      - prometheus_data:/prometheus
+    networks:
+      - security-network
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--web.console.libraries=/etc/prometheus/console_libraries'
+      - '--web.console.templates=/etc/prometheus/consoles'
+
+  grafana:
+    image: grafana/grafana:latest
+    container_name: security-orchestrator-grafana
+    environment:
+      GF_SECURITY_ADMIN_USER: admin
+      GF_SECURITY_ADMIN_PASSWORD: admin
+    ports:
+      - "3000:3000"
+    volumes:
+      - grafana_data:/var/lib/grafana
+      - ./infrastructure/docker/monitoring/grafana/provisioning:/etc/grafana/provisioning
+    networks:
+      - security-network
+    depends_on:
+      - prometheus
+
+  # Microservices (placeholders - to be implemented)
+  # process-management-service:
+  #   build:
+  #     context: ../services/process-management
+  #     dockerfile: docker/Dockerfile
+  #   ports:
+  #     - "8001:8000"
+  #   environment:
+  #     - DATABASE_URL=postgresql://security_user:security_password@postgres/security_orchestrator
+  #     - REDIS_URL=redis://redis:6379
+  #     - RABBITMQ_URL=amqp://security_user:security_password@rabbitmq:5672
+  #   networks:
+  #     - security-network
+  #   depends_on:
+  #     postgres:
+  #       condition: service_healthy
+  #     redis:
+  #       condition: service_healthy
+  #     rabbitmq:
+  #       condition: service_healthy
+
+  # api-security-service:
+  #   build:
+  #     context: ../services/api-security
+  #     dockerfile: docker/Dockerfile
+  #   ports:
+  #     - "8002:8000"
+  #   environment:
+  #     - DATABASE_URL=postgresql://security_user:security_password@postgres/security_orchestrator
+  #     - REDIS_URL=redis://redis:6379
+  #     - RABBITMQ_URL=amqp://security_user:security_password@rabbitmq:5672
+  #   networks:
+  #     - security-network
+  #   depends_on:
+  #     postgres:
+  #       condition: service_healthy
+  #     redis:
+  #       condition: service_healthy
+  #     rabbitmq:
+  #       condition: service_healthy
+
+  # test-generation-service:
+  #   build:
+  #     context: ../services/test-generation
+  #     dockerfile: docker/Dockerfile
+  #   ports:
+  #     - "8003:8000"
+  #   environment:
+  #     - DATABASE_URL=postgresql://security_user:security_password@postgres/security_orchestrator
+  #     - REDIS_URL=redis://redis:6379
+  #     - RABBITMQ_URL=amqp://security_user:security_password@rabbitmq:5672
+  #   networks:
+  #     - security-network
+  #   depends_on:
+  #     postgres:
+  #       condition: service_healthy
+  #     redis:
+  #       condition: service_healthy
+  #     rabbitmq:
+  #       condition: service_healthy
+
+  # monitoring-service:
+  #   build:
+  #     context: ../services/monitoring
+  #     dockerfile: docker/Dockerfile
+  #   ports:
+  #     - "8004:8000"
+  #   environment:
+  #     - DATABASE_URL=postgresql://security_user:security_password@postgres/security_orchestrator
+  #     - REDIS_URL=redis://redis:6379
+  #     - RABBITMQ_URL=amqp://security_user:security_password@rabbitmq:5672
+  #   networks:
+  #     - security-network
+  #   depends_on:
+  #     postgres:
+  #       condition: service_healthy
+  #     redis:
+  #       condition: service_healthy
+  #     rabbitmq:
+  #       condition: service_healthy
+
+  # reporting-service:
+  #   build:
+  #     context: ../services/reporting
+  #     dockerfile: docker/Dockerfile
+  #   ports:
+  #     - "8005:8000"
+  #   environment:
+  #     - DATABASE_URL=postgresql://security_user:security_password@postgres/security_orchestrator
+  #     - REDIS_URL=redis://redis:6379
+  #     - RABBITMQ_URL=amqp://security_user:security_password@rabbitmq:5672
+  #   networks:
+  #     - security-network
+  #   depends_on:
+  #     postgres:
+  #       condition: service_healthy
+  #     redis:
+  #       condition: service_healthy
+  #     rabbitmq:
+  #       condition: service_healthy
+
+volumes:
+  postgres_data:
+  redis_data:
+  rabbitmq_data:
+  prometheus_data:
+  grafana_data:
+
+networks:
+  security-network:
+    driver: bridge
