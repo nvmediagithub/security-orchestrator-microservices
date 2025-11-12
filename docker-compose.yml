@@ -90,13 +90,49 @@ services:
     depends_on:
       - prometheus
 
-  # Microservices (placeholders - to be implemented)
+  # Microservices
+  health-monitoring-service:
+    build:
+      context: ./services/health-monitoring-service
+      dockerfile: Dockerfile
+    container_name: security-orchestrator-health-monitoring
+    ports:
+      - "8001:8001"
+    environment:
+      - SERVICE_NAME=health-monitoring-service
+      - SERVICE_VERSION=1.0.0
+      - ENVIRONMENT=development
+      - HOST=0.0.0.0
+      - PORT=8001
+      - DATABASE_URL=postgresql://security_user:security_password@postgres/security_orchestrator
+      - REDIS_URL=redis://redis:6379
+      - RABBITMQ_URL=amqp://security_user:security_password@rabbitmq:5672
+      - CPU_THRESHOLD=90.0
+      - MEMORY_THRESHOLD=90.0
+      - DISK_THRESHOLD=90.0
+      - LOG_LEVEL=INFO
+    networks:
+      - security-network
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+      rabbitmq:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8001/health/live"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
   # process-management-service:
   #   build:
   #     context: ../services/process-management
   #     dockerfile: docker/Dockerfile
   #   ports:
-  #     - "8001:8000"
+  #     - "8002:8000"
   #   environment:
   #     - DATABASE_URL=postgresql://security_user:security_password@postgres/security_orchestrator
   #     - REDIS_URL=redis://redis:6379
