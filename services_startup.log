@@ -1031,3 +1031,335 @@
 2025-11-13 11:28:31,087 - __main__ - INFO -   [DOWN] reporting-service: {'running': False, 'healthy': False, 'port': 8082, 'pid': None}
 2025-11-13 11:28:31,089 - __main__ - INFO -   [DOWN] test-generation-service: {'running': False, 'healthy': False, 'port': 8083, 'pid': None}
 2025-11-13 11:28:31,091 - __main__ - INFO -   [UP] flutter-web-app: {'running': True, 'healthy': False, 'port': 3000, 'pid': 5575}
+2025-11-13 11:29:01,106 - __main__ - INFO - Service Status Summary:
+2025-11-13 11:29:01,110 - __main__ - INFO -   [DOWN] health-monitoring-service: {'running': False, 'healthy': False, 'port': 8001, 'pid': None}
+2025-11-13 11:29:01,113 - __main__ - INFO -   [DOWN] process-management-service: {'running': False, 'healthy': False, 'port': 8002, 'pid': None}
+2025-11-13 11:29:01,116 - __main__ - INFO -   [DOWN] api-security-service: {'running': False, 'healthy': False, 'port': 8080, 'pid': None}
+2025-11-13 11:29:01,119 - __main__ - INFO -   [DOWN] monitoring-service: {'running': False, 'healthy': False, 'port': 8081, 'pid': None}
+2025-11-13 11:29:01,121 - __main__ - INFO -   [DOWN] reporting-service: {'running': False, 'healthy': False, 'port': 8082, 'pid': None}
+2025-11-13 11:29:01,123 - __main__ - INFO -   [DOWN] test-generation-service: {'running': False, 'healthy': False, 'port': 8083, 'pid': None}
+2025-11-13 11:29:01,126 - __main__ - INFO -   [UP] flutter-web-app: {'running': True, 'healthy': False, 'port': 3000, 'pid': 5575}
+2025-11-13 11:29:31,130 - __main__ - INFO - Service Status Summary:
+2025-11-13 11:29:31,133 - __main__ - INFO -   [DOWN] health-monitoring-service: {'running': False, 'healthy': False, 'port': 8001, 'pid': None}
+2025-11-13 11:29:31,135 - __main__ - INFO -   [DOWN] process-management-service: {'running': False, 'healthy': False, 'port': 8002, 'pid': None}
+2025-11-13 11:29:31,137 - __main__ - INFO -   [DOWN] api-security-service: {'running': False, 'healthy': False, 'port': 8080, 'pid': None}
+2025-11-13 11:29:31,139 - __main__ - INFO -   [DOWN] monitoring-service: {'running': False, 'healthy': False, 'port': 8081, 'pid': None}
+2025-11-13 11:29:31,141 - __main__ - INFO -   [DOWN] reporting-service: {'running': False, 'healthy': False, 'port': 8082, 'pid': None}
+2025-11-13 11:29:31,142 - __main__ - INFO -   [DOWN] test-generation-service: {'running': False, 'healthy': False, 'port': 8083, 'pid': None}
+2025-11-13 11:29:31,144 - __main__ - INFO -   [UP] flutter-web-app: {'running': True, 'healthy': False, 'port': 3000, 'pid': 5575}
+2025-11-13 11:29:43,779 - __main__ - INFO - Received signal 2. Initiating shutdown...
+2025-11-13 11:29:43,779 - __main__ - INFO - Stopping all services...
+2025-11-13 11:29:43,779 - __main__ - INFO - Stopped service: flutter-web-app
+2025-11-13 11:29:43,782 - __main__ - INFO - Stopping all services...
+2025-11-13 11:29:49,059 - __main__ - INFO - Starting Security Orchestrator Microservices...
+2025-11-13 11:29:49,059 - __main__ - INFO - Added service: health-monitoring-service on port 8001
+2025-11-13 11:29:49,059 - __main__ - INFO - Added service: process-management-service on port 8002
+2025-11-13 11:29:49,059 - __main__ - INFO - Added service: api-security-service on port 8080
+2025-11-13 11:29:49,059 - __main__ - INFO - Added service: monitoring-service on port 8081
+2025-11-13 11:29:49,059 - __main__ - INFO - Added service: reporting-service on port 8082
+2025-11-13 11:29:49,059 - __main__ - INFO - Added service: test-generation-service on port 8083
+2025-11-13 11:29:49,059 - __main__ - INFO - Added service: flutter-web-app on port 3000
+2025-11-13 11:29:49,059 - __main__ - INFO - Attempting to start flutter-web-app...
+2025-11-13 11:29:49,059 - __main__ - INFO - Starting service: flutter-web-app
+2025-11-13 11:29:49,059 - __main__ - INFO - Service Status Summary:
+2025-11-13 11:29:49,059 - __main__ - INFO -   [DOWN] health-monitoring-service: {'running': False, 'healthy': False, 'port': 8001, 'pid': None}
+2025-11-13 11:29:49,059 - __main__ - INFO -   [DOWN] process-management-service: {'running': False, 'healthy': False, 'port': 8002, 'pid': None}
+2025-11-13 11:29:49,061 - __main__ - INFO -   [DOWN] api-security-service: {'running': False, 'healthy': False, 'port': 8080, 'pid': None}
+2025-11-13 11:29:49,061 - __main__ - INFO -   [DOWN] monitoring-service: {'running': False, 'healthy': False, 'port': 8081, 'pid': None}
+2025-11-13 11:29:49,061 - __main__ - INFO -   [DOWN] reporting-service: {'running': False, 'healthy': False, 'port': 8082, 'pid': None}
+2025-11-13 11:29:49,061 - __main__ - INFO -   [DOWN] test-generation-service: {'running': False, 'healthy': False, 'port': 8083, 'pid': None}
+2025-11-13 11:29:49,061 - __main__ - INFO -   [DOWN] flutter-web-app: {'running': False, 'healthy': False, 'port': 3000, 'pid': None}
+2025-11-13 11:29:55,147 - __main__ - INFO - Service flutter-web-app is healthy
+2025-11-13 11:29:55,148 - __main__ - INFO - Successfully started service: flutter-web-app
+2025-11-13 11:29:55,148 - __main__ - INFO - ✅ Successfully started flutter-web-app
+2025-11-13 11:29:55,148 - __main__ - INFO - [SUCCESS] Started 1 services: flutter-web-app
+2025-11-13 11:29:55,148 - __main__ - INFO - [READY] All services started successfully!
+2025-11-13 11:29:55,148 - __main__ - INFO - Press Ctrl+C to stop all services
+2025-11-13 11:30:19,073 - __main__ - INFO - Service Status Summary:
+2025-11-13 11:30:19,079 - __main__ - INFO -   [DOWN] health-monitoring-service: {'running': False, 'healthy': False, 'port': 8001, 'pid': None}
+2025-11-13 11:30:19,085 - __main__ - INFO -   [DOWN] process-management-service: {'running': False, 'healthy': False, 'port': 8002, 'pid': None}
+2025-11-13 11:30:19,090 - __main__ - INFO -   [DOWN] api-security-service: {'running': False, 'healthy': False, 'port': 8080, 'pid': None}
+2025-11-13 11:30:19,096 - __main__ - INFO -   [DOWN] monitoring-service: {'running': False, 'healthy': False, 'port': 8081, 'pid': None}
+2025-11-13 11:30:19,100 - __main__ - INFO -   [DOWN] reporting-service: {'running': False, 'healthy': False, 'port': 8082, 'pid': None}
+2025-11-13 11:30:19,104 - __main__ - INFO -   [DOWN] test-generation-service: {'running': False, 'healthy': False, 'port': 8083, 'pid': None}
+2025-11-13 11:30:19,107 - __main__ - INFO -   [OK] flutter-web-app: {'running': True, 'healthy': True, 'port': 3000, 'pid': 18511}
+2025-11-13 11:30:49,117 - __main__ - INFO - Service Status Summary:
+2025-11-13 11:30:49,123 - __main__ - INFO -   [DOWN] health-monitoring-service: {'running': False, 'healthy': False, 'port': 8001, 'pid': None}
+2025-11-13 11:30:49,129 - __main__ - INFO -   [DOWN] process-management-service: {'running': False, 'healthy': False, 'port': 8002, 'pid': None}
+2025-11-13 11:30:49,134 - __main__ - INFO -   [DOWN] api-security-service: {'running': False, 'healthy': False, 'port': 8080, 'pid': None}
+2025-11-13 11:30:49,139 - __main__ - INFO -   [DOWN] monitoring-service: {'running': False, 'healthy': False, 'port': 8081, 'pid': None}
+2025-11-13 11:30:49,144 - __main__ - INFO -   [DOWN] reporting-service: {'running': False, 'healthy': False, 'port': 8082, 'pid': None}
+2025-11-13 11:30:49,149 - __main__ - INFO -   [DOWN] test-generation-service: {'running': False, 'healthy': False, 'port': 8083, 'pid': None}
+2025-11-13 11:30:49,152 - __main__ - INFO -   [OK] flutter-web-app: {'running': True, 'healthy': True, 'port': 3000, 'pid': 18511}
+2025-11-13 11:31:19,157 - __main__ - INFO - Service Status Summary:
+2025-11-13 11:31:19,160 - __main__ - INFO -   [DOWN] health-monitoring-service: {'running': False, 'healthy': False, 'port': 8001, 'pid': None}
+2025-11-13 11:31:19,163 - __main__ - INFO -   [DOWN] process-management-service: {'running': False, 'healthy': False, 'port': 8002, 'pid': None}
+2025-11-13 11:31:19,165 - __main__ - INFO -   [DOWN] api-security-service: {'running': False, 'healthy': False, 'port': 8080, 'pid': None}
+2025-11-13 11:31:19,168 - __main__ - INFO -   [DOWN] monitoring-service: {'running': False, 'healthy': False, 'port': 8081, 'pid': None}
+2025-11-13 11:31:19,172 - __main__ - INFO -   [DOWN] reporting-service: {'running': False, 'healthy': False, 'port': 8082, 'pid': None}
+2025-11-13 11:31:19,175 - __main__ - INFO -   [DOWN] test-generation-service: {'running': False, 'healthy': False, 'port': 8083, 'pid': None}
+2025-11-13 11:31:19,178 - __main__ - INFO -   [OK] flutter-web-app: {'running': True, 'healthy': True, 'port': 3000, 'pid': 18511}
+2025-11-13 11:31:49,188 - __main__ - INFO - Service Status Summary:
+2025-11-13 11:31:49,195 - __main__ - INFO -   [DOWN] health-monitoring-service: {'running': False, 'healthy': False, 'port': 8001, 'pid': None}
+2025-11-13 11:31:49,200 - __main__ - INFO -   [DOWN] process-management-service: {'running': False, 'healthy': False, 'port': 8002, 'pid': None}
+2025-11-13 11:31:49,206 - __main__ - INFO -   [DOWN] api-security-service: {'running': False, 'healthy': False, 'port': 8080, 'pid': None}
+2025-11-13 11:31:49,212 - __main__ - INFO -   [DOWN] monitoring-service: {'running': False, 'healthy': False, 'port': 8081, 'pid': None}
+2025-11-13 11:31:49,218 - __main__ - INFO -   [DOWN] reporting-service: {'running': False, 'healthy': False, 'port': 8082, 'pid': None}
+2025-11-13 11:31:49,221 - __main__ - INFO -   [DOWN] test-generation-service: {'running': False, 'healthy': False, 'port': 8083, 'pid': None}
+2025-11-13 11:31:49,224 - __main__ - INFO -   [OK] flutter-web-app: {'running': True, 'healthy': True, 'port': 3000, 'pid': 18511}
+2025-11-13 11:32:19,236 - __main__ - INFO - Service Status Summary:
+2025-11-13 11:32:19,241 - __main__ - INFO -   [DOWN] health-monitoring-service: {'running': False, 'healthy': False, 'port': 8001, 'pid': None}
+2025-11-13 11:32:19,247 - __main__ - INFO -   [DOWN] process-management-service: {'running': False, 'healthy': False, 'port': 8002, 'pid': None}
+2025-11-13 11:32:19,254 - __main__ - INFO -   [DOWN] api-security-service: {'running': False, 'healthy': False, 'port': 8080, 'pid': None}
+2025-11-13 11:32:19,259 - __main__ - INFO -   [DOWN] monitoring-service: {'running': False, 'healthy': False, 'port': 8081, 'pid': None}
+2025-11-13 11:32:19,264 - __main__ - INFO -   [DOWN] reporting-service: {'running': False, 'healthy': False, 'port': 8082, 'pid': None}
+2025-11-13 11:32:19,267 - __main__ - INFO -   [DOWN] test-generation-service: {'running': False, 'healthy': False, 'port': 8083, 'pid': None}
+2025-11-13 11:32:19,271 - __main__ - INFO -   [OK] flutter-web-app: {'running': True, 'healthy': True, 'port': 3000, 'pid': 18511}
+2025-11-13 11:32:49,282 - __main__ - INFO - Service Status Summary:
+2025-11-13 11:32:49,288 - __main__ - INFO -   [DOWN] health-monitoring-service: {'running': False, 'healthy': False, 'port': 8001, 'pid': None}
+2025-11-13 11:32:49,293 - __main__ - INFO -   [DOWN] process-management-service: {'running': False, 'healthy': False, 'port': 8002, 'pid': None}
+2025-11-13 11:32:49,299 - __main__ - INFO -   [DOWN] api-security-service: {'running': False, 'healthy': False, 'port': 8080, 'pid': None}
+2025-11-13 11:32:49,302 - __main__ - INFO -   [DOWN] monitoring-service: {'running': False, 'healthy': False, 'port': 8081, 'pid': None}
+2025-11-13 11:32:49,306 - __main__ - INFO -   [DOWN] reporting-service: {'running': False, 'healthy': False, 'port': 8082, 'pid': None}
+2025-11-13 11:32:49,311 - __main__ - INFO -   [DOWN] test-generation-service: {'running': False, 'healthy': False, 'port': 8083, 'pid': None}
+2025-11-13 11:32:49,316 - __main__ - INFO -   [OK] flutter-web-app: {'running': True, 'healthy': True, 'port': 3000, 'pid': 18511}
+2025-11-13 11:33:19,325 - __main__ - INFO - Service Status Summary:
+2025-11-13 11:33:19,330 - __main__ - INFO -   [DOWN] health-monitoring-service: {'running': False, 'healthy': False, 'port': 8001, 'pid': None}
+2025-11-13 11:33:19,335 - __main__ - INFO -   [DOWN] process-management-service: {'running': False, 'healthy': False, 'port': 8002, 'pid': None}
+2025-11-13 11:33:19,340 - __main__ - INFO -   [DOWN] api-security-service: {'running': False, 'healthy': False, 'port': 8080, 'pid': None}
+2025-11-13 11:33:19,345 - __main__ - INFO -   [DOWN] monitoring-service: {'running': False, 'healthy': False, 'port': 8081, 'pid': None}
+2025-11-13 11:33:19,349 - __main__ - INFO -   [DOWN] reporting-service: {'running': False, 'healthy': False, 'port': 8082, 'pid': None}
+2025-11-13 11:33:19,353 - __main__ - INFO -   [DOWN] test-generation-service: {'running': False, 'healthy': False, 'port': 8083, 'pid': None}
+2025-11-13 11:33:19,357 - __main__ - INFO -   [OK] flutter-web-app: {'running': True, 'healthy': True, 'port': 3000, 'pid': 18511}
+2025-11-13 11:33:49,378 - __main__ - INFO - Service Status Summary:
+2025-11-13 11:33:49,381 - __main__ - INFO -   [DOWN] health-monitoring-service: {'running': False, 'healthy': False, 'port': 8001, 'pid': None}
+2025-11-13 11:33:49,382 - __main__ - INFO -   [DOWN] process-management-service: {'running': False, 'healthy': False, 'port': 8002, 'pid': None}
+2025-11-13 11:33:49,385 - __main__ - INFO -   [DOWN] api-security-service: {'running': False, 'healthy': False, 'port': 8080, 'pid': None}
+2025-11-13 11:33:49,387 - __main__ - INFO -   [DOWN] monitoring-service: {'running': False, 'healthy': False, 'port': 8081, 'pid': None}
+2025-11-13 11:33:49,389 - __main__ - INFO -   [DOWN] reporting-service: {'running': False, 'healthy': False, 'port': 8082, 'pid': None}
+2025-11-13 11:33:49,393 - __main__ - INFO -   [DOWN] test-generation-service: {'running': False, 'healthy': False, 'port': 8083, 'pid': None}
+2025-11-13 11:33:49,395 - __main__ - INFO -   [OK] flutter-web-app: {'running': True, 'healthy': True, 'port': 3000, 'pid': 18511}
+2025-11-13 11:34:19,406 - __main__ - INFO - Service Status Summary:
+2025-11-13 11:34:19,417 - __main__ - INFO -   [DOWN] health-monitoring-service: {'running': False, 'healthy': False, 'port': 8001, 'pid': None}
+2025-11-13 11:34:19,423 - __main__ - INFO -   [DOWN] process-management-service: {'running': False, 'healthy': False, 'port': 8002, 'pid': None}
+2025-11-13 11:34:19,429 - __main__ - INFO -   [DOWN] api-security-service: {'running': False, 'healthy': False, 'port': 8080, 'pid': None}
+2025-11-13 11:34:19,435 - __main__ - INFO -   [DOWN] monitoring-service: {'running': False, 'healthy': False, 'port': 8081, 'pid': None}
+2025-11-13 11:34:19,439 - __main__ - INFO -   [DOWN] reporting-service: {'running': False, 'healthy': False, 'port': 8082, 'pid': None}
+2025-11-13 11:34:19,450 - __main__ - INFO -   [DOWN] test-generation-service: {'running': False, 'healthy': False, 'port': 8083, 'pid': None}
+2025-11-13 11:34:19,453 - __main__ - INFO -   [OK] flutter-web-app: {'running': True, 'healthy': True, 'port': 3000, 'pid': 18511}
+2025-11-13 11:34:49,463 - __main__ - INFO - Service Status Summary:
+2025-11-13 11:34:49,469 - __main__ - INFO -   [DOWN] health-monitoring-service: {'running': False, 'healthy': False, 'port': 8001, 'pid': None}
+2025-11-13 11:34:49,474 - __main__ - INFO -   [DOWN] process-management-service: {'running': False, 'healthy': False, 'port': 8002, 'pid': None}
+2025-11-13 11:34:49,478 - __main__ - INFO -   [DOWN] api-security-service: {'running': False, 'healthy': False, 'port': 8080, 'pid': None}
+2025-11-13 11:34:49,483 - __main__ - INFO -   [DOWN] monitoring-service: {'running': False, 'healthy': False, 'port': 8081, 'pid': None}
+2025-11-13 11:34:49,487 - __main__ - INFO -   [DOWN] reporting-service: {'running': False, 'healthy': False, 'port': 8082, 'pid': None}
+2025-11-13 11:34:49,490 - __main__ - INFO -   [DOWN] test-generation-service: {'running': False, 'healthy': False, 'port': 8083, 'pid': None}
+2025-11-13 11:34:49,494 - __main__ - INFO -   [OK] flutter-web-app: {'running': True, 'healthy': True, 'port': 3000, 'pid': 18511}
+2025-11-13 11:35:19,507 - __main__ - INFO - Service Status Summary:
+2025-11-13 11:35:19,514 - __main__ - INFO -   [DOWN] health-monitoring-service: {'running': False, 'healthy': False, 'port': 8001, 'pid': None}
+2025-11-13 11:35:19,519 - __main__ - INFO -   [DOWN] process-management-service: {'running': False, 'healthy': False, 'port': 8002, 'pid': None}
+2025-11-13 11:35:19,524 - __main__ - INFO -   [DOWN] api-security-service: {'running': False, 'healthy': False, 'port': 8080, 'pid': None}
+2025-11-13 11:35:19,529 - __main__ - INFO -   [DOWN] monitoring-service: {'running': False, 'healthy': False, 'port': 8081, 'pid': None}
+2025-11-13 11:35:19,534 - __main__ - INFO -   [DOWN] reporting-service: {'running': False, 'healthy': False, 'port': 8082, 'pid': None}
+2025-11-13 11:35:19,537 - __main__ - INFO -   [DOWN] test-generation-service: {'running': False, 'healthy': False, 'port': 8083, 'pid': None}
+2025-11-13 11:35:19,541 - __main__ - INFO -   [OK] flutter-web-app: {'running': True, 'healthy': True, 'port': 3000, 'pid': 18511}
+2025-11-13 11:35:49,552 - __main__ - INFO - Service Status Summary:
+2025-11-13 11:35:49,556 - __main__ - INFO -   [DOWN] health-monitoring-service: {'running': False, 'healthy': False, 'port': 8001, 'pid': None}
+2025-11-13 11:35:49,560 - __main__ - INFO -   [DOWN] process-management-service: {'running': False, 'healthy': False, 'port': 8002, 'pid': None}
+2025-11-13 11:35:49,564 - __main__ - INFO -   [DOWN] api-security-service: {'running': False, 'healthy': False, 'port': 8080, 'pid': None}
+2025-11-13 11:35:49,569 - __main__ - INFO -   [DOWN] monitoring-service: {'running': False, 'healthy': False, 'port': 8081, 'pid': None}
+2025-11-13 11:35:49,573 - __main__ - INFO -   [DOWN] reporting-service: {'running': False, 'healthy': False, 'port': 8082, 'pid': None}
+2025-11-13 11:35:49,576 - __main__ - INFO -   [DOWN] test-generation-service: {'running': False, 'healthy': False, 'port': 8083, 'pid': None}
+2025-11-13 11:35:49,579 - __main__ - INFO -   [OK] flutter-web-app: {'running': True, 'healthy': True, 'port': 3000, 'pid': 18511}
+2025-11-13 11:36:19,591 - __main__ - INFO - Service Status Summary:
+2025-11-13 11:36:19,596 - __main__ - INFO -   [DOWN] health-monitoring-service: {'running': False, 'healthy': False, 'port': 8001, 'pid': None}
+2025-11-13 11:36:19,601 - __main__ - INFO -   [DOWN] process-management-service: {'running': False, 'healthy': False, 'port': 8002, 'pid': None}
+2025-11-13 11:36:19,605 - __main__ - INFO -   [DOWN] api-security-service: {'running': False, 'healthy': False, 'port': 8080, 'pid': None}
+2025-11-13 11:36:19,611 - __main__ - INFO -   [DOWN] monitoring-service: {'running': False, 'healthy': False, 'port': 8081, 'pid': None}
+2025-11-13 11:36:19,615 - __main__ - INFO -   [DOWN] reporting-service: {'running': False, 'healthy': False, 'port': 8082, 'pid': None}
+2025-11-13 11:36:19,619 - __main__ - INFO -   [DOWN] test-generation-service: {'running': False, 'healthy': False, 'port': 8083, 'pid': None}
+2025-11-13 11:36:19,622 - __main__ - INFO -   [OK] flutter-web-app: {'running': True, 'healthy': True, 'port': 3000, 'pid': 18511}
+2025-11-13 11:36:49,632 - __main__ - INFO - Service Status Summary:
+2025-11-13 11:36:49,638 - __main__ - INFO -   [DOWN] health-monitoring-service: {'running': False, 'healthy': False, 'port': 8001, 'pid': None}
+2025-11-13 11:36:49,643 - __main__ - INFO -   [DOWN] process-management-service: {'running': False, 'healthy': False, 'port': 8002, 'pid': None}
+2025-11-13 11:36:49,648 - __main__ - INFO -   [DOWN] api-security-service: {'running': False, 'healthy': False, 'port': 8080, 'pid': None}
+2025-11-13 11:36:49,652 - __main__ - INFO -   [DOWN] monitoring-service: {'running': False, 'healthy': False, 'port': 8081, 'pid': None}
+2025-11-13 11:36:49,655 - __main__ - INFO -   [DOWN] reporting-service: {'running': False, 'healthy': False, 'port': 8082, 'pid': None}
+2025-11-13 11:36:49,658 - __main__ - INFO -   [DOWN] test-generation-service: {'running': False, 'healthy': False, 'port': 8083, 'pid': None}
+2025-11-13 11:36:49,661 - __main__ - INFO -   [OK] flutter-web-app: {'running': True, 'healthy': True, 'port': 3000, 'pid': 18511}
+2025-11-13 11:37:19,672 - __main__ - INFO - Service Status Summary:
+2025-11-13 11:37:19,677 - __main__ - INFO -   [DOWN] health-monitoring-service: {'running': False, 'healthy': False, 'port': 8001, 'pid': None}
+2025-11-13 11:37:19,682 - __main__ - INFO -   [DOWN] process-management-service: {'running': False, 'healthy': False, 'port': 8002, 'pid': None}
+2025-11-13 11:37:19,686 - __main__ - INFO -   [DOWN] api-security-service: {'running': False, 'healthy': False, 'port': 8080, 'pid': None}
+2025-11-13 11:37:19,691 - __main__ - INFO -   [DOWN] monitoring-service: {'running': False, 'healthy': False, 'port': 8081, 'pid': None}
+2025-11-13 11:37:19,695 - __main__ - INFO -   [DOWN] reporting-service: {'running': False, 'healthy': False, 'port': 8082, 'pid': None}
+2025-11-13 11:37:19,699 - __main__ - INFO -   [DOWN] test-generation-service: {'running': False, 'healthy': False, 'port': 8083, 'pid': None}
+2025-11-13 11:37:19,702 - __main__ - INFO -   [OK] flutter-web-app: {'running': True, 'healthy': True, 'port': 3000, 'pid': 18511}
+2025-11-13 11:37:49,714 - __main__ - INFO - Service Status Summary:
+2025-11-13 11:37:49,721 - __main__ - INFO -   [DOWN] health-monitoring-service: {'running': False, 'healthy': False, 'port': 8001, 'pid': None}
+2025-11-13 11:37:49,726 - __main__ - INFO -   [DOWN] process-management-service: {'running': False, 'healthy': False, 'port': 8002, 'pid': None}
+2025-11-13 11:37:49,730 - __main__ - INFO -   [DOWN] api-security-service: {'running': False, 'healthy': False, 'port': 8080, 'pid': None}
+2025-11-13 11:37:49,735 - __main__ - INFO -   [DOWN] monitoring-service: {'running': False, 'healthy': False, 'port': 8081, 'pid': None}
+2025-11-13 11:37:49,739 - __main__ - INFO -   [DOWN] reporting-service: {'running': False, 'healthy': False, 'port': 8082, 'pid': None}
+2025-11-13 11:37:49,742 - __main__ - INFO -   [DOWN] test-generation-service: {'running': False, 'healthy': False, 'port': 8083, 'pid': None}
+2025-11-13 11:37:49,747 - __main__ - INFO -   [OK] flutter-web-app: {'running': True, 'healthy': True, 'port': 3000, 'pid': 18511}
+2025-11-13 11:38:19,757 - __main__ - INFO - Service Status Summary:
+2025-11-13 11:38:19,762 - __main__ - INFO -   [DOWN] health-monitoring-service: {'running': False, 'healthy': False, 'port': 8001, 'pid': None}
+2025-11-13 11:38:19,766 - __main__ - INFO -   [DOWN] process-management-service: {'running': False, 'healthy': False, 'port': 8002, 'pid': None}
+2025-11-13 11:38:19,770 - __main__ - INFO -   [DOWN] api-security-service: {'running': False, 'healthy': False, 'port': 8080, 'pid': None}
+2025-11-13 11:38:19,775 - __main__ - INFO -   [DOWN] monitoring-service: {'running': False, 'healthy': False, 'port': 8081, 'pid': None}
+2025-11-13 11:38:19,779 - __main__ - INFO -   [DOWN] reporting-service: {'running': False, 'healthy': False, 'port': 8082, 'pid': None}
+2025-11-13 11:38:19,783 - __main__ - INFO -   [DOWN] test-generation-service: {'running': False, 'healthy': False, 'port': 8083, 'pid': None}
+2025-11-13 11:38:19,787 - __main__ - INFO -   [OK] flutter-web-app: {'running': True, 'healthy': True, 'port': 3000, 'pid': 18511}
+2025-11-13 11:38:49,797 - __main__ - INFO - Service Status Summary:
+2025-11-13 11:38:49,802 - __main__ - INFO -   [DOWN] health-monitoring-service: {'running': False, 'healthy': False, 'port': 8001, 'pid': None}
+2025-11-13 11:38:49,807 - __main__ - INFO -   [DOWN] process-management-service: {'running': False, 'healthy': False, 'port': 8002, 'pid': None}
+2025-11-13 11:38:49,811 - __main__ - INFO -   [DOWN] api-security-service: {'running': False, 'healthy': False, 'port': 8080, 'pid': None}
+2025-11-13 11:38:49,815 - __main__ - INFO -   [DOWN] monitoring-service: {'running': False, 'healthy': False, 'port': 8081, 'pid': None}
+2025-11-13 11:38:49,819 - __main__ - INFO -   [DOWN] reporting-service: {'running': False, 'healthy': False, 'port': 8082, 'pid': None}
+2025-11-13 11:38:49,822 - __main__ - INFO -   [DOWN] test-generation-service: {'running': False, 'healthy': False, 'port': 8083, 'pid': None}
+2025-11-13 11:38:49,825 - __main__ - INFO -   [OK] flutter-web-app: {'running': True, 'healthy': True, 'port': 3000, 'pid': 18511}
+2025-11-13 11:39:19,835 - __main__ - INFO - Service Status Summary:
+2025-11-13 11:39:19,841 - __main__ - INFO -   [DOWN] health-monitoring-service: {'running': False, 'healthy': False, 'port': 8001, 'pid': None}
+2025-11-13 11:39:19,845 - __main__ - INFO -   [DOWN] process-management-service: {'running': False, 'healthy': False, 'port': 8002, 'pid': None}
+2025-11-13 11:39:19,850 - __main__ - INFO -   [DOWN] api-security-service: {'running': False, 'healthy': False, 'port': 8080, 'pid': None}
+2025-11-13 11:39:19,854 - __main__ - INFO -   [DOWN] monitoring-service: {'running': False, 'healthy': False, 'port': 8081, 'pid': None}
+2025-11-13 11:39:19,858 - __main__ - INFO -   [DOWN] reporting-service: {'running': False, 'healthy': False, 'port': 8082, 'pid': None}
+2025-11-13 11:39:19,862 - __main__ - INFO -   [DOWN] test-generation-service: {'running': False, 'healthy': False, 'port': 8083, 'pid': None}
+2025-11-13 11:39:19,867 - __main__ - INFO -   [OK] flutter-web-app: {'running': True, 'healthy': True, 'port': 3000, 'pid': 18511}
+2025-11-13 11:39:49,877 - __main__ - INFO - Service Status Summary:
+2025-11-13 11:39:49,884 - __main__ - INFO -   [DOWN] health-monitoring-service: {'running': False, 'healthy': False, 'port': 8001, 'pid': None}
+2025-11-13 11:39:49,889 - __main__ - INFO -   [DOWN] process-management-service: {'running': False, 'healthy': False, 'port': 8002, 'pid': None}
+2025-11-13 11:39:49,894 - __main__ - INFO -   [DOWN] api-security-service: {'running': False, 'healthy': False, 'port': 8080, 'pid': None}
+2025-11-13 11:39:49,898 - __main__ - INFO -   [DOWN] monitoring-service: {'running': False, 'healthy': False, 'port': 8081, 'pid': None}
+2025-11-13 11:39:49,902 - __main__ - INFO -   [DOWN] reporting-service: {'running': False, 'healthy': False, 'port': 8082, 'pid': None}
+2025-11-13 11:39:49,905 - __main__ - INFO -   [DOWN] test-generation-service: {'running': False, 'healthy': False, 'port': 8083, 'pid': None}
+2025-11-13 11:39:49,908 - __main__ - INFO -   [OK] flutter-web-app: {'running': True, 'healthy': True, 'port': 3000, 'pid': 18511}
+2025-11-13 11:40:19,919 - __main__ - INFO - Service Status Summary:
+2025-11-13 11:40:19,924 - __main__ - INFO -   [DOWN] health-monitoring-service: {'running': False, 'healthy': False, 'port': 8001, 'pid': None}
+2025-11-13 11:40:19,929 - __main__ - INFO -   [DOWN] process-management-service: {'running': False, 'healthy': False, 'port': 8002, 'pid': None}
+2025-11-13 11:40:19,933 - __main__ - INFO -   [DOWN] api-security-service: {'running': False, 'healthy': False, 'port': 8080, 'pid': None}
+2025-11-13 11:40:19,938 - __main__ - INFO -   [DOWN] monitoring-service: {'running': False, 'healthy': False, 'port': 8081, 'pid': None}
+2025-11-13 11:40:19,943 - __main__ - INFO -   [DOWN] reporting-service: {'running': False, 'healthy': False, 'port': 8082, 'pid': None}
+2025-11-13 11:40:19,947 - __main__ - INFO -   [DOWN] test-generation-service: {'running': False, 'healthy': False, 'port': 8083, 'pid': None}
+2025-11-13 11:40:19,951 - __main__ - INFO -   [OK] flutter-web-app: {'running': True, 'healthy': True, 'port': 3000, 'pid': 18511}
+2025-11-13 11:40:49,965 - __main__ - INFO - Service Status Summary:
+2025-11-13 11:40:49,970 - __main__ - INFO -   [DOWN] health-monitoring-service: {'running': False, 'healthy': False, 'port': 8001, 'pid': None}
+2025-11-13 11:40:49,975 - __main__ - INFO -   [DOWN] process-management-service: {'running': False, 'healthy': False, 'port': 8002, 'pid': None}
+2025-11-13 11:40:49,979 - __main__ - INFO -   [DOWN] api-security-service: {'running': False, 'healthy': False, 'port': 8080, 'pid': None}
+2025-11-13 11:40:49,983 - __main__ - INFO -   [DOWN] monitoring-service: {'running': False, 'healthy': False, 'port': 8081, 'pid': None}
+2025-11-13 11:40:49,986 - __main__ - INFO -   [DOWN] reporting-service: {'running': False, 'healthy': False, 'port': 8082, 'pid': None}
+2025-11-13 11:40:49,989 - __main__ - INFO -   [DOWN] test-generation-service: {'running': False, 'healthy': False, 'port': 8083, 'pid': None}
+2025-11-13 11:40:49,992 - __main__ - INFO -   [OK] flutter-web-app: {'running': True, 'healthy': True, 'port': 3000, 'pid': 18511}
+2025-11-13 11:41:20,005 - __main__ - INFO - Service Status Summary:
+2025-11-13 11:41:20,013 - __main__ - INFO -   [DOWN] health-monitoring-service: {'running': False, 'healthy': False, 'port': 8001, 'pid': None}
+2025-11-13 11:41:20,018 - __main__ - INFO -   [DOWN] process-management-service: {'running': False, 'healthy': False, 'port': 8002, 'pid': None}
+2025-11-13 11:41:20,023 - __main__ - INFO -   [DOWN] api-security-service: {'running': False, 'healthy': False, 'port': 8080, 'pid': None}
+2025-11-13 11:41:20,028 - __main__ - INFO -   [DOWN] monitoring-service: {'running': False, 'healthy': False, 'port': 8081, 'pid': None}
+2025-11-13 11:41:20,032 - __main__ - INFO -   [DOWN] reporting-service: {'running': False, 'healthy': False, 'port': 8082, 'pid': None}
+2025-11-13 11:41:20,036 - __main__ - INFO -   [DOWN] test-generation-service: {'running': False, 'healthy': False, 'port': 8083, 'pid': None}
+2025-11-13 11:41:20,039 - __main__ - INFO -   [OK] flutter-web-app: {'running': True, 'healthy': True, 'port': 3000, 'pid': 18511}
+2025-11-13 11:41:50,050 - __main__ - INFO - Service Status Summary:
+2025-11-13 11:41:50,055 - __main__ - INFO -   [DOWN] health-monitoring-service: {'running': False, 'healthy': False, 'port': 8001, 'pid': None}
+2025-11-13 11:41:50,061 - __main__ - INFO -   [DOWN] process-management-service: {'running': False, 'healthy': False, 'port': 8002, 'pid': None}
+2025-11-13 11:41:50,065 - __main__ - INFO -   [DOWN] api-security-service: {'running': False, 'healthy': False, 'port': 8080, 'pid': None}
+2025-11-13 11:41:50,076 - __main__ - INFO -   [DOWN] monitoring-service: {'running': False, 'healthy': False, 'port': 8081, 'pid': None}
+2025-11-13 11:41:50,081 - __main__ - INFO -   [DOWN] reporting-service: {'running': False, 'healthy': False, 'port': 8082, 'pid': None}
+2025-11-13 11:41:50,085 - __main__ - INFO -   [DOWN] test-generation-service: {'running': False, 'healthy': False, 'port': 8083, 'pid': None}
+2025-11-13 11:41:50,088 - __main__ - INFO -   [OK] flutter-web-app: {'running': True, 'healthy': True, 'port': 3000, 'pid': 18511}
+2025-11-13 11:42:20,097 - __main__ - INFO - Service Status Summary:
+2025-11-13 11:42:20,102 - __main__ - INFO -   [DOWN] health-monitoring-service: {'running': False, 'healthy': False, 'port': 8001, 'pid': None}
+2025-11-13 11:42:20,108 - __main__ - INFO -   [DOWN] process-management-service: {'running': False, 'healthy': False, 'port': 8002, 'pid': None}
+2025-11-13 11:42:20,112 - __main__ - INFO -   [DOWN] api-security-service: {'running': False, 'healthy': False, 'port': 8080, 'pid': None}
+2025-11-13 11:42:20,116 - __main__ - INFO -   [DOWN] monitoring-service: {'running': False, 'healthy': False, 'port': 8081, 'pid': None}
+2025-11-13 11:42:20,119 - __main__ - INFO -   [DOWN] reporting-service: {'running': False, 'healthy': False, 'port': 8082, 'pid': None}
+2025-11-13 11:42:20,122 - __main__ - INFO -   [DOWN] test-generation-service: {'running': False, 'healthy': False, 'port': 8083, 'pid': None}
+2025-11-13 11:42:20,125 - __main__ - INFO -   [OK] flutter-web-app: {'running': True, 'healthy': True, 'port': 3000, 'pid': 18511}
+2025-11-13 11:42:50,135 - __main__ - INFO - Service Status Summary:
+2025-11-13 11:42:50,140 - __main__ - INFO -   [DOWN] health-monitoring-service: {'running': False, 'healthy': False, 'port': 8001, 'pid': None}
+2025-11-13 11:42:50,144 - __main__ - INFO -   [DOWN] process-management-service: {'running': False, 'healthy': False, 'port': 8002, 'pid': None}
+2025-11-13 11:42:50,148 - __main__ - INFO -   [DOWN] api-security-service: {'running': False, 'healthy': False, 'port': 8080, 'pid': None}
+2025-11-13 11:42:50,153 - __main__ - INFO -   [DOWN] monitoring-service: {'running': False, 'healthy': False, 'port': 8081, 'pid': None}
+2025-11-13 11:42:50,156 - __main__ - INFO -   [DOWN] reporting-service: {'running': False, 'healthy': False, 'port': 8082, 'pid': None}
+2025-11-13 11:42:50,160 - __main__ - INFO -   [DOWN] test-generation-service: {'running': False, 'healthy': False, 'port': 8083, 'pid': None}
+2025-11-13 11:42:50,163 - __main__ - INFO -   [OK] flutter-web-app: {'running': True, 'healthy': True, 'port': 3000, 'pid': 18511}
+2025-11-13 11:43:20,169 - __main__ - INFO - Service Status Summary:
+2025-11-13 11:43:20,175 - __main__ - INFO -   [DOWN] health-monitoring-service: {'running': False, 'healthy': False, 'port': 8001, 'pid': None}
+2025-11-13 11:43:20,179 - __main__ - INFO -   [DOWN] process-management-service: {'running': False, 'healthy': False, 'port': 8002, 'pid': None}
+2025-11-13 11:43:20,184 - __main__ - INFO -   [DOWN] api-security-service: {'running': False, 'healthy': False, 'port': 8080, 'pid': None}
+2025-11-13 11:43:20,188 - __main__ - INFO -   [DOWN] monitoring-service: {'running': False, 'healthy': False, 'port': 8081, 'pid': None}
+2025-11-13 11:43:20,191 - __main__ - INFO -   [DOWN] reporting-service: {'running': False, 'healthy': False, 'port': 8082, 'pid': None}
+2025-11-13 11:43:20,193 - __main__ - INFO -   [DOWN] test-generation-service: {'running': False, 'healthy': False, 'port': 8083, 'pid': None}
+2025-11-13 11:43:20,196 - __main__ - INFO -   [OK] flutter-web-app: {'running': True, 'healthy': True, 'port': 3000, 'pid': 18511}
+2025-11-13 11:43:50,204 - __main__ - INFO - Service Status Summary:
+2025-11-13 11:43:50,209 - __main__ - INFO -   [DOWN] health-monitoring-service: {'running': False, 'healthy': False, 'port': 8001, 'pid': None}
+2025-11-13 11:43:50,214 - __main__ - INFO -   [DOWN] process-management-service: {'running': False, 'healthy': False, 'port': 8002, 'pid': None}
+2025-11-13 11:43:50,218 - __main__ - INFO -   [DOWN] api-security-service: {'running': False, 'healthy': False, 'port': 8080, 'pid': None}
+2025-11-13 11:43:50,223 - __main__ - INFO -   [DOWN] monitoring-service: {'running': False, 'healthy': False, 'port': 8081, 'pid': None}
+2025-11-13 11:43:50,226 - __main__ - INFO -   [DOWN] reporting-service: {'running': False, 'healthy': False, 'port': 8082, 'pid': None}
+2025-11-13 11:43:50,229 - __main__ - INFO -   [DOWN] test-generation-service: {'running': False, 'healthy': False, 'port': 8083, 'pid': None}
+2025-11-13 11:43:50,233 - __main__ - INFO -   [OK] flutter-web-app: {'running': True, 'healthy': True, 'port': 3000, 'pid': 18511}
+2025-11-13 11:44:20,248 - __main__ - INFO - Service Status Summary:
+2025-11-13 11:44:20,254 - __main__ - INFO -   [DOWN] health-monitoring-service: {'running': False, 'healthy': False, 'port': 8001, 'pid': None}
+2025-11-13 11:44:20,258 - __main__ - INFO -   [DOWN] process-management-service: {'running': False, 'healthy': False, 'port': 8002, 'pid': None}
+2025-11-13 11:44:20,262 - __main__ - INFO -   [DOWN] api-security-service: {'running': False, 'healthy': False, 'port': 8080, 'pid': None}
+2025-11-13 11:44:20,268 - __main__ - INFO -   [DOWN] monitoring-service: {'running': False, 'healthy': False, 'port': 8081, 'pid': None}
+2025-11-13 11:44:20,273 - __main__ - INFO -   [DOWN] reporting-service: {'running': False, 'healthy': False, 'port': 8082, 'pid': None}
+2025-11-13 11:44:20,277 - __main__ - INFO -   [DOWN] test-generation-service: {'running': False, 'healthy': False, 'port': 8083, 'pid': None}
+2025-11-13 11:44:20,281 - __main__ - INFO -   [OK] flutter-web-app: {'running': True, 'healthy': True, 'port': 3000, 'pid': 18511}
+2025-11-13 11:44:50,299 - __main__ - INFO - Service Status Summary:
+2025-11-13 11:44:50,304 - __main__ - INFO -   [DOWN] health-monitoring-service: {'running': False, 'healthy': False, 'port': 8001, 'pid': None}
+2025-11-13 11:44:50,309 - __main__ - INFO -   [DOWN] process-management-service: {'running': False, 'healthy': False, 'port': 8002, 'pid': None}
+2025-11-13 11:44:50,313 - __main__ - INFO -   [DOWN] api-security-service: {'running': False, 'healthy': False, 'port': 8080, 'pid': None}
+2025-11-13 11:44:50,317 - __main__ - INFO -   [DOWN] monitoring-service: {'running': False, 'healthy': False, 'port': 8081, 'pid': None}
+2025-11-13 11:44:50,321 - __main__ - INFO -   [DOWN] reporting-service: {'running': False, 'healthy': False, 'port': 8082, 'pid': None}
+2025-11-13 11:44:50,324 - __main__ - INFO -   [DOWN] test-generation-service: {'running': False, 'healthy': False, 'port': 8083, 'pid': None}
+2025-11-13 11:44:50,330 - __main__ - INFO -   [OK] flutter-web-app: {'running': True, 'healthy': True, 'port': 3000, 'pid': 18511}
+2025-11-13 11:45:20,343 - __main__ - INFO - Service Status Summary:
+2025-11-13 11:45:20,348 - __main__ - INFO -   [DOWN] health-monitoring-service: {'running': False, 'healthy': False, 'port': 8001, 'pid': None}
+2025-11-13 11:45:20,352 - __main__ - INFO -   [DOWN] process-management-service: {'running': False, 'healthy': False, 'port': 8002, 'pid': None}
+2025-11-13 11:45:20,356 - __main__ - INFO -   [DOWN] api-security-service: {'running': False, 'healthy': False, 'port': 8080, 'pid': None}
+2025-11-13 11:45:20,361 - __main__ - INFO -   [DOWN] monitoring-service: {'running': False, 'healthy': False, 'port': 8081, 'pid': None}
+2025-11-13 11:45:20,365 - __main__ - INFO -   [DOWN] reporting-service: {'running': False, 'healthy': False, 'port': 8082, 'pid': None}
+2025-11-13 11:45:20,368 - __main__ - INFO -   [DOWN] test-generation-service: {'running': False, 'healthy': False, 'port': 8083, 'pid': None}
+2025-11-13 11:45:20,371 - __main__ - INFO -   [OK] flutter-web-app: {'running': True, 'healthy': True, 'port': 3000, 'pid': 18511}
+2025-11-13 11:45:50,383 - __main__ - INFO - Service Status Summary:
+2025-11-13 11:45:50,388 - __main__ - INFO -   [DOWN] health-monitoring-service: {'running': False, 'healthy': False, 'port': 8001, 'pid': None}
+2025-11-13 11:45:50,393 - __main__ - INFO -   [DOWN] process-management-service: {'running': False, 'healthy': False, 'port': 8002, 'pid': None}
+2025-11-13 11:45:50,397 - __main__ - INFO -   [DOWN] api-security-service: {'running': False, 'healthy': False, 'port': 8080, 'pid': None}
+2025-11-13 11:45:50,402 - __main__ - INFO -   [DOWN] monitoring-service: {'running': False, 'healthy': False, 'port': 8081, 'pid': None}
+2025-11-13 11:45:50,405 - __main__ - INFO -   [DOWN] reporting-service: {'running': False, 'healthy': False, 'port': 8082, 'pid': None}
+2025-11-13 11:45:50,408 - __main__ - INFO -   [DOWN] test-generation-service: {'running': False, 'healthy': False, 'port': 8083, 'pid': None}
+2025-11-13 11:45:50,411 - __main__ - INFO -   [OK] flutter-web-app: {'running': True, 'healthy': True, 'port': 3000, 'pid': 18511}
+2025-11-13 11:46:20,426 - __main__ - INFO - Service Status Summary:
+2025-11-13 11:46:20,432 - __main__ - INFO -   [DOWN] health-monitoring-service: {'running': False, 'healthy': False, 'port': 8001, 'pid': None}
+2025-11-13 11:46:20,436 - __main__ - INFO -   [DOWN] process-management-service: {'running': False, 'healthy': False, 'port': 8002, 'pid': None}
+2025-11-13 11:46:20,441 - __main__ - INFO -   [DOWN] api-security-service: {'running': False, 'healthy': False, 'port': 8080, 'pid': None}
+2025-11-13 11:46:20,446 - __main__ - INFO -   [DOWN] monitoring-service: {'running': False, 'healthy': False, 'port': 8081, 'pid': None}
+2025-11-13 11:46:20,451 - __main__ - INFO -   [DOWN] reporting-service: {'running': False, 'healthy': False, 'port': 8082, 'pid': None}
+2025-11-13 11:46:20,455 - __main__ - INFO -   [DOWN] test-generation-service: {'running': False, 'healthy': False, 'port': 8083, 'pid': None}
+2025-11-13 11:46:20,458 - __main__ - INFO -   [OK] flutter-web-app: {'running': True, 'healthy': True, 'port': 3000, 'pid': 18511}
+2025-11-13 11:46:50,470 - __main__ - INFO - Service Status Summary:
+2025-11-13 11:46:50,476 - __main__ - INFO -   [DOWN] health-monitoring-service: {'running': False, 'healthy': False, 'port': 8001, 'pid': None}
+2025-11-13 11:46:50,480 - __main__ - INFO -   [DOWN] process-management-service: {'running': False, 'healthy': False, 'port': 8002, 'pid': None}
+2025-11-13 11:46:50,485 - __main__ - INFO -   [DOWN] api-security-service: {'running': False, 'healthy': False, 'port': 8080, 'pid': None}
+2025-11-13 11:46:50,490 - __main__ - INFO -   [DOWN] monitoring-service: {'running': False, 'healthy': False, 'port': 8081, 'pid': None}
+2025-11-13 11:46:50,494 - __main__ - INFO -   [DOWN] reporting-service: {'running': False, 'healthy': False, 'port': 8082, 'pid': None}
+2025-11-13 11:46:50,498 - __main__ - INFO -   [DOWN] test-generation-service: {'running': False, 'healthy': False, 'port': 8083, 'pid': None}
+2025-11-13 11:46:50,502 - __main__ - INFO -   [OK] flutter-web-app: {'running': True, 'healthy': True, 'port': 3000, 'pid': 18511}
+2025-11-13 11:47:20,516 - __main__ - INFO - Service Status Summary:
+2025-11-13 11:47:20,521 - __main__ - INFO -   [DOWN] health-monitoring-service: {'running': False, 'healthy': False, 'port': 8001, 'pid': None}
+2025-11-13 11:47:20,526 - __main__ - INFO -   [DOWN] process-management-service: {'running': False, 'healthy': False, 'port': 8002, 'pid': None}
+2025-11-13 11:47:20,531 - __main__ - INFO -   [DOWN] api-security-service: {'running': False, 'healthy': False, 'port': 8080, 'pid': None}
+2025-11-13 11:47:20,535 - __main__ - INFO -   [DOWN] monitoring-service: {'running': False, 'healthy': False, 'port': 8081, 'pid': None}
+2025-11-13 11:47:20,538 - __main__ - INFO -   [DOWN] reporting-service: {'running': False, 'healthy': False, 'port': 8082, 'pid': None}
+2025-11-13 11:47:20,542 - __main__ - INFO -   [DOWN] test-generation-service: {'running': False, 'healthy': False, 'port': 8083, 'pid': None}
+2025-11-13 11:47:20,545 - __main__ - INFO -   [OK] flutter-web-app: {'running': True, 'healthy': True, 'port': 3000, 'pid': 18511}
+2025-11-13 11:47:50,557 - __main__ - INFO - Service Status Summary:
+2025-11-13 11:47:50,563 - __main__ - INFO -   [DOWN] health-monitoring-service: {'running': False, 'healthy': False, 'port': 8001, 'pid': None}
+2025-11-13 11:47:50,568 - __main__ - INFO -   [DOWN] process-management-service: {'running': False, 'healthy': False, 'port': 8002, 'pid': None}
+2025-11-13 11:47:50,572 - __main__ - INFO -   [DOWN] api-security-service: {'running': False, 'healthy': False, 'port': 8080, 'pid': None}
+2025-11-13 11:47:50,577 - __main__ - INFO -   [DOWN] monitoring-service: {'running': False, 'healthy': False, 'port': 8081, 'pid': None}
+2025-11-13 11:47:50,580 - __main__ - INFO -   [DOWN] reporting-service: {'running': False, 'healthy': False, 'port': 8082, 'pid': None}
+2025-11-13 11:47:50,583 - __main__ - INFO -   [DOWN] test-generation-service: {'running': False, 'healthy': False, 'port': 8083, 'pid': None}
+2025-11-13 11:47:50,587 - __main__ - INFO -   [OK] flutter-web-app: {'running': True, 'healthy': True, 'port': 3000, 'pid': 18511}
