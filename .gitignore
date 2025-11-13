@@ -176,4 +176,3 @@ build/
 # Docker
 .dockerignore
 services_startup.log
-services_startup.log
