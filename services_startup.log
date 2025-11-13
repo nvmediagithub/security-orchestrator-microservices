@@ -1,0 +1,85 @@
+2025-11-13 00:14:39,327 - __main__ - INFO - Starting Security Orchestrator Microservices...
+2025-11-13 00:14:39,327 - __main__ - INFO - Added service: health-monitoring-service on port 8001
+2025-11-13 00:14:39,327 - __main__ - INFO - Added service: process-management-service on port 8002
+2025-11-13 00:14:39,328 - __main__ - INFO - Added service: api-security-service on port 8080
+2025-11-13 00:14:39,328 - __main__ - INFO - Added service: monitoring-service on port 8081
+2025-11-13 00:14:39,328 - __main__ - INFO - Added service: reporting-service on port 8082
+2025-11-13 00:14:39,328 - __main__ - INFO - Added service: test-generation-service on port 8083
+2025-11-13 00:14:39,328 - __main__ - INFO - Added service: flutter-web-app on port 3000
+2025-11-13 00:14:39,329 - __main__ - INFO - Attempting to start health-monitoring-service...
+2025-11-13 00:14:39,331 - __main__ - INFO - Service Status Summary:
+2025-11-13 00:14:39,331 - __main__ - INFO - Starting service: health-monitoring-service
+2025-11-13 00:15:13,671 - __main__ - INFO - Service Status Summary:
+2025-11-13 00:15:40,251 - __main__ - ERROR - Service health-monitoring-service failed health check
+2025-11-13 00:15:40,251 - __main__ - INFO - Stopped service: health-monitoring-service
+2025-11-13 00:15:40,255 - __main__ - INFO - Attempting to start process-management-service...
+2025-11-13 00:15:40,255 - __main__ - INFO - Starting service: process-management-service
+2025-11-13 00:15:47,821 - __main__ - INFO - Service Status Summary:
+2025-11-13 00:16:21,955 - __main__ - INFO - Service Status Summary:
+2025-11-13 00:16:41,222 - __main__ - ERROR - Service process-management-service failed health check
+2025-11-13 00:16:41,229 - __main__ - INFO - Stopped service: process-management-service
+2025-11-13 00:16:41,233 - __main__ - INFO - Attempting to start flutter-web-app...
+2025-11-13 00:16:41,234 - __main__ - INFO - Starting service: flutter-web-app
+2025-11-13 00:16:41,245 - __main__ - ERROR - Failed to start service flutter-web-app: [WinError 2] Не удается найти указанный файл
+2025-11-13 00:16:41,257 - __main__ - INFO - Stopping all services...
+2025-11-13 00:20:50,354 - __main__ - INFO - Starting Security Orchestrator Microservices...
+2025-11-13 00:20:50,354 - __main__ - INFO - Added service: health-monitoring-service on port 8001
+2025-11-13 00:20:50,355 - __main__ - INFO - Added service: process-management-service on port 8002
+2025-11-13 00:20:50,355 - __main__ - INFO - Added service: api-security-service on port 8080
+2025-11-13 00:20:50,355 - __main__ - INFO - Added service: monitoring-service on port 8081
+2025-11-13 00:20:50,355 - __main__ - INFO - Added service: reporting-service on port 8082
+2025-11-13 00:20:50,355 - __main__ - INFO - Added service: test-generation-service on port 8083
+2025-11-13 00:20:50,355 - __main__ - INFO - Added service: flutter-web-app on port 3000
+2025-11-13 00:20:50,355 - __main__ - INFO - Attempting to start health-monitoring-service...
+2025-11-13 00:20:50,356 - __main__ - INFO - Service Status Summary:
+2025-11-13 00:20:50,356 - __main__ - INFO - Starting service: health-monitoring-service
+2025-11-13 00:20:50,357 - __main__ - INFO -   [DOWN] health-monitoring-service: {'running': False, 'healthy': False, 'port': 8001, 'pid': None}
+2025-11-13 00:20:50,357 - __main__ - INFO -   [DOWN] process-management-service: {'running': False, 'healthy': False, 'port': 8002, 'pid': None}
+2025-11-13 00:20:50,357 - __main__ - INFO -   [DOWN] api-security-service: {'running': False, 'healthy': False, 'port': 8080, 'pid': None}
+2025-11-13 00:20:50,357 - __main__ - INFO -   [DOWN] monitoring-service: {'running': False, 'healthy': False, 'port': 8081, 'pid': None}
+2025-11-13 00:20:50,358 - __main__ - INFO -   [DOWN] reporting-service: {'running': False, 'healthy': False, 'port': 8082, 'pid': None}
+2025-11-13 00:20:50,358 - __main__ - INFO -   [DOWN] test-generation-service: {'running': False, 'healthy': False, 'port': 8083, 'pid': None}
+2025-11-13 00:20:50,358 - __main__ - INFO -   [DOWN] flutter-web-app: {'running': False, 'healthy': False, 'port': 3000, 'pid': None}
+2025-11-13 00:21:24,474 - __main__ - INFO - Service Status Summary:
+2025-11-13 00:21:28,556 - __main__ - INFO -   [UP] health-monitoring-service: {'running': True, 'healthy': False, 'port': 8001, 'pid': 30500}
+2025-11-13 00:21:32,625 - __main__ - INFO -   [DOWN] process-management-service: {'running': False, 'healthy': False, 'port': 8002, 'pid': None}
+2025-11-13 00:21:36,688 - __main__ - INFO -   [DOWN] api-security-service: {'running': False, 'healthy': False, 'port': 8080, 'pid': None}
+2025-11-13 00:21:40,777 - __main__ - INFO -   [DOWN] monitoring-service: {'running': False, 'healthy': False, 'port': 8081, 'pid': None}
+2025-11-13 00:21:44,868 - __main__ - INFO -   [DOWN] reporting-service: {'running': False, 'healthy': False, 'port': 8082, 'pid': None}
+2025-11-13 00:21:48,947 - __main__ - INFO -   [DOWN] test-generation-service: {'running': False, 'healthy': False, 'port': 8083, 'pid': None}
+2025-11-13 00:21:51,120 - __main__ - ERROR - Service health-monitoring-service failed health check
+2025-11-13 00:21:51,121 - __main__ - INFO - Stopped service: health-monitoring-service
+2025-11-13 00:21:53,037 - __main__ - ERROR - Error monitoring services: 'health-monitoring-service'
+2025-11-13 00:21:53,037 - __main__ - ERROR - [FAIL] Failed to start health-monitoring-service: Health check timeout for health-monitoring-service
+2025-11-13 00:21:53,038 - __main__ - INFO - Attempting to start process-management-service...
+2025-11-13 00:21:53,038 - __main__ - INFO - Starting service: process-management-service
+2025-11-13 00:22:00,090 - __main__ - INFO - Received signal 2. Initiating shutdown...
+2025-11-13 00:22:00,090 - __main__ - INFO - Stopping all services...
+2025-11-13 00:22:00,095 - __main__ - INFO - Stopped service: process-management-service
+2025-11-13 00:22:00,096 - __main__ - INFO - Stopping all services...
+2025-11-13 00:22:53,705 - __main__ - ERROR - Service process-management-service failed health check
+2025-11-13 00:24:16,028 - __main__ - INFO - Starting Security Orchestrator Microservices...
+2025-11-13 00:24:16,028 - __main__ - INFO - Added service: health-monitoring-service on port 8001
+2025-11-13 00:24:16,028 - __main__ - INFO - Added service: process-management-service on port 8002
+2025-11-13 00:24:16,028 - __main__ - INFO - Added service: api-security-service on port 8080
+2025-11-13 00:24:16,029 - __main__ - INFO - Added service: monitoring-service on port 8081
+2025-11-13 00:24:16,029 - __main__ - INFO - Added service: reporting-service on port 8082
+2025-11-13 00:24:16,029 - __main__ - INFO - Added service: test-generation-service on port 8083
+2025-11-13 00:24:16,029 - __main__ - INFO - Added service: flutter-web-app on port 3000
+2025-11-13 00:24:16,029 - __main__ - INFO - Attempting to start health-monitoring-service...
+2025-11-13 00:24:16,030 - __main__ - INFO - Starting service: health-monitoring-service
+2025-11-13 00:24:16,030 - __main__ - INFO - Service Status Summary:
+2025-11-13 00:24:16,031 - __main__ - INFO -   [DOWN] health-monitoring-service: {'running': False, 'healthy': False, 'port': 8001, 'pid': None}
+2025-11-13 00:24:16,031 - __main__ - INFO -   [DOWN] process-management-service: {'running': False, 'healthy': False, 'port': 8002, 'pid': None}
+2025-11-13 00:24:16,031 - __main__ - INFO -   [DOWN] api-security-service: {'running': False, 'healthy': False, 'port': 8080, 'pid': None}
+2025-11-13 00:24:16,031 - __main__ - INFO -   [DOWN] monitoring-service: {'running': False, 'healthy': False, 'port': 8081, 'pid': None}
+2025-11-13 00:24:16,032 - __main__ - INFO -   [DOWN] reporting-service: {'running': False, 'healthy': False, 'port': 8082, 'pid': None}
+2025-11-13 00:24:16,032 - __main__ - INFO -   [DOWN] test-generation-service: {'running': False, 'healthy': False, 'port': 8083, 'pid': None}
+2025-11-13 00:24:16,032 - __main__ - INFO -   [DOWN] flutter-web-app: {'running': False, 'healthy': False, 'port': 3000, 'pid': None}
+2025-11-13 00:24:50,101 - __main__ - INFO - Service Status Summary:
+2025-11-13 00:24:54,191 - __main__ - INFO -   [UP] health-monitoring-service: {'running': True, 'healthy': False, 'port': 8001, 'pid': 34728}
+2025-11-13 00:24:58,273 - __main__ - INFO -   [DOWN] process-management-service: {'running': False, 'healthy': False, 'port': 8002, 'pid': None}
+2025-11-13 00:25:02,331 - __main__ - INFO -   [DOWN] api-security-service: {'running': False, 'healthy': False, 'port': 8080, 'pid': None}
+2025-11-13 00:25:06,389 - __main__ - INFO -   [DOWN] monitoring-service: {'running': False, 'healthy': False, 'port': 8081, 'pid': None}
+2025-11-13 00:25:10,481 - __main__ - INFO -   [DOWN] reporting-service: {'running': False, 'healthy': False, 'port': 8082, 'pid': None}
+2025-11-13 00:25:14,559 - __main__ - INFO -   [DOWN] test-generation-service: {'running': False, 'healthy': False, 'port': 8083, 'pid': None}
