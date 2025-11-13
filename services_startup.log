@@ -1427,3 +1427,232 @@
 2025-11-13 11:56:17,788 - __main__ - INFO -   [DOWN] reporting-service: {'running': False, 'healthy': False, 'port': 8082, 'pid': None}
 2025-11-13 11:56:17,792 - __main__ - INFO -   [DOWN] test-generation-service: {'running': False, 'healthy': False, 'port': 8083, 'pid': None}
 2025-11-13 11:56:17,795 - __main__ - INFO -   [OK] flutter-web-app: {'running': True, 'healthy': True, 'port': 3000, 'pid': 18511}
+2025-11-13 12:22:58,750 - __main__ - INFO - Starting Security Orchestrator Microservices...
+2025-11-13 12:22:58,750 - __main__ - INFO - Added service: api-analysis-service on port 8001
+2025-11-13 12:22:58,750 - __main__ - INFO - Added service: health-monitoring-service on port 8002
+2025-11-13 12:22:58,750 - __main__ - INFO - Added service: process-management-service on port 8003
+2025-11-13 12:22:58,750 - __main__ - INFO - Added service: flutter-web-app on port 3000
+2025-11-13 12:22:58,750 - __main__ - INFO - Attempting to start api-analysis-service...
+2025-11-13 12:22:58,750 - __main__ - INFO - Starting service: api-analysis-service
+2025-11-13 12:22:58,750 - __main__ - INFO - Service Status Summary:
+2025-11-13 12:22:58,750 - __main__ - INFO -   [DOWN] api-analysis-service: {'running': False, 'healthy': False, 'port': 8001, 'pid': None}
+2025-11-13 12:22:58,750 - __main__ - INFO -   [DOWN] health-monitoring-service: {'running': False, 'healthy': False, 'port': 8002, 'pid': None}
+2025-11-13 12:22:58,752 - __main__ - INFO -   [DOWN] process-management-service: {'running': False, 'healthy': False, 'port': 8003, 'pid': None}
+2025-11-13 12:22:58,752 - __main__ - INFO -   [DOWN] flutter-web-app: {'running': False, 'healthy': False, 'port': 3000, 'pid': None}
+2025-11-13 12:23:28,761 - __main__ - INFO - Service Status Summary:
+2025-11-13 12:23:28,767 - __main__ - INFO -   [UP] api-analysis-service: {'running': True, 'healthy': False, 'port': 8001, 'pid': 27840}
+2025-11-13 12:23:28,770 - __main__ - INFO -   [DOWN] health-monitoring-service: {'running': False, 'healthy': False, 'port': 8002, 'pid': None}
+2025-11-13 12:23:28,773 - __main__ - INFO -   [DOWN] process-management-service: {'running': False, 'healthy': False, 'port': 8003, 'pid': None}
+2025-11-13 12:23:28,776 - __main__ - INFO -   [DOWN] flutter-web-app: {'running': False, 'healthy': False, 'port': 3000, 'pid': None}
+2025-11-13 12:23:58,785 - __main__ - INFO - Service Status Summary:
+2025-11-13 12:23:58,790 - __main__ - INFO -   [UP] api-analysis-service: {'running': True, 'healthy': False, 'port': 8001, 'pid': 27840}
+2025-11-13 12:23:58,793 - __main__ - INFO -   [DOWN] health-monitoring-service: {'running': False, 'healthy': False, 'port': 8002, 'pid': None}
+2025-11-13 12:23:58,795 - __main__ - INFO -   [DOWN] process-management-service: {'running': False, 'healthy': False, 'port': 8003, 'pid': None}
+2025-11-13 12:23:58,798 - __main__ - INFO -   [DOWN] flutter-web-app: {'running': False, 'healthy': False, 'port': 3000, 'pid': None}
+2025-11-13 12:23:59,072 - __main__ - ERROR - Service api-analysis-service failed health check
+2025-11-13 12:23:59,072 - __main__ - INFO - Stopped service: api-analysis-service
+2025-11-13 12:23:59,073 - __main__ - ERROR - [FAIL] Failed to start api-analysis-service: Health check timeout for api-analysis-service
+2025-11-13 12:23:59,073 - __main__ - INFO - Attempting to start health-monitoring-service...
+2025-11-13 12:23:59,074 - __main__ - INFO - Starting service: health-monitoring-service
+2025-11-13 12:24:28,806 - __main__ - INFO - Service Status Summary:
+2025-11-13 12:24:28,811 - __main__ - INFO -   [DOWN] api-analysis-service: {'running': False, 'healthy': False, 'port': 8001, 'pid': None}
+2025-11-13 12:24:28,815 - __main__ - INFO -   [UP] health-monitoring-service: {'running': True, 'healthy': False, 'port': 8002, 'pid': 27992}
+2025-11-13 12:24:28,818 - __main__ - INFO -   [DOWN] process-management-service: {'running': False, 'healthy': False, 'port': 8003, 'pid': None}
+2025-11-13 12:24:28,820 - __main__ - INFO -   [DOWN] flutter-web-app: {'running': False, 'healthy': False, 'port': 3000, 'pid': None}
+2025-11-13 12:24:58,830 - __main__ - INFO - Service Status Summary:
+2025-11-13 12:24:58,835 - __main__ - INFO -   [DOWN] api-analysis-service: {'running': False, 'healthy': False, 'port': 8001, 'pid': None}
+2025-11-13 12:24:58,838 - __main__ - INFO -   [UP] health-monitoring-service: {'running': True, 'healthy': False, 'port': 8002, 'pid': 27992}
+2025-11-13 12:24:58,841 - __main__ - INFO -   [DOWN] process-management-service: {'running': False, 'healthy': False, 'port': 8003, 'pid': None}
+2025-11-13 12:24:58,843 - __main__ - INFO -   [DOWN] flutter-web-app: {'running': False, 'healthy': False, 'port': 3000, 'pid': None}
+2025-11-13 12:24:59,357 - __main__ - ERROR - Service health-monitoring-service failed health check
+2025-11-13 12:24:59,357 - __main__ - INFO - Stopped service: health-monitoring-service
+2025-11-13 12:24:59,359 - __main__ - ERROR - [FAIL] Failed to start health-monitoring-service: Health check timeout for health-monitoring-service
+2025-11-13 12:24:59,359 - __main__ - INFO - Attempting to start process-management-service...
+2025-11-13 12:24:59,359 - __main__ - INFO - Starting service: process-management-service
+2025-11-13 12:25:28,851 - __main__ - INFO - Service Status Summary:
+2025-11-13 12:25:28,855 - __main__ - INFO -   [DOWN] api-analysis-service: {'running': False, 'healthy': False, 'port': 8001, 'pid': None}
+2025-11-13 12:25:28,857 - __main__ - INFO -   [DOWN] health-monitoring-service: {'running': False, 'healthy': False, 'port': 8002, 'pid': None}
+2025-11-13 12:25:28,860 - __main__ - INFO -   [UP] process-management-service: {'running': True, 'healthy': False, 'port': 8003, 'pid': 28179}
+2025-11-13 12:25:28,862 - __main__ - INFO -   [DOWN] flutter-web-app: {'running': False, 'healthy': False, 'port': 3000, 'pid': None}
+2025-11-13 12:25:33,625 - __main__ - INFO - Received signal 2. Initiating shutdown...
+2025-11-13 12:25:33,626 - __main__ - INFO - Stopping all services...
+2025-11-13 12:25:33,626 - __main__ - INFO - Stopped service: process-management-service
+2025-11-13 12:25:33,627 - __main__ - INFO - Stopping all services...
+2025-11-13 12:25:53,890 - __main__ - INFO - Received signal 2. Initiating shutdown...
+2025-11-13 12:25:53,890 - __main__ - INFO - Stopping all services...
+2025-11-13 12:25:53,901 - asyncio - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-1' coro=<main() done, defined at /Users/user/Documents/Repositories/migration_folder/security-orchestrator-microservices/start_services.py:234> exception=SystemExit(0)>
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/asyncio/runners.py", line 44, in run
+    return loop.run_until_complete(main)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/asyncio/base_events.py", line 634, in run_until_complete
+    self.run_forever()
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/asyncio/base_events.py", line 601, in run_forever
+    self._run_once()
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/asyncio/base_events.py", line 1869, in _run_once
+    event_list = self._selector.select(timeout)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/selectors.py", line 562, in select
+    kev_list = self._selector.control(None, max_ev, timeout)
+  File "/Users/user/Documents/Repositories/migration_folder/security-orchestrator-microservices/start_services.py", line 252, in signal_handler
+    sys.exit(0)
+SystemExit: 0
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/user/Documents/Repositories/migration_folder/security-orchestrator-microservices/start_services.py", line 270, in main
+    success, error = await asyncio.get_event_loop().run_in_executor(
+asyncio.exceptions.CancelledError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/user/Documents/Repositories/migration_folder/security-orchestrator-microservices/start_services.py", line 309, in <module>
+    exit_code = asyncio.run(main())
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/asyncio/runners.py", line 47, in run
+    _cancel_all_tasks(loop)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/asyncio/runners.py", line 63, in _cancel_all_tasks
+    loop.run_until_complete(
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/asyncio/base_events.py", line 634, in run_until_complete
+    self.run_forever()
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/asyncio/base_events.py", line 601, in run_forever
+    self._run_once()
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/asyncio/base_events.py", line 1905, in _run_once
+    handle._run()
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/asyncio/events.py", line 80, in _run
+    self._context.run(self._callback, *self._args)
+  File "/Users/user/Documents/Repositories/migration_folder/security-orchestrator-microservices/start_services.py", line 302, in main
+    manager.executor.shutdown(wait=True)
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/concurrent/futures/thread.py", line 235, in shutdown
+    t.join()
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/threading.py", line 1060, in join
+    self._wait_for_tstate_lock()
+  File "/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/threading.py", line 1080, in _wait_for_tstate_lock
+    if lock.acquire(block, timeout):
+  File "/Users/user/Documents/Repositories/migration_folder/security-orchestrator-microservices/start_services.py", line 252, in signal_handler
+    sys.exit(0)
+SystemExit: 0
+2025-11-13 12:25:53,908 - asyncio - ERROR - Task was destroyed but it is pending!
+task: <Task cancelling name='Task-2' coro=<monitor_services() running at /Users/user/Documents/Repositories/migration_folder/security-orchestrator-microservices/start_services.py:228> wait_for=<Future cancelled> cb=[_gather.<locals>._done_callback() at /Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/asyncio/tasks.py:767]>
+2025-11-13 13:47:34,510 - __main__ - INFO - Starting Security Orchestrator Microservices...
+2025-11-13 13:47:34,510 - __main__ - INFO - Added service: api-analysis-service on port 8001
+2025-11-13 13:47:34,510 - __main__ - INFO - Added service: vulnerable-api-service on port 8002
+2025-11-13 13:47:34,510 - __main__ - INFO - Added service: health-monitoring-service on port 8004
+2025-11-13 13:47:34,510 - __main__ - INFO - Added service: process-management-service on port 8003
+2025-11-13 13:47:34,510 - __main__ - INFO - Added service: flutter-web-app on port 3000
+2025-11-13 13:47:34,510 - __main__ - INFO - Attempting to start api-analysis-service...
+2025-11-13 13:47:34,510 - __main__ - INFO - Starting service: api-analysis-service
+2025-11-13 13:47:34,510 - __main__ - INFO - Service Status Summary:
+2025-11-13 13:47:34,510 - __main__ - INFO -   [DOWN] api-analysis-service: {'running': False, 'healthy': False, 'port': 8001, 'pid': None}
+2025-11-13 13:47:34,510 - __main__ - INFO -   [DOWN] vulnerable-api-service: {'running': False, 'healthy': False, 'port': 8002, 'pid': None}
+2025-11-13 13:47:34,511 - __main__ - INFO -   [DOWN] health-monitoring-service: {'running': False, 'healthy': False, 'port': 8004, 'pid': None}
+2025-11-13 13:47:34,512 - __main__ - INFO -   [DOWN] process-management-service: {'running': False, 'healthy': False, 'port': 8003, 'pid': None}
+2025-11-13 13:47:34,512 - __main__ - INFO -   [DOWN] flutter-web-app: {'running': False, 'healthy': False, 'port': 3000, 'pid': None}
+2025-11-13 13:48:04,516 - __main__ - INFO - Service Status Summary:
+2025-11-13 13:48:04,520 - __main__ - INFO -   [UP] api-analysis-service: {'running': True, 'healthy': False, 'port': 8001, 'pid': 46019}
+2025-11-13 13:48:04,522 - __main__ - INFO -   [DOWN] vulnerable-api-service: {'running': False, 'healthy': False, 'port': 8002, 'pid': None}
+2025-11-13 13:48:04,526 - __main__ - INFO -   [DOWN] health-monitoring-service: {'running': False, 'healthy': False, 'port': 8004, 'pid': None}
+2025-11-13 13:48:04,528 - __main__ - INFO -   [DOWN] process-management-service: {'running': False, 'healthy': False, 'port': 8003, 'pid': None}
+2025-11-13 13:48:04,531 - __main__ - INFO -   [DOWN] flutter-web-app: {'running': False, 'healthy': False, 'port': 3000, 'pid': None}
+2025-11-13 13:48:34,536 - __main__ - INFO - Service Status Summary:
+2025-11-13 13:48:34,540 - __main__ - INFO -   [UP] api-analysis-service: {'running': True, 'healthy': False, 'port': 8001, 'pid': 46019}
+2025-11-13 13:48:34,542 - __main__ - INFO -   [DOWN] vulnerable-api-service: {'running': False, 'healthy': False, 'port': 8002, 'pid': None}
+2025-11-13 13:48:34,545 - __main__ - INFO -   [DOWN] health-monitoring-service: {'running': False, 'healthy': False, 'port': 8004, 'pid': None}
+2025-11-13 13:48:34,548 - __main__ - INFO -   [DOWN] process-management-service: {'running': False, 'healthy': False, 'port': 8003, 'pid': None}
+2025-11-13 13:48:34,552 - __main__ - INFO -   [DOWN] flutter-web-app: {'running': False, 'healthy': False, 'port': 3000, 'pid': None}
+2025-11-13 13:48:34,775 - __main__ - ERROR - Service api-analysis-service failed health check
+2025-11-13 13:48:34,775 - __main__ - INFO - Stopped service: api-analysis-service
+2025-11-13 13:48:34,776 - __main__ - ERROR - [FAIL] Failed to start api-analysis-service: Health check timeout for api-analysis-service
+2025-11-13 13:48:34,776 - __main__ - INFO - Attempting to start vulnerable-api-service...
+2025-11-13 13:48:34,776 - __main__ - INFO - Starting service: vulnerable-api-service
+2025-11-13 13:49:04,556 - __main__ - INFO - Service Status Summary:
+2025-11-13 13:49:04,560 - __main__ - INFO -   [DOWN] api-analysis-service: {'running': False, 'healthy': False, 'port': 8001, 'pid': None}
+2025-11-13 13:49:04,562 - __main__ - INFO -   [UP] vulnerable-api-service: {'running': True, 'healthy': False, 'port': 8002, 'pid': 46171}
+2025-11-13 13:49:04,565 - __main__ - INFO -   [DOWN] health-monitoring-service: {'running': False, 'healthy': False, 'port': 8004, 'pid': None}
+2025-11-13 13:49:04,568 - __main__ - INFO -   [DOWN] process-management-service: {'running': False, 'healthy': False, 'port': 8003, 'pid': None}
+2025-11-13 13:49:04,570 - __main__ - INFO -   [DOWN] flutter-web-app: {'running': False, 'healthy': False, 'port': 3000, 'pid': None}
+2025-11-13 13:49:34,575 - __main__ - INFO - Service Status Summary:
+2025-11-13 13:49:34,578 - __main__ - INFO -   [DOWN] api-analysis-service: {'running': False, 'healthy': False, 'port': 8001, 'pid': None}
+2025-11-13 13:49:34,580 - __main__ - INFO -   [UP] vulnerable-api-service: {'running': True, 'healthy': False, 'port': 8002, 'pid': 46171}
+2025-11-13 13:49:34,584 - __main__ - INFO -   [DOWN] health-monitoring-service: {'running': False, 'healthy': False, 'port': 8004, 'pid': None}
+2025-11-13 13:49:34,587 - __main__ - INFO -   [DOWN] process-management-service: {'running': False, 'healthy': False, 'port': 8003, 'pid': None}
+2025-11-13 13:49:34,590 - __main__ - INFO -   [DOWN] flutter-web-app: {'running': False, 'healthy': False, 'port': 3000, 'pid': None}
+2025-11-13 13:49:35,078 - __main__ - ERROR - Service vulnerable-api-service failed health check
+2025-11-13 13:49:35,078 - __main__ - INFO - Stopped service: vulnerable-api-service
+2025-11-13 13:49:35,079 - __main__ - ERROR - [FAIL] Failed to start vulnerable-api-service: Health check timeout for vulnerable-api-service
+2025-11-13 13:49:35,079 - __main__ - INFO - Attempting to start health-monitoring-service...
+2025-11-13 13:49:35,080 - __main__ - INFO - Starting service: health-monitoring-service
+2025-11-13 13:50:04,593 - __main__ - INFO - Service Status Summary:
+2025-11-13 13:50:04,597 - __main__ - INFO -   [DOWN] api-analysis-service: {'running': False, 'healthy': False, 'port': 8001, 'pid': None}
+2025-11-13 13:50:04,601 - __main__ - INFO -   [DOWN] vulnerable-api-service: {'running': False, 'healthy': False, 'port': 8002, 'pid': None}
+2025-11-13 13:50:04,604 - __main__ - INFO -   [UP] health-monitoring-service: {'running': True, 'healthy': False, 'port': 8004, 'pid': 46329}
+2025-11-13 13:50:04,606 - __main__ - INFO -   [DOWN] process-management-service: {'running': False, 'healthy': False, 'port': 8003, 'pid': None}
+2025-11-13 13:50:04,609 - __main__ - INFO -   [DOWN] flutter-web-app: {'running': False, 'healthy': False, 'port': 3000, 'pid': None}
+2025-11-13 13:50:34,614 - __main__ - INFO - Service Status Summary:
+2025-11-13 13:50:34,619 - __main__ - INFO -   [DOWN] api-analysis-service: {'running': False, 'healthy': False, 'port': 8001, 'pid': None}
+2025-11-13 13:50:34,621 - __main__ - INFO -   [DOWN] vulnerable-api-service: {'running': False, 'healthy': False, 'port': 8002, 'pid': None}
+2025-11-13 13:50:34,624 - __main__ - INFO -   [UP] health-monitoring-service: {'running': True, 'healthy': False, 'port': 8004, 'pid': 46329}
+2025-11-13 13:50:34,626 - __main__ - INFO -   [DOWN] process-management-service: {'running': False, 'healthy': False, 'port': 8003, 'pid': None}
+2025-11-13 13:50:34,628 - __main__ - INFO -   [DOWN] flutter-web-app: {'running': False, 'healthy': False, 'port': 3000, 'pid': None}
+2025-11-13 13:50:35,372 - __main__ - ERROR - Service health-monitoring-service failed health check
+2025-11-13 13:50:35,373 - __main__ - INFO - Stopped service: health-monitoring-service
+2025-11-13 13:50:35,373 - __main__ - ERROR - [FAIL] Failed to start health-monitoring-service: Health check timeout for health-monitoring-service
+2025-11-13 13:50:35,374 - __main__ - INFO - Attempting to start process-management-service...
+2025-11-13 13:50:35,374 - __main__ - INFO - Starting service: process-management-service
+2025-11-13 13:51:04,635 - __main__ - INFO - Service Status Summary:
+2025-11-13 13:51:04,639 - __main__ - INFO -   [DOWN] api-analysis-service: {'running': False, 'healthy': False, 'port': 8001, 'pid': None}
+2025-11-13 13:51:04,641 - __main__ - INFO -   [DOWN] vulnerable-api-service: {'running': False, 'healthy': False, 'port': 8002, 'pid': None}
+2025-11-13 13:51:04,645 - __main__ - INFO -   [DOWN] health-monitoring-service: {'running': False, 'healthy': False, 'port': 8004, 'pid': None}
+2025-11-13 13:51:04,648 - __main__ - INFO -   [UP] process-management-service: {'running': True, 'healthy': False, 'port': 8003, 'pid': 46481}
+2025-11-13 13:51:04,652 - __main__ - INFO -   [DOWN] flutter-web-app: {'running': False, 'healthy': False, 'port': 3000, 'pid': None}
+2025-11-13 13:51:34,655 - __main__ - INFO - Service Status Summary:
+2025-11-13 13:51:34,658 - __main__ - INFO -   [DOWN] api-analysis-service: {'running': False, 'healthy': False, 'port': 8001, 'pid': None}
+2025-11-13 13:51:34,660 - __main__ - INFO -   [DOWN] vulnerable-api-service: {'running': False, 'healthy': False, 'port': 8002, 'pid': None}
+2025-11-13 13:51:34,663 - __main__ - INFO -   [DOWN] health-monitoring-service: {'running': False, 'healthy': False, 'port': 8004, 'pid': None}
+2025-11-13 13:51:34,667 - __main__ - INFO -   [UP] process-management-service: {'running': True, 'healthy': False, 'port': 8003, 'pid': 46481}
+2025-11-13 13:51:34,670 - __main__ - INFO -   [DOWN] flutter-web-app: {'running': False, 'healthy': False, 'port': 3000, 'pid': None}
+2025-11-13 13:51:35,661 - __main__ - ERROR - Service process-management-service failed health check
+2025-11-13 13:51:35,662 - __main__ - INFO - Stopped service: process-management-service
+2025-11-13 13:51:35,662 - __main__ - ERROR - [FAIL] Failed to start process-management-service: Health check timeout for process-management-service
+2025-11-13 13:51:35,663 - __main__ - INFO - Attempting to start flutter-web-app...
+2025-11-13 13:51:35,663 - __main__ - INFO - Starting service: flutter-web-app
+2025-11-13 13:51:41,714 - __main__ - INFO - Service flutter-web-app is healthy
+2025-11-13 13:51:41,715 - __main__ - INFO - Successfully started service: flutter-web-app
+2025-11-13 13:51:41,715 - __main__ - INFO - ✅ Successfully started flutter-web-app
+2025-11-13 13:51:41,715 - __main__ - INFO - [SUCCESS] Started 1 services: flutter-web-app
+2025-11-13 13:51:41,715 - __main__ - INFO - [READY] All services started successfully!
+2025-11-13 13:51:41,715 - __main__ - INFO - Press Ctrl+C to stop all services
+2025-11-13 13:52:04,677 - __main__ - INFO - Service Status Summary:
+2025-11-13 13:52:04,684 - __main__ - INFO -   [DOWN] api-analysis-service: {'running': False, 'healthy': False, 'port': 8001, 'pid': None}
+2025-11-13 13:52:04,689 - __main__ - INFO -   [DOWN] vulnerable-api-service: {'running': False, 'healthy': False, 'port': 8002, 'pid': None}
+2025-11-13 13:52:04,693 - __main__ - INFO -   [DOWN] health-monitoring-service: {'running': False, 'healthy': False, 'port': 8004, 'pid': None}
+2025-11-13 13:52:04,700 - __main__ - INFO -   [DOWN] process-management-service: {'running': False, 'healthy': False, 'port': 8003, 'pid': None}
+2025-11-13 13:52:04,704 - __main__ - INFO -   [OK] flutter-web-app: {'running': True, 'healthy': True, 'port': 3000, 'pid': 46640}
+2025-11-13 13:52:34,711 - __main__ - INFO - Service Status Summary:
+2025-11-13 13:52:34,716 - __main__ - INFO -   [DOWN] api-analysis-service: {'running': False, 'healthy': False, 'port': 8001, 'pid': None}
+2025-11-13 13:52:34,721 - __main__ - INFO -   [DOWN] vulnerable-api-service: {'running': False, 'healthy': False, 'port': 8002, 'pid': None}
+2025-11-13 13:52:34,727 - __main__ - INFO -   [DOWN] health-monitoring-service: {'running': False, 'healthy': False, 'port': 8004, 'pid': None}
+2025-11-13 13:52:34,733 - __main__ - INFO -   [DOWN] process-management-service: {'running': False, 'healthy': False, 'port': 8003, 'pid': None}
+2025-11-13 13:52:34,737 - __main__ - INFO -   [OK] flutter-web-app: {'running': True, 'healthy': True, 'port': 3000, 'pid': 46640}
+2025-11-13 13:53:04,746 - __main__ - INFO - Service Status Summary:
+2025-11-13 13:53:04,752 - __main__ - INFO -   [DOWN] api-analysis-service: {'running': False, 'healthy': False, 'port': 8001, 'pid': None}
+2025-11-13 13:53:04,757 - __main__ - INFO -   [DOWN] vulnerable-api-service: {'running': False, 'healthy': False, 'port': 8002, 'pid': None}
+2025-11-13 13:53:04,764 - __main__ - INFO -   [DOWN] health-monitoring-service: {'running': False, 'healthy': False, 'port': 8004, 'pid': None}
+2025-11-13 13:53:04,769 - __main__ - INFO -   [DOWN] process-management-service: {'running': False, 'healthy': False, 'port': 8003, 'pid': None}
+2025-11-13 13:53:04,772 - __main__ - INFO -   [OK] flutter-web-app: {'running': True, 'healthy': True, 'port': 3000, 'pid': 46640}
+2025-11-13 13:53:34,781 - __main__ - INFO - Service Status Summary:
+2025-11-13 13:53:34,787 - __main__ - INFO -   [DOWN] api-analysis-service: {'running': False, 'healthy': False, 'port': 8001, 'pid': None}
+2025-11-13 13:53:34,792 - __main__ - INFO -   [DOWN] vulnerable-api-service: {'running': False, 'healthy': False, 'port': 8002, 'pid': None}
+2025-11-13 13:53:34,798 - __main__ - INFO -   [DOWN] health-monitoring-service: {'running': False, 'healthy': False, 'port': 8004, 'pid': None}
+2025-11-13 13:53:34,803 - __main__ - INFO -   [DOWN] process-management-service: {'running': False, 'healthy': False, 'port': 8003, 'pid': None}
+2025-11-13 13:53:34,806 - __main__ - INFO -   [OK] flutter-web-app: {'running': True, 'healthy': True, 'port': 3000, 'pid': 46640}
+2025-11-13 13:54:04,815 - __main__ - INFO - Service Status Summary:
+2025-11-13 13:54:04,820 - __main__ - INFO -   [DOWN] api-analysis-service: {'running': False, 'healthy': False, 'port': 8001, 'pid': None}
+2025-11-13 13:54:04,825 - __main__ - INFO -   [DOWN] vulnerable-api-service: {'running': False, 'healthy': False, 'port': 8002, 'pid': None}
+2025-11-13 13:54:04,830 - __main__ - INFO -   [DOWN] health-monitoring-service: {'running': False, 'healthy': False, 'port': 8004, 'pid': None}
+2025-11-13 13:54:04,834 - __main__ - INFO -   [DOWN] process-management-service: {'running': False, 'healthy': False, 'port': 8003, 'pid': None}
+2025-11-13 13:54:04,838 - __main__ - INFO -   [OK] flutter-web-app: {'running': True, 'healthy': True, 'port': 3000, 'pid': 46640}
+2025-11-13 13:54:15,631 - __main__ - INFO - Received signal 15. Initiating shutdown...
+2025-11-13 13:54:15,631 - __main__ - INFO - Stopping all services...
+2025-11-13 13:54:15,924 - __main__ - INFO - Stopped service: flutter-web-app
+2025-11-13 13:54:15,927 - __main__ - INFO - Stopping all services...

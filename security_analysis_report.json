@@ -1,0 +1,246 @@
+{
+  "timestamp": "2025-11-13T14:05:38.352264",
+  "service_analyzed": "Vulnerable API Service",
+  "test_results": [
+    {
+      "test_name": "Admin Panel",
+      "url": "http://localhost:8002/admin",
+      "description": "Административная панель без аутентификации",
+      "analysis": {
+        "is_secure": false,
+        "issues": [
+          "https_protocol: Endpoint должен использовать HTTPS для безопасной связи",
+          "admin_endpoint_exposure: Admin endpoint должен быть защищен дополнительной аутентификацией",
+          "api_versioning: API versioning должен быть реализован для лучшей совместимости"
+        ],
+        "recommendations": [
+          "КРИТИЧНО: Endpoint должен использовать HTTPS для безопасной связи",
+          "ВЫСОКИЙ: Admin endpoint должен быть защищен дополнительной аутентификацией"
+        ],
+        "security_checks": [
+          "SecurityCheck(name='https_protocol', passed=False, description='Endpoint должен использовать HTTPS для безопасной связи', severity='critical', details={'protocol': 'http'})",
+          "SecurityCheck(name='admin_endpoint_exposure', passed=False, description='Admin endpoint должен быть защищен дополнительной аутентификацией', severity='high', details={'admin_paths_found': ['/admin']})",
+          "SecurityCheck(name='debug_endpoint_exposure', passed=True, description='Debug endpoints не обнаружены', severity='info', details={'debug_paths_found': []})",
+          "SecurityCheck(name='api_versioning', passed=False, description='API versioning должен быть реализован для лучшей совместимости', severity='medium', details={'version_patterns_found': []})"
+        ],
+        "compliance_issues": [
+          "HIPAA/GDPR: Передача данных должна быть зашифрована",
+          "SOX: Доступ к admin требует дополнительного аудита"
+        ],
+        "best_practices": [
+          "Реализуйте API versioning для лучшей совместимости"
+        ],
+        "details": {
+          "protocol": "http",
+          "hostname": "localhost:8002",
+          "path": "/admin",
+          "query_params": {},
+          "total_checks": 4,
+          "passed_checks": 1,
+          "failed_checks": 3,
+          "severity_distribution": {
+            "critical": 1,
+            "high": 1,
+            "medium": 1,
+            "low": 0
+          },
+          "analysis_timestamp": "2025-11-13T11:05:38.351558"
+        }
+      }
+    },
+    {
+      "test_name": "User Management",
+      "url": "http://localhost:8002/admin/users",
+      "description": "Управление пользователями с раскрытием паролей",
+      "analysis": {
+        "is_secure": false,
+        "issues": [
+          "https_protocol: Endpoint должен использовать HTTPS для безопасной связи",
+          "admin_endpoint_exposure: Admin endpoint должен быть защищен дополнительной аутентификацией",
+          "sensitive_data_exposure: Endpoint обрабатывает чувствительные данные и должен иметь усиленную защиту",
+          "api_versioning: API versioning должен быть реализован для лучшей совместимости"
+        ],
+        "recommendations": [
+          "КРИТИЧНО: Endpoint должен использовать HTTPS для безопасной связи",
+          "ВЫСОКИЙ: Admin endpoint должен быть защищен дополнительной аутентификацией",
+          "ВЫСОКИЙ: Endpoint обрабатывает чувствительные данные и должен иметь усиленную защиту"
+        ],
+        "security_checks": [
+          "SecurityCheck(name='https_protocol', passed=False, description='Endpoint должен использовать HTTPS для безопасной связи', severity='critical', details={'protocol': 'http'})",
+          "SecurityCheck(name='admin_endpoint_exposure', passed=False, description='Admin endpoint должен быть защищен дополнительной аутентификацией', severity='high', details={'admin_paths_found': ['/admin']})",
+          "SecurityCheck(name='debug_endpoint_exposure', passed=True, description='Debug endpoints не обнаружены', severity='info', details={'debug_paths_found': []})",
+          "SecurityCheck(name='sensitive_data_exposure', passed=False, description='Endpoint обрабатывает чувствительные данные и должен иметь усиленную защиту', severity='high', details={'financial_data': False, 'user_data': True, 'config_data': False})",
+          "SecurityCheck(name='api_versioning', passed=False, description='API versioning должен быть реализован для лучшей совместимости', severity='medium', details={'version_patterns_found': []})"
+        ],
+        "compliance_issues": [
+          "HIPAA/GDPR: Передача данных должна быть зашифрована",
+          "SOX: Доступ к admin требует дополнительного аудита"
+        ],
+        "best_practices": [
+          "Реализуйте API versioning для лучшей совместимости"
+        ],
+        "details": {
+          "protocol": "http",
+          "hostname": "localhost:8002",
+          "path": "/admin/users",
+          "query_params": {},
+          "total_checks": 5,
+          "passed_checks": 1,
+          "failed_checks": 4,
+          "severity_distribution": {
+            "critical": 1,
+            "high": 2,
+            "medium": 1,
+            "low": 0
+          },
+          "analysis_timestamp": "2025-11-13T11:05:38.351876"
+        }
+      }
+    },
+    {
+      "test_name": "System Configuration",
+      "url": "http://localhost:8002/admin/config",
+      "description": "Конфигурация системы с секретными ключами",
+      "analysis": {
+        "is_secure": false,
+        "issues": [
+          "https_protocol: Endpoint должен использовать HTTPS для безопасной связи",
+          "admin_endpoint_exposure: Admin endpoint должен быть защищен дополнительной аутентификацией",
+          "sensitive_data_exposure: Endpoint обрабатывает чувствительные данные и должен иметь усиленную защиту",
+          "information_disclosure: Endpoint может раскрывать чувствительную информацию",
+          "api_versioning: API versioning должен быть реализован для лучшей совместимости"
+        ],
+        "recommendations": [
+          "КРИТИЧНО: Endpoint должен использовать HTTPS для безопасной связи",
+          "ВЫСОКИЙ: Admin endpoint должен быть защищен дополнительной аутентификацией",
+          "ВЫСОКИЙ: Endpoint обрабатывает чувствительные данные и должен иметь усиленную защиту",
+          "ВЫСОКИЙ: Endpoint может раскрывать чувствительную информацию"
+        ],
+        "security_checks": [
+          "SecurityCheck(name='https_protocol', passed=False, description='Endpoint должен использовать HTTPS для безопасной связи', severity='critical', details={'protocol': 'http'})",
+          "SecurityCheck(name='admin_endpoint_exposure', passed=False, description='Admin endpoint должен быть защищен дополнительной аутентификацией', severity='high', details={'admin_paths_found': ['/admin']})",
+          "SecurityCheck(name='debug_endpoint_exposure', passed=True, description='Debug endpoints не обнаружены', severity='info', details={'debug_paths_found': []})",
+          "SecurityCheck(name='sensitive_data_exposure', passed=False, description='Endpoint обрабатывает чувствительные данные и должен иметь усиленную защиту', severity='high', details={'financial_data': False, 'user_data': False, 'config_data': True})",
+          "SecurityCheck(name='information_disclosure', passed=False, description='Endpoint может раскрывать чувствительную информацию', severity='high', details={'sensitive_endpoint': True, 'disclosure_risk': True})",
+          "SecurityCheck(name='api_versioning', passed=False, description='API versioning должен быть реализован для лучшей совместимости', severity='medium', details={'version_patterns_found': []})"
+        ],
+        "compliance_issues": [
+          "HIPAA/GDPR: Передача данных должна быть зашифрована",
+          "SOX: Доступ к admin требует дополнительного аудита"
+        ],
+        "best_practices": [
+          "Реализуйте API versioning для лучшей совместимости"
+        ],
+        "details": {
+          "protocol": "http",
+          "hostname": "localhost:8002",
+          "path": "/admin/config",
+          "query_params": {},
+          "total_checks": 6,
+          "passed_checks": 1,
+          "failed_checks": 5,
+          "severity_distribution": {
+            "critical": 1,
+            "high": 3,
+            "medium": 1,
+            "low": 0
+          },
+          "analysis_timestamp": "2025-11-13T11:05:38.351988"
+        }
+      }
+    },
+    {
+      "test_name": "Backend Management",
+      "url": "http://localhost:8002/backend/management",
+      "description": "Backend управление без защиты",
+      "analysis": {
+        "is_secure": false,
+        "issues": [
+          "https_protocol: Endpoint должен использовать HTTPS для безопасной связи",
+          "admin_endpoint_exposure: Admin endpoint должен быть защищен дополнительной аутентификацией",
+          "api_versioning: API versioning должен быть реализован для лучшей совместимости"
+        ],
+        "recommendations": [
+          "КРИТИЧНО: Endpoint должен использовать HTTPS для безопасной связи",
+          "ВЫСОКИЙ: Admin endpoint должен быть защищен дополнительной аутентификацией"
+        ],
+        "security_checks": [
+          "SecurityCheck(name='https_protocol', passed=False, description='Endpoint должен использовать HTTPS для безопасной связи', severity='critical', details={'protocol': 'http'})",
+          "SecurityCheck(name='admin_endpoint_exposure', passed=False, description='Admin endpoint должен быть защищен дополнительной аутентификацией', severity='high', details={'admin_paths_found': ['/manage', '/management', '/backend']})",
+          "SecurityCheck(name='debug_endpoint_exposure', passed=True, description='Debug endpoints не обнаружены', severity='info', details={'debug_paths_found': []})",
+          "SecurityCheck(name='api_versioning', passed=False, description='API versioning должен быть реализован для лучшей совместимости', severity='medium', details={'version_patterns_found': []})"
+        ],
+        "compliance_issues": [
+          "HIPAA/GDPR: Передача данных должна быть зашифрована"
+        ],
+        "best_practices": [
+          "Реализуйте API versioning для лучшей совместимости"
+        ],
+        "details": {
+          "protocol": "http",
+          "hostname": "localhost:8002",
+          "path": "/backend/management",
+          "query_params": {},
+          "total_checks": 4,
+          "passed_checks": 1,
+          "failed_checks": 3,
+          "severity_distribution": {
+            "critical": 1,
+            "high": 1,
+            "medium": 1,
+            "low": 0
+          },
+          "analysis_timestamp": "2025-11-13T11:05:38.352097"
+        }
+      }
+    },
+    {
+      "test_name": "Health Check",
+      "url": "http://localhost:8002/health",
+      "description": "Проверка состояния сервиса",
+      "analysis": {
+        "is_secure": false,
+        "issues": [
+          "https_protocol: Endpoint должен использовать HTTPS для безопасной связи",
+          "api_versioning: API versioning должен быть реализован для лучшей совместимости"
+        ],
+        "recommendations": [
+          "КРИТИЧНО: Endpoint должен использовать HTTPS для безопасной связи"
+        ],
+        "security_checks": [
+          "SecurityCheck(name='https_protocol', passed=False, description='Endpoint должен использовать HTTPS для безопасной связи', severity='critical', details={'protocol': 'http'})",
+          "SecurityCheck(name='admin_endpoint_exposure', passed=True, description='Admin endpoints не обнаружены', severity='info', details={'admin_paths_found': []})",
+          "SecurityCheck(name='debug_endpoint_exposure', passed=True, description='Debug endpoints не обнаружены', severity='info', details={'debug_paths_found': []})",
+          "SecurityCheck(name='api_versioning', passed=False, description='API versioning должен быть реализован для лучшей совместимости', severity='medium', details={'version_patterns_found': []})"
+        ],
+        "compliance_issues": [
+          "HIPAA/GDPR: Передача данных должна быть зашифрована"
+        ],
+        "best_practices": [
+          "Реализуйте API versioning для лучшей совместимости"
+        ],
+        "details": {
+          "protocol": "http",
+          "hostname": "localhost:8002",
+          "path": "/health",
+          "query_params": {},
+          "total_checks": 4,
+          "passed_checks": 2,
+          "failed_checks": 2,
+          "severity_distribution": {
+            "critical": 1,
+            "high": 0,
+            "medium": 1,
+            "low": 0
+          },
+          "analysis_timestamp": "2025-11-13T11:05:38.352180"
+        }
+      }
+    }
+  ],
+  "summary": {
+    "total_tests": 5,
+    "vulnerable_tests": 5,
+    "secure_tests": 0
+  }
+}

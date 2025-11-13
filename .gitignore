@@ -5,6 +5,7 @@ __pycache__/
 *.pyc
 *.pyo
 *.pyd
+*.log
 
 # C extensions
 *.so
@@ -175,4 +176,3 @@ build/
 
 # Docker
 .dockerignore
-services_startup.log

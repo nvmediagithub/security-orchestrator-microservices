@@ -171,58 +171,40 @@ def setup_service_configs() -> List[ServiceConfig]:
     """Setup configurations for all services."""
     base_dir = Path(__file__).parent
 
+    # API Analysis Service (Python/FastAPI)
+    api_analysis_service = ServiceConfig(
+        name="api-analysis-service",
+        port=8001,
+        startup_command=["python3", "main.py"],
+        working_dir=base_dir / "services/api-analysis-service",
+        health_check_url="http://localhost:8001/api/v1/health"
+    )
+
+    # Vulnerable API Service (Python/FastAPI)
+    vulnerable_api_service = ServiceConfig(
+        name="vulnerable-api-service",
+        port=8002,
+        startup_command=["python3", "main.py"],
+        working_dir=base_dir / "services/vulnerable-api-service",
+        health_check_url="http://localhost:8002/health"
+    )
+
     # Health Monitoring Service (Python)
     health_service = ServiceConfig(
         name="health-monitoring-service",
-        port=8001,
+        port=8004,
         startup_command=["python3", "-m", "health_monitoring_service.main"],
         working_dir=base_dir / "services/health-monitoring-service/src",
-        health_check_url="http://localhost:8001/health/"
+        health_check_url="http://localhost:8004/health/"
     )
 
     # Process Management Service (Python)
     process_service = ServiceConfig(
         name="process-management-service",
-        port=8002,
-        startup_command=["python3", "-m", "uvicorn", "process_management_service.presentation.api:app", "--host", "0.0.0.0", "--port", "8002"],
+        port=8003,
+        startup_command=["python3", "-m", "uvicorn", "process_management_service.presentation.api:app", "--host", "0.0.0.0", "--port", "8003"],
         working_dir=base_dir / "services/process-management/src",
-        health_check_url="http://localhost:8002/health"
-    )
-
-    # API Security Service (Java/Spring Boot - placeholder)
-    api_security_service = ServiceConfig(
-        name="api-security-service",
-        port=8080,
-        startup_command=["./gradlew", "bootRun"],  # Assuming Gradle wrapper
-        working_dir=base_dir / "services/api-security",
-        health_check_url="http://localhost:8080/actuator/health"
-    )
-
-    # Monitoring Service (Java/Spring Boot - placeholder)
-    monitoring_service = ServiceConfig(
-        name="monitoring-service",
-        port=8081,
-        startup_command=["./gradlew", "bootRun"],
-        working_dir=base_dir / "services/monitoring",
-        health_check_url="http://localhost:8081/actuator/health"
-    )
-
-    # Reporting Service (Java/Spring Boot - placeholder)
-    reporting_service = ServiceConfig(
-        name="reporting-service",
-        port=8082,
-        startup_command=["./gradlew", "bootRun"],
-        working_dir=base_dir / "services/reporting",
-        health_check_url="http://localhost:8082/actuator/health"
-    )
-
-    # Test Generation Service (Java/Spring Boot - placeholder)
-    test_generation_service = ServiceConfig(
-        name="test-generation-service",
-        port=8083,
-        startup_command=["./gradlew", "bootRun"],
-        working_dir=base_dir / "services/test-generation",
-        health_check_url="http://localhost:8083/actuator/health"
+        health_check_url="http://localhost:8003/health"
     )
 
     # Flutter Web App
@@ -235,12 +217,10 @@ def setup_service_configs() -> List[ServiceConfig]:
     )
 
     return [
+        api_analysis_service,
+        vulnerable_api_service,
         health_service,
         process_service,
-        api_security_service,
-        monitoring_service,
-        reporting_service,
-        test_generation_service,
         flutter_app
     ]
 
@@ -287,13 +267,10 @@ async def main():
     try:
         # Start services in order
         startup_order = [
-            # "health-monitoring-service",  # Start with health monitoring (disabled due to dependencies)
-            # "process-management-service", # Then process management (disabled due to dependencies)
-            # Java services (commented out for now as they may not be implemented)
-            # "api-security-service",
-            # "monitoring-service",
-            # "reporting-service",
-            # "test-generation-service",
+            "api-analysis-service",  # Start with API analysis service
+            "vulnerable-api-service",  # Then vulnerable API for testing
+            "health-monitoring-service",  # Then health monitoring
+            "process-management-service", # Then process management
             "flutter-web-app"  # Finally start the web app
         ]
 

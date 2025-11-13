@@ -1,0 +1,71 @@
+# Vulnerable API Service Dependencies
+# ВНИМАНИЕ: Этот файл содержит зависимости для тестового сервиса с уязвимостями!
+
+# FastAPI веб-фреймворк
+fastapi==0.104.1
+
+# ASGI сервер для запуска FastAPI
+uvicorn[standard]==0.24.0
+
+# Pydantic для валидации данных
+pydantic[email]==2.5.0
+
+# HTTP клиент для тестирования
+httpx==0.25.2
+
+# SQLite для базы данных (встроен в Python, но указываем для ясности)
+# sqlite3
+
+# JSON обработка (встроен в Python)
+# json
+
+# Хеширование и криптография
+# hashlib, secrets (встроены в Python)
+
+# Операции с файлами и системой
+# os, subprocess (встроены в Python)
+
+# Работа с датами и временем
+# datetime (встроен в Python)
+
+# Регулярные выражения
+# re (встроен в Python)
+
+# Logging
+# logging (встроен в Python)
+
+# Сериализация данных
+# pickle, base64 (встроены в Python)
+
+# CORS middleware
+fastapi-cors==0.0.6
+
+# SQLAlchemy (опционально, для более сложных SQL операций)
+# sqlalchemy==2.0.23
+
+# Python-multipart для обработки form data
+python-multipart==0.0.6
+
+# Статические файлы
+# aiofiles==23.2.1
+
+# Jinja2 для HTML шаблонов
+# jinja2==3.1.2
+
+# Асинхронная поддержка
+# asyncio (встроен в Python)
+
+# Тестирование (для локального тестирования)
+pytest==7.4.3
+pytest-asyncio==0.21.1
+requests==2.31.0
+
+# Линтинг и качество кода (для разработки)
+# flake8==6.1.0
+# black==23.11.0
+# mypy==1.7.1
+
+# Дополнительные библиотеки для уязвимостей
+python-jose[cryptography]==3.3.0  # Для JWT токенов (слабой реализации)
+passlib[bcrypt]==1.7.4           # Для хеширования паролей (небезопасного)
+cryptography==41.0.7             # Для криптографических операций
