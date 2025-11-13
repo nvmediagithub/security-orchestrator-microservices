@@ -1,9 +1,4 @@
-enum ConnectionStatus {
-  connected,
-  disconnected,
-  error,
-  checking,
-}
+enum ConnectionStatus { connected, disconnected, error, checking }
 
 extension ConnectionStatusExtension on ConnectionStatus {
   String get displayName {

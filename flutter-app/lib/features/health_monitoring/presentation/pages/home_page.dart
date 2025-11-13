@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:riverpod/riverpod.dart';
-import '../widgets/connection_status_card.dart';
+import '../widgets/health_monitoring_card.dart';
 
-class HomePage extends ConsumerWidget {
+class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Security Orchestrator'),
@@ -19,24 +18,17 @@ class HomePage extends ConsumerWidget {
             SizedBox(height: 24),
             Text(
               'Security Orchestrator Dashboard',
-              style: TextStyle(
-                fontSize: 28,
-                fontWeight: FontWeight.bold,
-                color: Colors.black87,
-              ),
+              style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold, color: Colors.black87),
               textAlign: TextAlign.center,
             ),
             SizedBox(height: 8),
             Text(
               'Monitor and manage your security infrastructure',
-              style: TextStyle(
-                fontSize: 16,
-                color: Colors.black54,
-              ),
+              style: TextStyle(fontSize: 16, color: Colors.black54),
               textAlign: TextAlign.center,
             ),
             SizedBox(height: 32),
-            ConnectionStatusCard(),
+            HealthMonitoringCard(),
           ],
         ),
       ),

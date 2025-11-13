@@ -3,19 +3,19 @@ import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:http/http.dart' as http;
 import '../../domain/entities/connection_status.dart';
 
-abstract class ConnectivityService {
+abstract class HealthMonitoringDatasource {
   Stream<ConnectionStatus> get connectivityStream;
   Future<ConnectionStatus> checkBackendConnectivity();
 }
 
-class ConnectivityServiceImpl implements ConnectivityService {
+class HealthMonitoringDatasourceImpl implements HealthMonitoringDatasource {
   final Connectivity _connectivity;
   final String _backendUrl;
   StreamSubscription<List<ConnectivityResult>>? _subscription;
   final StreamController<ConnectionStatus> _statusController =
       StreamController<ConnectionStatus>.broadcast();
 
-  ConnectivityServiceImpl(this._connectivity, this._backendUrl) {
+  HealthMonitoringDatasourceImpl(this._connectivity, this._backendUrl) {
     _initializeConnectivity();
   }
 
@@ -51,9 +51,9 @@ class ConnectivityServiceImpl implements ConnectivityService {
     try {
       // Try to connect to health-monitoring service first (port 8001)
       final healthServiceUrl = _backendUrl.replaceAll(RegExp(r':\d+/?$'), ':8001');
-      final response = await http.get(Uri.parse('$healthServiceUrl/health')).timeout(
-            const Duration(seconds: 10),
-          );
+      final response = await http
+          .get(Uri.parse('$healthServiceUrl/health'))
+          .timeout(const Duration(seconds: 10));
 
       if (response.statusCode == 200) {
         return ConnectionStatus.connected;
@@ -63,9 +63,9 @@ class ConnectivityServiceImpl implements ConnectivityService {
     } catch (e) {
       // Fallback to original backend URL if health service is not available
       try {
-        final response = await http.get(Uri.parse('$_backendUrl/health')).timeout(
-              const Duration(seconds: 5),
-            );
+        final response = await http
+            .get(Uri.parse('$_backendUrl/health'))
+            .timeout(const Duration(seconds: 5));
 
         if (response.statusCode == 200) {
           return ConnectionStatus.connected;

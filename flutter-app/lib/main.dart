@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:riverpod/riverpod.dart';
-import 'presentation/pages/home_page.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'features/health_monitoring/presentation/pages/home_page.dart';
 
 void main() {
   runApp(const ProviderScope(child: MyApp()));
@@ -17,18 +17,14 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
         useMaterial3: true,
-        cardTheme: CardTheme(
+        cardTheme: const CardThemeData(
           elevation: 4,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(12),
-          ),
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(12))),
         ),
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: ElevatedButton.styleFrom(
             padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
-            shape: const RoundedRectangleBorder(
-              borderRadius: BorderRadius.all(Radius.circular(8)),
-            ),
+            shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(8))),
           ),
         ),
       ),
@@ -36,4 +32,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-

@@ -175,7 +175,7 @@ def setup_service_configs() -> List[ServiceConfig]:
     health_service = ServiceConfig(
         name="health-monitoring-service",
         port=8001,
-        startup_command=["python", "-m", "health_monitoring_service.main"],
+        startup_command=["python3", "-m", "health_monitoring_service.main"],
         working_dir=base_dir / "services/health-monitoring-service/src",
         health_check_url="http://localhost:8001/health/"
     )
@@ -184,7 +184,7 @@ def setup_service_configs() -> List[ServiceConfig]:
     process_service = ServiceConfig(
         name="process-management-service",
         port=8002,
-        startup_command=["python", "-m", "uvicorn", "process_management_service.presentation.api:app", "--host", "0.0.0.0", "--port", "8002"],
+        startup_command=["python3", "-m", "uvicorn", "process_management_service.presentation.api:app", "--host", "0.0.0.0", "--port", "8002"],
         working_dir=base_dir / "services/process-management/src",
         health_check_url="http://localhost:8002/health"
     )
@@ -229,7 +229,7 @@ def setup_service_configs() -> List[ServiceConfig]:
     flutter_app = ServiceConfig(
         name="flutter-web-app",
         port=3000,
-        startup_command=["flutter", "run", "-d", "web-server", "--web-port", "3000"],
+        startup_command=["flutter", "run", "-d", "web-server", "--web-port", "3000", "--release"],
         working_dir=base_dir / "flutter-app",
         health_check_url="http://localhost:3000"
     )
@@ -287,8 +287,8 @@ async def main():
     try:
         # Start services in order
         startup_order = [
-            "health-monitoring-service",  # Start with health monitoring
-            "process-management-service", # Then process management
+            # "health-monitoring-service",  # Start with health monitoring (disabled due to dependencies)
+            # "process-management-service", # Then process management (disabled due to dependencies)
             # Java services (commented out for now as they may not be implemented)
             # "api-security-service",
             # "monitoring-service",
