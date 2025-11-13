@@ -1656,3 +1656,373 @@ task: <Task cancelling name='Task-2' coro=<monitor_services() running at /Users/
 2025-11-13 13:54:15,631 - __main__ - INFO - Stopping all services...
 2025-11-13 13:54:15,924 - __main__ - INFO - Stopped service: flutter-web-app
 2025-11-13 13:54:15,927 - __main__ - INFO - Stopping all services...
+2025-11-13 15:26:08,655 - __main__ - INFO - Starting Security Orchestrator Microservices...
+2025-11-13 15:26:08,655 - __main__ - INFO - Added service: api-analysis-service on port 8001
+2025-11-13 15:26:08,655 - __main__ - INFO - Added service: vulnerable-api-service on port 8002
+2025-11-13 15:26:08,656 - __main__ - INFO - Added service: health-monitoring-service on port 8004
+2025-11-13 15:26:08,656 - __main__ - INFO - Added service: process-management-service on port 8003
+2025-11-13 15:26:08,656 - __main__ - INFO - Added service: flutter-web-app on port 3000
+2025-11-13 15:26:08,656 - __main__ - INFO - Attempting to start api-analysis-service...
+2025-11-13 15:26:08,656 - __main__ - INFO - Starting service: api-analysis-service
+2025-11-13 15:26:08,656 - __main__ - INFO - Service Status Summary:
+2025-11-13 15:26:08,656 - __main__ - INFO -   [DOWN] api-analysis-service: {'running': False, 'healthy': False, 'port': 8001, 'pid': None}
+2025-11-13 15:26:08,656 - __main__ - INFO -   [DOWN] vulnerable-api-service: {'running': False, 'healthy': False, 'port': 8002, 'pid': None}
+2025-11-13 15:26:08,657 - __main__ - INFO -   [DOWN] health-monitoring-service: {'running': False, 'healthy': False, 'port': 8004, 'pid': None}
+2025-11-13 15:26:08,657 - __main__ - INFO -   [DOWN] process-management-service: {'running': False, 'healthy': False, 'port': 8003, 'pid': None}
+2025-11-13 15:26:08,657 - __main__ - INFO -   [DOWN] flutter-web-app: {'running': False, 'healthy': False, 'port': 3000, 'pid': None}
+2025-11-13 15:26:38,662 - __main__ - INFO - Service Status Summary:
+2025-11-13 15:26:38,665 - __main__ - INFO -   [UP] api-analysis-service: {'running': True, 'healthy': False, 'port': 8001, 'pid': 65086}
+2025-11-13 15:26:38,668 - __main__ - INFO -   [DOWN] vulnerable-api-service: {'running': False, 'healthy': False, 'port': 8002, 'pid': None}
+2025-11-13 15:26:38,671 - __main__ - INFO -   [DOWN] health-monitoring-service: {'running': False, 'healthy': False, 'port': 8004, 'pid': None}
+2025-11-13 15:26:38,674 - __main__ - INFO -   [DOWN] process-management-service: {'running': False, 'healthy': False, 'port': 8003, 'pid': None}
+2025-11-13 15:26:38,676 - __main__ - INFO -   [DOWN] flutter-web-app: {'running': False, 'healthy': False, 'port': 3000, 'pid': None}
+2025-11-13 15:27:08,683 - __main__ - INFO - Service Status Summary:
+2025-11-13 15:27:08,686 - __main__ - INFO -   [UP] api-analysis-service: {'running': True, 'healthy': False, 'port': 8001, 'pid': 65086}
+2025-11-13 15:27:08,690 - __main__ - INFO -   [DOWN] vulnerable-api-service: {'running': False, 'healthy': False, 'port': 8002, 'pid': None}
+2025-11-13 15:27:08,693 - __main__ - INFO -   [DOWN] health-monitoring-service: {'running': False, 'healthy': False, 'port': 8004, 'pid': None}
+2025-11-13 15:27:08,696 - __main__ - INFO -   [DOWN] process-management-service: {'running': False, 'healthy': False, 'port': 8003, 'pid': None}
+2025-11-13 15:27:08,699 - __main__ - INFO -   [DOWN] flutter-web-app: {'running': False, 'healthy': False, 'port': 3000, 'pid': None}
+2025-11-13 15:27:08,989 - __main__ - ERROR - Service api-analysis-service failed health check
+2025-11-13 15:27:08,990 - __main__ - INFO - Stopped service: api-analysis-service
+2025-11-13 15:27:08,991 - __main__ - ERROR - [FAIL] Failed to start api-analysis-service: Health check timeout for api-analysis-service
+2025-11-13 15:27:08,991 - __main__ - INFO - Attempting to start vulnerable-api-service...
+2025-11-13 15:27:08,992 - __main__ - INFO - Starting service: vulnerable-api-service
+2025-11-13 15:27:11,023 - __main__ - INFO - Service vulnerable-api-service is healthy
+2025-11-13 15:27:11,023 - __main__ - INFO - Successfully started service: vulnerable-api-service
+2025-11-13 15:27:11,024 - __main__ - INFO - ✅ Successfully started vulnerable-api-service
+2025-11-13 15:27:11,024 - __main__ - INFO - Attempting to start health-monitoring-service...
+2025-11-13 15:27:11,024 - __main__ - INFO - Starting service: health-monitoring-service
+2025-11-13 15:27:38,705 - __main__ - INFO - Service Status Summary:
+2025-11-13 15:27:38,709 - __main__ - INFO -   [DOWN] api-analysis-service: {'running': False, 'healthy': False, 'port': 8001, 'pid': None}
+2025-11-13 15:27:38,712 - __main__ - INFO -   [OK] vulnerable-api-service: {'running': True, 'healthy': True, 'port': 8002, 'pid': 65244}
+2025-11-13 15:27:38,716 - __main__ - INFO -   [UP] health-monitoring-service: {'running': True, 'healthy': False, 'port': 8004, 'pid': 65252}
+2025-11-13 15:27:38,719 - __main__ - INFO -   [DOWN] process-management-service: {'running': False, 'healthy': False, 'port': 8003, 'pid': None}
+2025-11-13 15:27:38,723 - __main__ - INFO -   [DOWN] flutter-web-app: {'running': False, 'healthy': False, 'port': 3000, 'pid': None}
+2025-11-13 15:28:08,736 - __main__ - INFO - Service Status Summary:
+2025-11-13 15:28:08,744 - __main__ - INFO -   [DOWN] api-analysis-service: {'running': False, 'healthy': False, 'port': 8001, 'pid': None}
+2025-11-13 15:28:08,751 - __main__ - INFO -   [OK] vulnerable-api-service: {'running': True, 'healthy': True, 'port': 8002, 'pid': 65244}
+2025-11-13 15:28:08,757 - __main__ - INFO -   [UP] health-monitoring-service: {'running': True, 'healthy': False, 'port': 8004, 'pid': 65252}
+2025-11-13 15:28:08,761 - __main__ - INFO -   [DOWN] process-management-service: {'running': False, 'healthy': False, 'port': 8003, 'pid': None}
+2025-11-13 15:28:08,766 - __main__ - INFO -   [DOWN] flutter-web-app: {'running': False, 'healthy': False, 'port': 3000, 'pid': None}
+2025-11-13 15:28:11,359 - __main__ - ERROR - Service health-monitoring-service failed health check
+2025-11-13 15:28:11,360 - __main__ - INFO - Stopped service: health-monitoring-service
+2025-11-13 15:28:11,361 - __main__ - ERROR - [FAIL] Failed to start health-monitoring-service: Health check timeout for health-monitoring-service
+2025-11-13 15:28:11,361 - __main__ - INFO - Attempting to start process-management-service...
+2025-11-13 15:28:11,361 - __main__ - INFO - Starting service: process-management-service
+2025-11-13 15:28:38,780 - __main__ - INFO - Service Status Summary:
+2025-11-13 15:28:38,789 - __main__ - INFO -   [DOWN] api-analysis-service: {'running': False, 'healthy': False, 'port': 8001, 'pid': None}
+2025-11-13 15:28:38,795 - __main__ - INFO -   [OK] vulnerable-api-service: {'running': True, 'healthy': True, 'port': 8002, 'pid': 65244}
+2025-11-13 15:28:38,802 - __main__ - INFO -   [DOWN] health-monitoring-service: {'running': False, 'healthy': False, 'port': 8004, 'pid': None}
+2025-11-13 15:28:38,807 - __main__ - INFO -   [UP] process-management-service: {'running': True, 'healthy': False, 'port': 8003, 'pid': 65403}
+2025-11-13 15:28:38,812 - __main__ - INFO -   [DOWN] flutter-web-app: {'running': False, 'healthy': False, 'port': 3000, 'pid': None}
+2025-11-13 15:29:08,825 - __main__ - INFO - Service Status Summary:
+2025-11-13 15:29:08,828 - __main__ - INFO -   [DOWN] api-analysis-service: {'running': False, 'healthy': False, 'port': 8001, 'pid': None}
+2025-11-13 15:29:08,831 - __main__ - INFO -   [OK] vulnerable-api-service: {'running': True, 'healthy': True, 'port': 8002, 'pid': 65244}
+2025-11-13 15:29:08,834 - __main__ - INFO -   [DOWN] health-monitoring-service: {'running': False, 'healthy': False, 'port': 8004, 'pid': None}
+2025-11-13 15:29:08,836 - __main__ - INFO -   [UP] process-management-service: {'running': True, 'healthy': False, 'port': 8003, 'pid': 65403}
+2025-11-13 15:29:08,839 - __main__ - INFO -   [DOWN] flutter-web-app: {'running': False, 'healthy': False, 'port': 3000, 'pid': None}
+2025-11-13 15:29:11,663 - __main__ - ERROR - Service process-management-service failed health check
+2025-11-13 15:29:11,663 - __main__ - INFO - Stopped service: process-management-service
+2025-11-13 15:29:11,663 - __main__ - ERROR - [FAIL] Failed to start process-management-service: Health check timeout for process-management-service
+2025-11-13 15:29:11,663 - __main__ - INFO - Attempting to start flutter-web-app...
+2025-11-13 15:29:11,663 - __main__ - INFO - Starting service: flutter-web-app
+2025-11-13 15:29:11,709 - __main__ - INFO - Service flutter-web-app is healthy
+2025-11-13 15:29:11,709 - __main__ - INFO - Successfully started service: flutter-web-app
+2025-11-13 15:29:11,710 - __main__ - INFO - ✅ Successfully started flutter-web-app
+2025-11-13 15:29:11,710 - __main__ - INFO - [SUCCESS] Started 2 services: vulnerable-api-service, flutter-web-app
+2025-11-13 15:29:11,710 - __main__ - INFO - [READY] All services started successfully!
+2025-11-13 15:29:11,710 - __main__ - INFO - Press Ctrl+C to stop all services
+2025-11-13 15:29:38,855 - __main__ - INFO - Service Status Summary:
+2025-11-13 15:29:38,860 - __main__ - INFO -   [DOWN] api-analysis-service: {'running': False, 'healthy': False, 'port': 8001, 'pid': None}
+2025-11-13 15:29:38,866 - __main__ - INFO -   [OK] vulnerable-api-service: {'running': True, 'healthy': True, 'port': 8002, 'pid': 65244}
+2025-11-13 15:29:38,870 - __main__ - INFO -   [DOWN] health-monitoring-service: {'running': False, 'healthy': False, 'port': 8004, 'pid': None}
+2025-11-13 15:29:38,874 - __main__ - INFO -   [DOWN] process-management-service: {'running': False, 'healthy': False, 'port': 8003, 'pid': None}
+2025-11-13 15:29:38,878 - __main__ - INFO -   [OK] flutter-web-app: {'running': True, 'healthy': True, 'port': 3000, 'pid': 65689}
+2025-11-13 15:30:08,886 - __main__ - INFO - Service Status Summary:
+2025-11-13 15:30:08,893 - __main__ - INFO -   [DOWN] api-analysis-service: {'running': False, 'healthy': False, 'port': 8001, 'pid': None}
+2025-11-13 15:30:08,899 - __main__ - INFO -   [OK] vulnerable-api-service: {'running': True, 'healthy': True, 'port': 8002, 'pid': 65244}
+2025-11-13 15:30:08,904 - __main__ - INFO -   [DOWN] health-monitoring-service: {'running': False, 'healthy': False, 'port': 8004, 'pid': None}
+2025-11-13 15:30:08,909 - __main__ - INFO -   [DOWN] process-management-service: {'running': False, 'healthy': False, 'port': 8003, 'pid': None}
+2025-11-13 15:30:08,913 - __main__ - INFO -   [UP] flutter-web-app: {'running': True, 'healthy': False, 'port': 3000, 'pid': 65689}
+2025-11-13 15:30:38,918 - __main__ - INFO - Service Status Summary:
+2025-11-13 15:30:38,921 - __main__ - INFO -   [DOWN] api-analysis-service: {'running': False, 'healthy': False, 'port': 8001, 'pid': None}
+2025-11-13 15:30:38,924 - __main__ - INFO -   [OK] vulnerable-api-service: {'running': True, 'healthy': True, 'port': 8002, 'pid': 65244}
+2025-11-13 15:30:38,927 - __main__ - INFO -   [DOWN] health-monitoring-service: {'running': False, 'healthy': False, 'port': 8004, 'pid': None}
+2025-11-13 15:30:38,932 - __main__ - INFO -   [DOWN] process-management-service: {'running': False, 'healthy': False, 'port': 8003, 'pid': None}
+2025-11-13 15:30:38,936 - __main__ - INFO -   [UP] flutter-web-app: {'running': True, 'healthy': False, 'port': 3000, 'pid': 65689}
+2025-11-13 15:31:08,943 - __main__ - INFO - Service Status Summary:
+2025-11-13 15:31:08,951 - __main__ - INFO -   [DOWN] api-analysis-service: {'running': False, 'healthy': False, 'port': 8001, 'pid': None}
+2025-11-13 15:31:08,957 - __main__ - INFO -   [OK] vulnerable-api-service: {'running': True, 'healthy': True, 'port': 8002, 'pid': 65244}
+2025-11-13 15:31:08,963 - __main__ - INFO -   [DOWN] health-monitoring-service: {'running': False, 'healthy': False, 'port': 8004, 'pid': None}
+2025-11-13 15:31:08,968 - __main__ - INFO -   [DOWN] process-management-service: {'running': False, 'healthy': False, 'port': 8003, 'pid': None}
+2025-11-13 15:31:08,972 - __main__ - INFO -   [UP] flutter-web-app: {'running': True, 'healthy': False, 'port': 3000, 'pid': 65689}
+2025-11-13 15:31:38,986 - __main__ - INFO - Service Status Summary:
+2025-11-13 15:31:38,992 - __main__ - INFO -   [DOWN] api-analysis-service: {'running': False, 'healthy': False, 'port': 8001, 'pid': None}
+2025-11-13 15:31:39,000 - __main__ - INFO -   [OK] vulnerable-api-service: {'running': True, 'healthy': True, 'port': 8002, 'pid': 65244}
+2025-11-13 15:31:39,005 - __main__ - INFO -   [DOWN] health-monitoring-service: {'running': False, 'healthy': False, 'port': 8004, 'pid': None}
+2025-11-13 15:31:39,010 - __main__ - INFO -   [DOWN] process-management-service: {'running': False, 'healthy': False, 'port': 8003, 'pid': None}
+2025-11-13 15:31:39,016 - __main__ - INFO -   [UP] flutter-web-app: {'running': True, 'healthy': False, 'port': 3000, 'pid': 65689}
+2025-11-13 15:32:09,023 - __main__ - INFO - Service Status Summary:
+2025-11-13 15:32:09,028 - __main__ - INFO -   [DOWN] api-analysis-service: {'running': False, 'healthy': False, 'port': 8001, 'pid': None}
+2025-11-13 15:32:09,036 - __main__ - INFO -   [OK] vulnerable-api-service: {'running': True, 'healthy': True, 'port': 8002, 'pid': 65244}
+2025-11-13 15:32:09,041 - __main__ - INFO -   [DOWN] health-monitoring-service: {'running': False, 'healthy': False, 'port': 8004, 'pid': None}
+2025-11-13 15:32:09,045 - __main__ - INFO -   [DOWN] process-management-service: {'running': False, 'healthy': False, 'port': 8003, 'pid': None}
+2025-11-13 15:32:09,051 - __main__ - INFO -   [UP] flutter-web-app: {'running': True, 'healthy': False, 'port': 3000, 'pid': 65689}
+2025-11-13 15:32:39,058 - __main__ - INFO - Service Status Summary:
+2025-11-13 15:32:39,066 - __main__ - INFO -   [DOWN] api-analysis-service: {'running': False, 'healthy': False, 'port': 8001, 'pid': None}
+2025-11-13 15:32:39,072 - __main__ - INFO -   [OK] vulnerable-api-service: {'running': True, 'healthy': True, 'port': 8002, 'pid': 65244}
+2025-11-13 15:32:39,078 - __main__ - INFO -   [DOWN] health-monitoring-service: {'running': False, 'healthy': False, 'port': 8004, 'pid': None}
+2025-11-13 15:32:39,084 - __main__ - INFO -   [DOWN] process-management-service: {'running': False, 'healthy': False, 'port': 8003, 'pid': None}
+2025-11-13 15:32:39,088 - __main__ - INFO -   [UP] flutter-web-app: {'running': True, 'healthy': False, 'port': 3000, 'pid': 65689}
+2025-11-13 15:33:13,452 - __main__ - INFO - Service Status Summary:
+2025-11-13 15:33:13,458 - __main__ - INFO -   [DOWN] api-analysis-service: {'running': False, 'healthy': False, 'port': 8001, 'pid': None}
+2025-11-13 15:33:13,463 - __main__ - INFO -   [OK] vulnerable-api-service: {'running': True, 'healthy': True, 'port': 8002, 'pid': 65244}
+2025-11-13 15:33:13,469 - __main__ - INFO -   [DOWN] health-monitoring-service: {'running': False, 'healthy': False, 'port': 8004, 'pid': None}
+2025-11-13 15:33:13,472 - __main__ - INFO -   [DOWN] process-management-service: {'running': False, 'healthy': False, 'port': 8003, 'pid': None}
+2025-11-13 15:33:13,476 - __main__ - INFO -   [UP] flutter-web-app: {'running': True, 'healthy': False, 'port': 3000, 'pid': 65689}
+2025-11-13 15:33:43,492 - __main__ - INFO - Service Status Summary:
+2025-11-13 15:33:43,499 - __main__ - INFO -   [DOWN] api-analysis-service: {'running': False, 'healthy': False, 'port': 8001, 'pid': None}
+2025-11-13 15:33:43,505 - __main__ - INFO -   [OK] vulnerable-api-service: {'running': True, 'healthy': True, 'port': 8002, 'pid': 65244}
+2025-11-13 15:33:43,511 - __main__ - INFO -   [DOWN] health-monitoring-service: {'running': False, 'healthy': False, 'port': 8004, 'pid': None}
+2025-11-13 15:33:43,515 - __main__ - INFO -   [DOWN] process-management-service: {'running': False, 'healthy': False, 'port': 8003, 'pid': None}
+2025-11-13 15:33:43,520 - __main__ - INFO -   [UP] flutter-web-app: {'running': True, 'healthy': False, 'port': 3000, 'pid': 65689}
+2025-11-13 15:34:13,530 - __main__ - INFO - Service Status Summary:
+2025-11-13 15:34:13,536 - __main__ - INFO -   [DOWN] api-analysis-service: {'running': False, 'healthy': False, 'port': 8001, 'pid': None}
+2025-11-13 15:34:13,543 - __main__ - INFO -   [OK] vulnerable-api-service: {'running': True, 'healthy': True, 'port': 8002, 'pid': 65244}
+2025-11-13 15:34:13,548 - __main__ - INFO -   [DOWN] health-monitoring-service: {'running': False, 'healthy': False, 'port': 8004, 'pid': None}
+2025-11-13 15:34:13,552 - __main__ - INFO -   [DOWN] process-management-service: {'running': False, 'healthy': False, 'port': 8003, 'pid': None}
+2025-11-13 15:34:13,557 - __main__ - INFO -   [UP] flutter-web-app: {'running': True, 'healthy': False, 'port': 3000, 'pid': 65689}
+2025-11-13 15:34:43,565 - __main__ - INFO - Service Status Summary:
+2025-11-13 15:34:43,571 - __main__ - INFO -   [DOWN] api-analysis-service: {'running': False, 'healthy': False, 'port': 8001, 'pid': None}
+2025-11-13 15:34:43,578 - __main__ - INFO -   [OK] vulnerable-api-service: {'running': True, 'healthy': True, 'port': 8002, 'pid': 65244}
+2025-11-13 15:34:43,582 - __main__ - INFO -   [DOWN] health-monitoring-service: {'running': False, 'healthy': False, 'port': 8004, 'pid': None}
+2025-11-13 15:34:43,587 - __main__ - INFO -   [DOWN] process-management-service: {'running': False, 'healthy': False, 'port': 8003, 'pid': None}
+2025-11-13 15:34:43,592 - __main__ - INFO -   [UP] flutter-web-app: {'running': True, 'healthy': False, 'port': 3000, 'pid': 65689}
+2025-11-13 15:35:13,613 - __main__ - INFO - Service Status Summary:
+2025-11-13 15:35:13,643 - __main__ - INFO -   [DOWN] api-analysis-service: {'running': False, 'healthy': False, 'port': 8001, 'pid': None}
+2025-11-13 15:35:13,651 - __main__ - INFO -   [OK] vulnerable-api-service: {'running': True, 'healthy': True, 'port': 8002, 'pid': 65244}
+2025-11-13 15:35:13,655 - __main__ - INFO -   [DOWN] health-monitoring-service: {'running': False, 'healthy': False, 'port': 8004, 'pid': None}
+2025-11-13 15:35:13,660 - __main__ - INFO -   [DOWN] process-management-service: {'running': False, 'healthy': False, 'port': 8003, 'pid': None}
+2025-11-13 15:35:13,664 - __main__ - INFO -   [UP] flutter-web-app: {'running': True, 'healthy': False, 'port': 3000, 'pid': 65689}
+2025-11-13 15:35:43,670 - __main__ - INFO - Service Status Summary:
+2025-11-13 15:35:43,676 - __main__ - INFO -   [DOWN] api-analysis-service: {'running': False, 'healthy': False, 'port': 8001, 'pid': None}
+2025-11-13 15:35:43,682 - __main__ - INFO -   [OK] vulnerable-api-service: {'running': True, 'healthy': True, 'port': 8002, 'pid': 65244}
+2025-11-13 15:35:43,687 - __main__ - INFO -   [DOWN] health-monitoring-service: {'running': False, 'healthy': False, 'port': 8004, 'pid': None}
+2025-11-13 15:35:43,693 - __main__ - INFO -   [DOWN] process-management-service: {'running': False, 'healthy': False, 'port': 8003, 'pid': None}
+2025-11-13 15:35:43,698 - __main__ - INFO -   [UP] flutter-web-app: {'running': True, 'healthy': False, 'port': 3000, 'pid': 65689}
+2025-11-13 15:36:13,703 - __main__ - INFO - Service Status Summary:
+2025-11-13 15:36:13,706 - __main__ - INFO -   [DOWN] api-analysis-service: {'running': False, 'healthy': False, 'port': 8001, 'pid': None}
+2025-11-13 15:36:13,710 - __main__ - INFO -   [OK] vulnerable-api-service: {'running': True, 'healthy': True, 'port': 8002, 'pid': 65244}
+2025-11-13 15:36:13,713 - __main__ - INFO -   [DOWN] health-monitoring-service: {'running': False, 'healthy': False, 'port': 8004, 'pid': None}
+2025-11-13 15:36:13,716 - __main__ - INFO -   [DOWN] process-management-service: {'running': False, 'healthy': False, 'port': 8003, 'pid': None}
+2025-11-13 15:36:13,719 - __main__ - INFO -   [UP] flutter-web-app: {'running': True, 'healthy': False, 'port': 3000, 'pid': 65689}
+2025-11-13 15:36:43,724 - __main__ - INFO - Service Status Summary:
+2025-11-13 15:36:43,732 - __main__ - INFO -   [DOWN] api-analysis-service: {'running': False, 'healthy': False, 'port': 8001, 'pid': None}
+2025-11-13 15:36:43,736 - __main__ - INFO -   [OK] vulnerable-api-service: {'running': True, 'healthy': True, 'port': 8002, 'pid': 65244}
+2025-11-13 15:36:43,741 - __main__ - INFO -   [DOWN] health-monitoring-service: {'running': False, 'healthy': False, 'port': 8004, 'pid': None}
+2025-11-13 15:36:43,744 - __main__ - INFO -   [DOWN] process-management-service: {'running': False, 'healthy': False, 'port': 8003, 'pid': None}
+2025-11-13 15:36:43,747 - __main__ - INFO -   [UP] flutter-web-app: {'running': True, 'healthy': False, 'port': 3000, 'pid': 65689}
+2025-11-13 15:37:13,754 - __main__ - INFO - Service Status Summary:
+2025-11-13 15:37:13,760 - __main__ - INFO -   [DOWN] api-analysis-service: {'running': False, 'healthy': False, 'port': 8001, 'pid': None}
+2025-11-13 15:37:13,765 - __main__ - INFO -   [OK] vulnerable-api-service: {'running': True, 'healthy': True, 'port': 8002, 'pid': 65244}
+2025-11-13 15:37:13,768 - __main__ - INFO -   [DOWN] health-monitoring-service: {'running': False, 'healthy': False, 'port': 8004, 'pid': None}
+2025-11-13 15:37:13,772 - __main__ - INFO -   [DOWN] process-management-service: {'running': False, 'healthy': False, 'port': 8003, 'pid': None}
+2025-11-13 15:37:13,775 - __main__ - INFO -   [UP] flutter-web-app: {'running': True, 'healthy': False, 'port': 3000, 'pid': 65689}
+2025-11-13 15:37:43,781 - __main__ - INFO - Service Status Summary:
+2025-11-13 15:37:43,790 - __main__ - INFO -   [DOWN] api-analysis-service: {'running': False, 'healthy': False, 'port': 8001, 'pid': None}
+2025-11-13 15:37:43,797 - __main__ - INFO -   [OK] vulnerable-api-service: {'running': True, 'healthy': True, 'port': 8002, 'pid': 65244}
+2025-11-13 15:37:43,801 - __main__ - INFO -   [DOWN] health-monitoring-service: {'running': False, 'healthy': False, 'port': 8004, 'pid': None}
+2025-11-13 15:37:43,807 - __main__ - INFO -   [DOWN] process-management-service: {'running': False, 'healthy': False, 'port': 8003, 'pid': None}
+2025-11-13 15:37:43,811 - __main__ - INFO -   [UP] flutter-web-app: {'running': True, 'healthy': False, 'port': 3000, 'pid': 65689}
+2025-11-13 15:38:13,818 - __main__ - INFO - Service Status Summary:
+2025-11-13 15:38:13,826 - __main__ - INFO -   [DOWN] api-analysis-service: {'running': False, 'healthy': False, 'port': 8001, 'pid': None}
+2025-11-13 15:38:13,833 - __main__ - INFO -   [OK] vulnerable-api-service: {'running': True, 'healthy': True, 'port': 8002, 'pid': 65244}
+2025-11-13 15:38:13,838 - __main__ - INFO -   [DOWN] health-monitoring-service: {'running': False, 'healthy': False, 'port': 8004, 'pid': None}
+2025-11-13 15:38:13,844 - __main__ - INFO -   [DOWN] process-management-service: {'running': False, 'healthy': False, 'port': 8003, 'pid': None}
+2025-11-13 15:38:13,848 - __main__ - INFO -   [UP] flutter-web-app: {'running': True, 'healthy': False, 'port': 3000, 'pid': 65689}
+2025-11-13 15:38:43,852 - __main__ - INFO - Service Status Summary:
+2025-11-13 15:38:43,856 - __main__ - INFO -   [DOWN] api-analysis-service: {'running': False, 'healthy': False, 'port': 8001, 'pid': None}
+2025-11-13 15:38:43,859 - __main__ - INFO -   [OK] vulnerable-api-service: {'running': True, 'healthy': True, 'port': 8002, 'pid': 65244}
+2025-11-13 15:38:43,863 - __main__ - INFO -   [DOWN] health-monitoring-service: {'running': False, 'healthy': False, 'port': 8004, 'pid': None}
+2025-11-13 15:38:43,866 - __main__ - INFO -   [DOWN] process-management-service: {'running': False, 'healthy': False, 'port': 8003, 'pid': None}
+2025-11-13 15:38:43,869 - __main__ - INFO -   [UP] flutter-web-app: {'running': True, 'healthy': False, 'port': 3000, 'pid': 65689}
+2025-11-13 15:39:13,874 - __main__ - INFO - Service Status Summary:
+2025-11-13 15:39:13,877 - __main__ - INFO -   [DOWN] api-analysis-service: {'running': False, 'healthy': False, 'port': 8001, 'pid': None}
+2025-11-13 15:39:13,881 - __main__ - INFO -   [OK] vulnerable-api-service: {'running': True, 'healthy': True, 'port': 8002, 'pid': 65244}
+2025-11-13 15:39:13,884 - __main__ - INFO -   [DOWN] health-monitoring-service: {'running': False, 'healthy': False, 'port': 8004, 'pid': None}
+2025-11-13 15:39:13,889 - __main__ - INFO -   [DOWN] process-management-service: {'running': False, 'healthy': False, 'port': 8003, 'pid': None}
+2025-11-13 15:39:13,893 - __main__ - INFO -   [UP] flutter-web-app: {'running': True, 'healthy': False, 'port': 3000, 'pid': 65689}
+2025-11-13 15:39:43,897 - __main__ - INFO - Service Status Summary:
+2025-11-13 15:39:43,901 - __main__ - INFO -   [DOWN] api-analysis-service: {'running': False, 'healthy': False, 'port': 8001, 'pid': None}
+2025-11-13 15:39:43,906 - __main__ - INFO -   [OK] vulnerable-api-service: {'running': True, 'healthy': True, 'port': 8002, 'pid': 65244}
+2025-11-13 15:39:43,909 - __main__ - INFO -   [DOWN] health-monitoring-service: {'running': False, 'healthy': False, 'port': 8004, 'pid': None}
+2025-11-13 15:39:43,912 - __main__ - INFO -   [DOWN] process-management-service: {'running': False, 'healthy': False, 'port': 8003, 'pid': None}
+2025-11-13 15:39:43,915 - __main__ - INFO -   [UP] flutter-web-app: {'running': True, 'healthy': False, 'port': 3000, 'pid': 65689}
+2025-11-13 15:40:13,924 - __main__ - INFO - Service Status Summary:
+2025-11-13 15:40:13,932 - __main__ - INFO -   [DOWN] api-analysis-service: {'running': False, 'healthy': False, 'port': 8001, 'pid': None}
+2025-11-13 15:40:13,939 - __main__ - INFO -   [OK] vulnerable-api-service: {'running': True, 'healthy': True, 'port': 8002, 'pid': 65244}
+2025-11-13 15:40:13,944 - __main__ - INFO -   [DOWN] health-monitoring-service: {'running': False, 'healthy': False, 'port': 8004, 'pid': None}
+2025-11-13 15:40:13,948 - __main__ - INFO -   [DOWN] process-management-service: {'running': False, 'healthy': False, 'port': 8003, 'pid': None}
+2025-11-13 15:40:13,952 - __main__ - INFO -   [UP] flutter-web-app: {'running': True, 'healthy': False, 'port': 3000, 'pid': 65689}
+2025-11-13 15:40:43,961 - __main__ - INFO - Service Status Summary:
+2025-11-13 15:40:43,967 - __main__ - INFO -   [DOWN] api-analysis-service: {'running': False, 'healthy': False, 'port': 8001, 'pid': None}
+2025-11-13 15:40:43,974 - __main__ - INFO -   [OK] vulnerable-api-service: {'running': True, 'healthy': True, 'port': 8002, 'pid': 65244}
+2025-11-13 15:40:43,979 - __main__ - INFO -   [DOWN] health-monitoring-service: {'running': False, 'healthy': False, 'port': 8004, 'pid': None}
+2025-11-13 15:40:43,983 - __main__ - INFO -   [DOWN] process-management-service: {'running': False, 'healthy': False, 'port': 8003, 'pid': None}
+2025-11-13 15:40:43,988 - __main__ - INFO -   [UP] flutter-web-app: {'running': True, 'healthy': False, 'port': 3000, 'pid': 65689}
+2025-11-13 15:41:14,000 - __main__ - INFO - Service Status Summary:
+2025-11-13 15:41:14,008 - __main__ - INFO -   [DOWN] api-analysis-service: {'running': False, 'healthy': False, 'port': 8001, 'pid': None}
+2025-11-13 15:41:14,014 - __main__ - INFO -   [OK] vulnerable-api-service: {'running': True, 'healthy': True, 'port': 8002, 'pid': 65244}
+2025-11-13 15:41:14,019 - __main__ - INFO -   [DOWN] health-monitoring-service: {'running': False, 'healthy': False, 'port': 8004, 'pid': None}
+2025-11-13 15:41:14,027 - __main__ - INFO -   [DOWN] process-management-service: {'running': False, 'healthy': False, 'port': 8003, 'pid': None}
+2025-11-13 15:41:14,031 - __main__ - INFO -   [UP] flutter-web-app: {'running': True, 'healthy': False, 'port': 3000, 'pid': 65689}
+2025-11-13 15:41:44,047 - __main__ - INFO - Service Status Summary:
+2025-11-13 15:41:44,054 - __main__ - INFO -   [DOWN] api-analysis-service: {'running': False, 'healthy': False, 'port': 8001, 'pid': None}
+2025-11-13 15:41:44,062 - __main__ - INFO -   [OK] vulnerable-api-service: {'running': True, 'healthy': True, 'port': 8002, 'pid': 65244}
+2025-11-13 15:41:44,067 - __main__ - INFO -   [DOWN] health-monitoring-service: {'running': False, 'healthy': False, 'port': 8004, 'pid': None}
+2025-11-13 15:41:44,071 - __main__ - INFO -   [DOWN] process-management-service: {'running': False, 'healthy': False, 'port': 8003, 'pid': None}
+2025-11-13 15:41:44,075 - __main__ - INFO -   [UP] flutter-web-app: {'running': True, 'healthy': False, 'port': 3000, 'pid': 65689}
+2025-11-13 15:42:14,080 - __main__ - INFO - Service Status Summary:
+2025-11-13 15:42:14,085 - __main__ - INFO -   [DOWN] api-analysis-service: {'running': False, 'healthy': False, 'port': 8001, 'pid': None}
+2025-11-13 15:42:14,090 - __main__ - INFO -   [OK] vulnerable-api-service: {'running': True, 'healthy': True, 'port': 8002, 'pid': 65244}
+2025-11-13 15:42:14,094 - __main__ - INFO -   [DOWN] health-monitoring-service: {'running': False, 'healthy': False, 'port': 8004, 'pid': None}
+2025-11-13 15:42:14,097 - __main__ - INFO -   [DOWN] process-management-service: {'running': False, 'healthy': False, 'port': 8003, 'pid': None}
+2025-11-13 15:42:14,100 - __main__ - INFO -   [UP] flutter-web-app: {'running': True, 'healthy': False, 'port': 3000, 'pid': 65689}
+2025-11-13 15:42:44,117 - __main__ - INFO - Service Status Summary:
+2025-11-13 15:42:44,126 - __main__ - INFO -   [DOWN] api-analysis-service: {'running': False, 'healthy': False, 'port': 8001, 'pid': None}
+2025-11-13 15:42:44,132 - __main__ - INFO -   [OK] vulnerable-api-service: {'running': True, 'healthy': True, 'port': 8002, 'pid': 65244}
+2025-11-13 15:42:44,138 - __main__ - INFO -   [DOWN] health-monitoring-service: {'running': False, 'healthy': False, 'port': 8004, 'pid': None}
+2025-11-13 15:42:44,141 - __main__ - INFO -   [DOWN] process-management-service: {'running': False, 'healthy': False, 'port': 8003, 'pid': None}
+2025-11-13 15:42:44,145 - __main__ - INFO -   [UP] flutter-web-app: {'running': True, 'healthy': False, 'port': 3000, 'pid': 65689}
+2025-11-13 15:43:14,154 - __main__ - INFO - Service Status Summary:
+2025-11-13 15:43:14,162 - __main__ - INFO -   [DOWN] api-analysis-service: {'running': False, 'healthy': False, 'port': 8001, 'pid': None}
+2025-11-13 15:43:14,212 - __main__ - INFO -   [OK] vulnerable-api-service: {'running': True, 'healthy': True, 'port': 8002, 'pid': 65244}
+2025-11-13 15:43:14,216 - __main__ - INFO -   [DOWN] health-monitoring-service: {'running': False, 'healthy': False, 'port': 8004, 'pid': None}
+2025-11-13 15:43:14,232 - __main__ - INFO -   [DOWN] process-management-service: {'running': False, 'healthy': False, 'port': 8003, 'pid': None}
+2025-11-13 15:43:14,236 - __main__ - INFO -   [UP] flutter-web-app: {'running': True, 'healthy': False, 'port': 3000, 'pid': 65689}
+2025-11-13 15:43:44,240 - __main__ - INFO - Service Status Summary:
+2025-11-13 15:43:44,244 - __main__ - INFO -   [DOWN] api-analysis-service: {'running': False, 'healthy': False, 'port': 8001, 'pid': None}
+2025-11-13 15:43:44,247 - __main__ - INFO -   [OK] vulnerable-api-service: {'running': True, 'healthy': True, 'port': 8002, 'pid': 65244}
+2025-11-13 15:43:44,251 - __main__ - INFO -   [DOWN] health-monitoring-service: {'running': False, 'healthy': False, 'port': 8004, 'pid': None}
+2025-11-13 15:43:44,255 - __main__ - INFO -   [DOWN] process-management-service: {'running': False, 'healthy': False, 'port': 8003, 'pid': None}
+2025-11-13 15:43:44,259 - __main__ - INFO -   [UP] flutter-web-app: {'running': True, 'healthy': False, 'port': 3000, 'pid': 65689}
+2025-11-13 15:44:14,266 - __main__ - INFO - Service Status Summary:
+2025-11-13 15:44:14,275 - __main__ - INFO -   [DOWN] api-analysis-service: {'running': False, 'healthy': False, 'port': 8001, 'pid': None}
+2025-11-13 15:44:14,281 - __main__ - INFO -   [OK] vulnerable-api-service: {'running': True, 'healthy': True, 'port': 8002, 'pid': 65244}
+2025-11-13 15:44:14,288 - __main__ - INFO -   [DOWN] health-monitoring-service: {'running': False, 'healthy': False, 'port': 8004, 'pid': None}
+2025-11-13 15:44:14,294 - __main__ - INFO -   [DOWN] process-management-service: {'running': False, 'healthy': False, 'port': 8003, 'pid': None}
+2025-11-13 15:44:14,298 - __main__ - INFO -   [UP] flutter-web-app: {'running': True, 'healthy': False, 'port': 3000, 'pid': 65689}
+2025-11-13 15:44:44,309 - __main__ - INFO - Service Status Summary:
+2025-11-13 15:44:44,315 - __main__ - INFO -   [DOWN] api-analysis-service: {'running': False, 'healthy': False, 'port': 8001, 'pid': None}
+2025-11-13 15:44:44,324 - __main__ - INFO -   [OK] vulnerable-api-service: {'running': True, 'healthy': True, 'port': 8002, 'pid': 65244}
+2025-11-13 15:44:44,329 - __main__ - INFO -   [DOWN] health-monitoring-service: {'running': False, 'healthy': False, 'port': 8004, 'pid': None}
+2025-11-13 15:44:44,333 - __main__ - INFO -   [DOWN] process-management-service: {'running': False, 'healthy': False, 'port': 8003, 'pid': None}
+2025-11-13 15:44:44,338 - __main__ - INFO -   [UP] flutter-web-app: {'running': True, 'healthy': False, 'port': 3000, 'pid': 65689}
+2025-11-13 15:45:14,349 - __main__ - INFO - Service Status Summary:
+2025-11-13 15:45:14,357 - __main__ - INFO -   [DOWN] api-analysis-service: {'running': False, 'healthy': False, 'port': 8001, 'pid': None}
+2025-11-13 15:45:14,364 - __main__ - INFO -   [OK] vulnerable-api-service: {'running': True, 'healthy': True, 'port': 8002, 'pid': 65244}
+2025-11-13 15:45:14,369 - __main__ - INFO -   [DOWN] health-monitoring-service: {'running': False, 'healthy': False, 'port': 8004, 'pid': None}
+2025-11-13 15:45:14,373 - __main__ - INFO -   [DOWN] process-management-service: {'running': False, 'healthy': False, 'port': 8003, 'pid': None}
+2025-11-13 15:45:14,377 - __main__ - INFO -   [UP] flutter-web-app: {'running': True, 'healthy': False, 'port': 3000, 'pid': 65689}
+2025-11-13 15:45:44,390 - __main__ - INFO - Service Status Summary:
+2025-11-13 15:45:44,397 - __main__ - INFO -   [DOWN] api-analysis-service: {'running': False, 'healthy': False, 'port': 8001, 'pid': None}
+2025-11-13 15:45:44,403 - __main__ - INFO -   [OK] vulnerable-api-service: {'running': True, 'healthy': True, 'port': 8002, 'pid': 65244}
+2025-11-13 15:45:44,408 - __main__ - INFO -   [DOWN] health-monitoring-service: {'running': False, 'healthy': False, 'port': 8004, 'pid': None}
+2025-11-13 15:45:44,412 - __main__ - INFO -   [DOWN] process-management-service: {'running': False, 'healthy': False, 'port': 8003, 'pid': None}
+2025-11-13 15:45:44,417 - __main__ - INFO -   [UP] flutter-web-app: {'running': True, 'healthy': False, 'port': 3000, 'pid': 65689}
+2025-11-13 15:46:14,425 - __main__ - INFO - Service Status Summary:
+2025-11-13 15:46:14,432 - __main__ - INFO -   [DOWN] api-analysis-service: {'running': False, 'healthy': False, 'port': 8001, 'pid': None}
+2025-11-13 15:46:14,439 - __main__ - INFO -   [OK] vulnerable-api-service: {'running': True, 'healthy': True, 'port': 8002, 'pid': 65244}
+2025-11-13 15:46:14,444 - __main__ - INFO -   [DOWN] health-monitoring-service: {'running': False, 'healthy': False, 'port': 8004, 'pid': None}
+2025-11-13 15:46:14,449 - __main__ - INFO -   [DOWN] process-management-service: {'running': False, 'healthy': False, 'port': 8003, 'pid': None}
+2025-11-13 15:46:14,453 - __main__ - INFO -   [UP] flutter-web-app: {'running': True, 'healthy': False, 'port': 3000, 'pid': 65689}
+2025-11-13 15:46:44,462 - __main__ - INFO - Service Status Summary:
+2025-11-13 15:46:44,469 - __main__ - INFO -   [DOWN] api-analysis-service: {'running': False, 'healthy': False, 'port': 8001, 'pid': None}
+2025-11-13 15:46:44,475 - __main__ - INFO -   [OK] vulnerable-api-service: {'running': True, 'healthy': True, 'port': 8002, 'pid': 65244}
+2025-11-13 15:46:44,481 - __main__ - INFO -   [DOWN] health-monitoring-service: {'running': False, 'healthy': False, 'port': 8004, 'pid': None}
+2025-11-13 15:46:44,486 - __main__ - INFO -   [DOWN] process-management-service: {'running': False, 'healthy': False, 'port': 8003, 'pid': None}
+2025-11-13 15:46:44,491 - __main__ - INFO -   [UP] flutter-web-app: {'running': True, 'healthy': False, 'port': 3000, 'pid': 65689}
+2025-11-13 15:47:14,499 - __main__ - INFO - Service Status Summary:
+2025-11-13 15:47:14,507 - __main__ - INFO -   [DOWN] api-analysis-service: {'running': False, 'healthy': False, 'port': 8001, 'pid': None}
+2025-11-13 15:47:14,514 - __main__ - INFO -   [OK] vulnerable-api-service: {'running': True, 'healthy': True, 'port': 8002, 'pid': 65244}
+2025-11-13 15:47:14,519 - __main__ - INFO -   [DOWN] health-monitoring-service: {'running': False, 'healthy': False, 'port': 8004, 'pid': None}
+2025-11-13 15:47:14,525 - __main__ - INFO -   [DOWN] process-management-service: {'running': False, 'healthy': False, 'port': 8003, 'pid': None}
+2025-11-13 15:47:14,529 - __main__ - INFO -   [UP] flutter-web-app: {'running': True, 'healthy': False, 'port': 3000, 'pid': 65689}
+2025-11-13 15:47:44,538 - __main__ - INFO - Service Status Summary:
+2025-11-13 15:47:44,547 - __main__ - INFO -   [DOWN] api-analysis-service: {'running': False, 'healthy': False, 'port': 8001, 'pid': None}
+2025-11-13 15:47:44,554 - __main__ - INFO -   [OK] vulnerable-api-service: {'running': True, 'healthy': True, 'port': 8002, 'pid': 65244}
+2025-11-13 15:47:44,560 - __main__ - INFO -   [DOWN] health-monitoring-service: {'running': False, 'healthy': False, 'port': 8004, 'pid': None}
+2025-11-13 15:47:44,565 - __main__ - INFO -   [DOWN] process-management-service: {'running': False, 'healthy': False, 'port': 8003, 'pid': None}
+2025-11-13 15:47:44,569 - __main__ - INFO -   [UP] flutter-web-app: {'running': True, 'healthy': False, 'port': 3000, 'pid': 65689}
+2025-11-13 15:48:14,582 - __main__ - INFO - Service Status Summary:
+2025-11-13 15:48:14,589 - __main__ - INFO -   [DOWN] api-analysis-service: {'running': False, 'healthy': False, 'port': 8001, 'pid': None}
+2025-11-13 15:48:14,596 - __main__ - INFO -   [OK] vulnerable-api-service: {'running': True, 'healthy': True, 'port': 8002, 'pid': 65244}
+2025-11-13 15:48:14,601 - __main__ - INFO -   [DOWN] health-monitoring-service: {'running': False, 'healthy': False, 'port': 8004, 'pid': None}
+2025-11-13 15:48:14,606 - __main__ - INFO -   [DOWN] process-management-service: {'running': False, 'healthy': False, 'port': 8003, 'pid': None}
+2025-11-13 15:48:14,610 - __main__ - INFO -   [UP] flutter-web-app: {'running': True, 'healthy': False, 'port': 3000, 'pid': 65689}
+2025-11-13 15:48:44,621 - __main__ - INFO - Service Status Summary:
+2025-11-13 15:48:44,629 - __main__ - INFO -   [DOWN] api-analysis-service: {'running': False, 'healthy': False, 'port': 8001, 'pid': None}
+2025-11-13 15:48:44,635 - __main__ - INFO -   [OK] vulnerable-api-service: {'running': True, 'healthy': True, 'port': 8002, 'pid': 65244}
+2025-11-13 15:48:44,640 - __main__ - INFO -   [DOWN] health-monitoring-service: {'running': False, 'healthy': False, 'port': 8004, 'pid': None}
+2025-11-13 15:48:44,645 - __main__ - INFO -   [DOWN] process-management-service: {'running': False, 'healthy': False, 'port': 8003, 'pid': None}
+2025-11-13 15:48:44,650 - __main__ - INFO -   [UP] flutter-web-app: {'running': True, 'healthy': False, 'port': 3000, 'pid': 65689}
+2025-11-13 15:49:14,665 - __main__ - INFO - Service Status Summary:
+2025-11-13 15:49:14,672 - __main__ - INFO -   [DOWN] api-analysis-service: {'running': False, 'healthy': False, 'port': 8001, 'pid': None}
+2025-11-13 15:49:14,679 - __main__ - INFO -   [OK] vulnerable-api-service: {'running': True, 'healthy': True, 'port': 8002, 'pid': 65244}
+2025-11-13 15:49:14,684 - __main__ - INFO -   [DOWN] health-monitoring-service: {'running': False, 'healthy': False, 'port': 8004, 'pid': None}
+2025-11-13 15:49:14,689 - __main__ - INFO -   [DOWN] process-management-service: {'running': False, 'healthy': False, 'port': 8003, 'pid': None}
+2025-11-13 15:49:14,739 - __main__ - INFO -   [UP] flutter-web-app: {'running': True, 'healthy': False, 'port': 3000, 'pid': 65689}
+2025-11-13 15:49:44,754 - __main__ - INFO - Service Status Summary:
+2025-11-13 15:49:44,762 - __main__ - INFO -   [DOWN] api-analysis-service: {'running': False, 'healthy': False, 'port': 8001, 'pid': None}
+2025-11-13 15:49:44,769 - __main__ - INFO -   [OK] vulnerable-api-service: {'running': True, 'healthy': True, 'port': 8002, 'pid': 65244}
+2025-11-13 15:49:44,774 - __main__ - INFO -   [DOWN] health-monitoring-service: {'running': False, 'healthy': False, 'port': 8004, 'pid': None}
+2025-11-13 15:49:44,779 - __main__ - INFO -   [DOWN] process-management-service: {'running': False, 'healthy': False, 'port': 8003, 'pid': None}
+2025-11-13 15:49:44,783 - __main__ - INFO -   [UP] flutter-web-app: {'running': True, 'healthy': False, 'port': 3000, 'pid': 65689}
+2025-11-13 15:50:14,795 - __main__ - INFO - Service Status Summary:
+2025-11-13 15:50:14,812 - __main__ - INFO -   [DOWN] api-analysis-service: {'running': False, 'healthy': False, 'port': 8001, 'pid': None}
+2025-11-13 15:50:14,817 - __main__ - INFO -   [OK] vulnerable-api-service: {'running': True, 'healthy': True, 'port': 8002, 'pid': 65244}
+2025-11-13 15:50:14,821 - __main__ - INFO -   [DOWN] health-monitoring-service: {'running': False, 'healthy': False, 'port': 8004, 'pid': None}
+2025-11-13 15:50:14,825 - __main__ - INFO -   [DOWN] process-management-service: {'running': False, 'healthy': False, 'port': 8003, 'pid': None}
+2025-11-13 15:50:14,830 - __main__ - INFO -   [UP] flutter-web-app: {'running': True, 'healthy': False, 'port': 3000, 'pid': 65689}
+2025-11-13 15:50:44,839 - __main__ - INFO - Service Status Summary:
+2025-11-13 15:50:44,847 - __main__ - INFO -   [DOWN] api-analysis-service: {'running': False, 'healthy': False, 'port': 8001, 'pid': None}
+2025-11-13 15:50:44,853 - __main__ - INFO -   [OK] vulnerable-api-service: {'running': True, 'healthy': True, 'port': 8002, 'pid': 65244}
+2025-11-13 15:50:44,858 - __main__ - INFO -   [DOWN] health-monitoring-service: {'running': False, 'healthy': False, 'port': 8004, 'pid': None}
+2025-11-13 15:50:44,864 - __main__ - INFO -   [DOWN] process-management-service: {'running': False, 'healthy': False, 'port': 8003, 'pid': None}
+2025-11-13 15:50:44,869 - __main__ - INFO -   [UP] flutter-web-app: {'running': True, 'healthy': False, 'port': 3000, 'pid': 65689}
+2025-11-13 15:51:14,881 - __main__ - INFO - Service Status Summary:
+2025-11-13 15:51:14,888 - __main__ - INFO -   [DOWN] api-analysis-service: {'running': False, 'healthy': False, 'port': 8001, 'pid': None}
+2025-11-13 15:51:14,895 - __main__ - INFO -   [OK] vulnerable-api-service: {'running': True, 'healthy': True, 'port': 8002, 'pid': 65244}
+2025-11-13 15:51:14,901 - __main__ - INFO -   [DOWN] health-monitoring-service: {'running': False, 'healthy': False, 'port': 8004, 'pid': None}
+2025-11-13 15:51:14,906 - __main__ - INFO -   [DOWN] process-management-service: {'running': False, 'healthy': False, 'port': 8003, 'pid': None}
+2025-11-13 15:51:14,911 - __main__ - INFO -   [UP] flutter-web-app: {'running': True, 'healthy': False, 'port': 3000, 'pid': 65689}
+2025-11-13 15:51:44,920 - __main__ - INFO - Service Status Summary:
+2025-11-13 15:51:44,928 - __main__ - INFO -   [DOWN] api-analysis-service: {'running': False, 'healthy': False, 'port': 8001, 'pid': None}
+2025-11-13 15:51:44,935 - __main__ - INFO -   [OK] vulnerable-api-service: {'running': True, 'healthy': True, 'port': 8002, 'pid': 65244}
+2025-11-13 15:51:44,939 - __main__ - INFO -   [DOWN] health-monitoring-service: {'running': False, 'healthy': False, 'port': 8004, 'pid': None}
+2025-11-13 15:51:44,944 - __main__ - INFO -   [DOWN] process-management-service: {'running': False, 'healthy': False, 'port': 8003, 'pid': None}
+2025-11-13 15:51:44,948 - __main__ - INFO -   [UP] flutter-web-app: {'running': True, 'healthy': False, 'port': 3000, 'pid': 65689}
+2025-11-13 15:52:14,957 - __main__ - INFO - Service Status Summary:
+2025-11-13 15:52:14,965 - __main__ - INFO -   [DOWN] api-analysis-service: {'running': False, 'healthy': False, 'port': 8001, 'pid': None}
+2025-11-13 15:52:14,970 - __main__ - INFO -   [OK] vulnerable-api-service: {'running': True, 'healthy': True, 'port': 8002, 'pid': 65244}
+2025-11-13 15:52:14,974 - __main__ - INFO -   [DOWN] health-monitoring-service: {'running': False, 'healthy': False, 'port': 8004, 'pid': None}
+2025-11-13 15:52:14,980 - __main__ - INFO -   [DOWN] process-management-service: {'running': False, 'healthy': False, 'port': 8003, 'pid': None}
+2025-11-13 15:52:14,984 - __main__ - INFO -   [UP] flutter-web-app: {'running': True, 'healthy': False, 'port': 3000, 'pid': 65689}
+2025-11-13 15:53:57,287 - __main__ - INFO - Service Status Summary:
+2025-11-13 15:53:57,295 - __main__ - INFO -   [DOWN] api-analysis-service: {'running': False, 'healthy': False, 'port': 8001, 'pid': None}
+2025-11-13 15:53:57,301 - __main__ - INFO -   [OK] vulnerable-api-service: {'running': True, 'healthy': True, 'port': 8002, 'pid': 65244}
+2025-11-13 15:53:57,307 - __main__ - INFO -   [DOWN] health-monitoring-service: {'running': False, 'healthy': False, 'port': 8004, 'pid': None}
+2025-11-13 15:53:57,312 - __main__ - INFO -   [DOWN] process-management-service: {'running': False, 'healthy': False, 'port': 8003, 'pid': None}
+2025-11-13 15:53:57,317 - __main__ - INFO -   [UP] flutter-web-app: {'running': True, 'healthy': False, 'port': 3000, 'pid': 65689}
+2025-11-13 15:54:27,324 - __main__ - INFO - Service Status Summary:
+2025-11-13 15:54:27,332 - __main__ - INFO -   [DOWN] api-analysis-service: {'running': False, 'healthy': False, 'port': 8001, 'pid': None}
+2025-11-13 15:54:27,338 - __main__ - INFO -   [OK] vulnerable-api-service: {'running': True, 'healthy': True, 'port': 8002, 'pid': 65244}
+2025-11-13 15:54:27,344 - __main__ - INFO -   [DOWN] health-monitoring-service: {'running': False, 'healthy': False, 'port': 8004, 'pid': None}
+2025-11-13 15:54:27,349 - __main__ - INFO -   [DOWN] process-management-service: {'running': False, 'healthy': False, 'port': 8003, 'pid': None}
+2025-11-13 15:54:27,353 - __main__ - INFO -   [UP] flutter-web-app: {'running': True, 'healthy': False, 'port': 3000, 'pid': 65689}
+2025-11-13 15:54:57,358 - __main__ - INFO - Service Status Summary:
+2025-11-13 15:54:57,362 - __main__ - INFO -   [DOWN] api-analysis-service: {'running': False, 'healthy': False, 'port': 8001, 'pid': None}
+2025-11-13 15:54:57,366 - __main__ - INFO -   [OK] vulnerable-api-service: {'running': True, 'healthy': True, 'port': 8002, 'pid': 65244}
+2025-11-13 15:54:57,370 - __main__ - INFO -   [DOWN] health-monitoring-service: {'running': False, 'healthy': False, 'port': 8004, 'pid': None}
+2025-11-13 15:54:57,373 - __main__ - INFO -   [DOWN] process-management-service: {'running': False, 'healthy': False, 'port': 8003, 'pid': None}
+2025-11-13 15:54:57,376 - __main__ - INFO -   [UP] flutter-web-app: {'running': True, 'healthy': False, 'port': 3000, 'pid': 65689}
