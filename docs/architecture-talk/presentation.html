@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>SecurityOrchestrator — архитектура и анализ безопасности API</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+  <script>
+    mermaid.initialize({ startOnLoad: true, theme: 'default' });
+  </script>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top left, #ffffff 0, #f7f7fb 40%, #eef1ff 100%);
+      color: #202124;
+    }
+    .slides {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      padding: 3rem 0;
+    }
+    .slide {
+      box-sizing: border-box;
+      width: 100%;
+      max-width: 1100px;
+      min-height: 80vh;
+      padding: 3rem 4rem;
+      margin: 0 auto 3rem auto;
+      background: #ffffff;
+      border-radius: 24px;
+      box-shadow: 0 18px 45px rgba(15, 23, 42, 0.15);
+      border: 1px solid rgba(15, 23, 42, 0.04);
+      display: block;
+      overflow: visible;
+      position: relative;
+    }
+    h1, h2 {
+      margin-top: 0;
+      color: #111827;
+    }
+    h1 {
+      font-size: 2.4rem;
+      letter-spacing: -0.03em;
+    }
+    h2 {
+      font-size: 1.8rem;
+      letter-spacing: -0.02em;
+    }
+    ul {
+      font-size: 1.1rem;
+      line-height: 1.5;
+      margin-top: 1.5rem;
+      padding-left: 1.3rem;
+    }
+    .subtitle {
+      color: #4f46e5;
+      margin-top: 0.5rem;
+      font-weight: 500;
+    }
+    .code {
+      font-family: 'JetBrains Mono', Menlo, Monaco, "Courier New", monospace;
+      background: #e8eaed;
+      padding: 0.5rem 0.75rem;
+      border-radius: 4px;
+      font-size: 0.9rem;
+      display: inline-block;
+    }
+    .highlight {
+      color: #155fa0;
+    }
+    footer {
+      margin-top: 2.5rem;
+      text-align: right;
+      font-size: 0.8rem;
+      color: #5f6368;
+    }
+    .mermaid {
+      background: #f1f3f4;
+      border-radius: 6px;
+      padding: 1rem;
+      border: 1px solid #e0e0e0;
+    }
+    .screenshot {
+      max-width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+      margin-top: 1rem;
+      border: 1px solid rgba(15, 23, 42, 0.05);
+    }
+  </style>
+</head>
+<body>
+<div class="slides">
+  <!-- Slide 1 -->
+  <section class="slide active">
+    <h1>SecurityOrchestrator</h1>
+    <p class="subtitle">Миграция к микросервисам и анализ безопасности API</p>
+    <ul>
+      <li>Переход с Java/Spring монолита на FastAPI микросервисы</li>
+      <li>Flutter‑клиент с фиче‑первой архитектурой</li>
+      <li>Фокус: API Security &amp; Swagger‑анализ</li>
+    </ul>
+    <footer>1 / 14</footer>
+  </section>
+
+  <!-- Slide 2 -->
+  <section class="slide">
+    <h2>Текущая проблема монолита</h2>
+    <ul>
+      <li>Крупные файлы (&gt;800 строк), высокая сложность</li>
+      <li>Жёсткое сцепление: BPMN, API‑тесты, оркестрация, LLM</li>
+      <li>Нельзя масштабировать отдельные функции</li>
+      <li>Долгие релизные циклы и высокий риск деплоя</li>
+    </ul>
+    <footer>2 / 14</footer>
+  </section>
+
+  <!-- Slide 3: Диаграмма монолита -->
+  <section class="slide">
+    <h2>Архитектура: текущий монолит</h2>
+    <div class="mermaid">
+graph TB
+    subgraph "Current Monolithic Architecture"
+        FE[Flutter Frontend<br/>Web Interface]
+        MONO[Java/Spring Boot Monolith<br/>Single JVM Process]
+
+        subgraph "Monolith Components"
+            BPMN_PROC[BPMN Processing<br/>883 lines]
+            API_TEST[API Testing<br/>860 lines]
+            ORCH[Orchestration<br/>842 lines]
+            LLM_INT[LLM Integration<br/>755 lines]
+            AI_GEN[AI Test Generation<br/>745 lines]
+        end
+
+        DB[(H2 Database<br/>File-based)]
+
+        FE --> MONO
+        MONO --> BPMN_PROC
+        MONO --> API_TEST
+        MONO --> ORCH
+        MONO --> LLM_INT
+        MONO --> AI_GEN
+        MONO --> DB
+    end
+
+    style MONO fill:#ffcccc
+    style BPMN_PROC fill:#ffe6cc
+    style API_TEST fill:#ffe6cc
+    style ORCH fill:#ffe6cc
+    style LLM_INT fill:#ffe6cc
+    style AI_GEN fill:#ffe6cc
+    </div>
+    <footer>3 / 14</footer>
+  </section>
+
+  <!-- Slide 4: Целевая архитектура -->
+  <section class="slide">
+    <h2>Архитектура: целевые микросервисы</h2>
+    <div class="mermaid">
+graph TB
+    subgraph "Flutter Mobile App"
+        UI[Cross-platform UI<br/>Material Design 3]
+        STATE[State Management<br/>Riverpod]
+        NETWORK[Networking<br/>Dio HTTP Client]
+    end
+
+    subgraph "API Gateway Layer"
+        GATEWAY[FastAPI Gateway<br/>Port: 8000<br/>Load Balancing & Auth]
+    end
+
+    subgraph "Core Microservices"
+        PROCESS[Process Management<br/>Port: 8001<br/>BPMN Processing]
+        API_SEC[API Security<br/>Port: 8002<br/>OpenAPI Analysis]
+        TEST_GEN[Test Generation<br/>Port: 8003<br/>AI Test Creation]
+        MONITOR[Monitoring<br/>Port: 8004<br/>Real-time Tracking]
+        REPORT[Reporting<br/>Port: 8005<br/>Findings Aggregation]
+    end
+
+    subgraph "Shared Domain Layer"
+        SHARED[Shared Domain Models<br/>Entities & DTOs]
+        UTILS[Common Utilities<br/>Config & Logging]
+    end
+
+    subgraph "Data & Messaging Infrastructure"
+        DB[(PostgreSQL<br/>Transactional Data)]
+        CACHE[(Redis<br/>Cache & Pub/Sub)]
+        MQ[RabbitMQ<br/>Async Messaging]
+    end
+
+    UI --> NETWORK
+    NETWORK --> GATEWAY
+
+    GATEWAY --> PROCESS
+    GATEWAY --> API_SEC
+    GATEWAY --> TEST_GEN
+    GATEWAY --> MONITOR
+    GATEWAY --> REPORT
+
+    PROCESS --> SHARED
+    API_SEC --> SHARED
+    TEST_GEN --> SHARED
+    MONITOR --> SHARED
+    REPORT --> SHARED
+
+    PROCESS --> UTILS
+    API_SEC --> UTILS
+    TEST_GEN --> UTILS
+    MONITOR --> UTILS
+    REPORT --> UTILS
+
+    PROCESS --> CACHE
+    API_SEC --> DB
+    TEST_GEN --> MQ
+    MONITOR --> CACHE
+    REPORT --> DB
+
+    style PROCESS fill:#e1f5fe
+    style API_SEC fill:#f3e5f5
+    style TEST_GEN fill:#fff3e0
+    style MONITOR fill:#e8f5e8
+    style REPORT fill:#fce4ec
+    </div>
+    <footer>4 / 14</footer>
+  </section>
+
+  <!-- Slide 5 -->
+  <section class="slide">
+    <h2>Микросервисы по доменам</h2>
+    <ul>
+      <li>Process Management Service — BPMN и оркестрация</li>
+      <li>API Security Service — анализ безопасности API/Swagger</li>
+      <li>Test Generation Service — AI‑генерация тестов</li>
+      <li>Monitoring Service — метрики и health‑checks</li>
+      <li>Reporting Service — отчёты по безопасности</li>
+    </ul>
+    <footer>5 / 14</footer>
+  </section>
+
+  <!-- Slide 6: Взаимодействие сервисов -->
+  <section class="slide">
+    <h2>Взаимодействие сервисов</h2>
+    <div class="mermaid">
+sequenceDiagram
+    participant UI as Flutter App
+    participant GW as API Gateway
+    participant PROCESS as Process Management
+    participant API_SEC as API Security
+    participant TEST_GEN as Test Generation
+
+    UI->>GW: POST /workflows
+    GW->>PROCESS: Validate BPMN
+    PROCESS-->>GW: Validation Result
+    GW->>API_SEC: Analyze APIs
+    API_SEC-->>GW: Security Analysis
+    GW->>TEST_GEN: Generate Tests
+    TEST_GEN-->>GW: Test Scenarios
+    GW-->>UI: Complete Workflow
+    </div>
+    <footer>6 / 14</footer>
+  </section>
+
+  <!-- Slide 7 -->
+  <section class="slide">
+    <h2>API Security Analysis (backend)</h2>
+    <ul>
+      <li>Отдельный сервис <span class="code">api-analysis-service</span> на FastAPI</li>
+      <li>
+        Слои:
+        <span class="code">api/</span> (маршруты, модели),
+        <span class="code">core/</span> (config, logging),
+        <span class="code">services/</span> (analysis, storage)
+      </li>
+      <li>Проверка протокола, admin‑эндпойнтов, версионирования API</li>
+      <li>История запусков, пакетный анализ, рекомендации</li>
+    </ul>
+    <footer>7 / 14</footer>
+  </section>
+
+  <!-- Slide 8 -->
+  <section class="slide">
+    <h2>Анализ Swagger/OpenAPI</h2>
+    <ul>
+      <li>Приём <span class="code">swagger_url</span>, скачивание и разбор спецификации</li>
+      <li>Статистика: всего, защищённые, незащищённые, deprecated эндпойнты</li>
+      <li>Оценка безопасности: 0–100 + уровни критичности</li>
+      <li>Опциональный AI‑анализ для детальных рекомендаций</li>
+    </ul>
+    <footer>8 / 14</footer>
+  </section>
+
+  <!-- Slide 9 -->
+  <section class="slide">
+    <h2>Миграция и выгоды</h2>
+    <ul>
+      <li>Фаза 1: каркас сервисов, shared‑модели, инфраструктура</li>
+      <li>Фаза 2: реализация ключевых сервисов (API Security, Test Gen)</li>
+      <li>Фаза 3: интеграция, события, отключение монолита</li>
+      <li>Результат: масштабируемость, независимые релизы, чище архитектура</li>
+    </ul>
+    <footer>9 / 14</footer>
+  </section>
+
+  <!-- Slide 10: Главный экран -->
+  <section class="slide">
+    <h2>Интерфейс: главный экран</h2>
+    <p class="subtitle">Общий обзор приложения SecurityOrchestrator</p>
+    <img src="screens/main.png" alt="Главный экран приложения" class="screenshot">
+    <footer>10 / 14</footer>
+  </section>
+
+  <!-- Slide 11: Экран анализа API -->
+  <section class="slide">
+    <h2>Интерфейс: модуль API Analysis</h2>
+    <p class="subtitle">Ввод URL, запуск анализа и статус выполнения</p>
+    <img src="screens/api_analisys.png" alt="Экран анализа API" class="screenshot">
+    <footer>11 / 14</footer>
+  </section>
+
+  <!-- Slide 12: Результаты анализа (1/3) -->
+  <section class="slide">
+    <h2>Результаты анализа API (1/3)</h2>
+    <p class="subtitle">Общая оценка безопасности и краткий итог</p>
+    <img src="screens/result0.png" alt="Результаты анализа API — часть 1" class="screenshot">
+    <footer>12 / 14</footer>
+  </section>
+
+  <!-- Slide 13: Результаты анализа (2/3) -->
+  <section class="slide">
+    <h2>Результаты анализа API (2/3)</h2>
+    <p class="subtitle">Детализация найденных проблем и уровни критичности</p>
+    <img src="screens/result1.png" alt="Результаты анализа API — часть 2" class="screenshot">
+    <footer>13 / 14</footer>
+  </section>
+
+  <!-- Slide 14: Результаты анализа (3/3) -->
+  <section class="slide">
+    <h2>Результаты анализа API (3/3)</h2>
+    <p class="subtitle">Рекомендации и статистика по эндпойнтам</p>
+    <img src="screens/result2.png" alt="Результаты анализа API — часть 3" class="screenshot">
+    <footer>14 / 14</footer>
+  </section>
+</div>
+
+<script>
+  (function () {
+    // Пролистывание стрелками остаётся, но слайды также доступны прокруткой
+    const slides = Array.from(document.querySelectorAll('.slide'));
+    let index = 0;
+
+    function scrollToSlide(i) {
+      const slide = slides[i];
+      if (slide) {
+        slide.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight' || e.key === 'PageDown' || e.key === ' ') {
+        index = Math.min(slides.length - 1, index + 1);
+        scrollToSlide(index);
+      }
+      if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+        index = Math.max(0, index - 1);
+        scrollToSlide(index);
+      }
+    });
+  })();
+</script>
+</body>
+</html>

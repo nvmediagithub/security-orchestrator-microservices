@@ -171,25 +171,25 @@ def setup_service_configs() -> List[ServiceConfig]:
     """Setup configurations for all services."""
     base_dir = Path(__file__).parent
 
-    # API Analysis Service (Python/FastAPI)
+    # API Analysis Service (Python/FastAPI) - наш основной сервис анализа API
     api_analysis_service = ServiceConfig(
         name="api-analysis-service",
         port=8001,
         startup_command=["python3", "main.py"],
         working_dir=base_dir / "services/api-analysis-service",
-        health_check_url="http://localhost:8001/api/v1/health"
+        health_check_url="http://localhost:8001/api/v1/swagger-analysis/health"
     )
 
-    # Vulnerable API Service (Python/FastAPI)
+    # Vulnerable API Service (Python/FastAPI) - тестовый API с уязвимостями
     vulnerable_api_service = ServiceConfig(
         name="vulnerable-api-service",
-        port=8002,
+        port=8003,
         startup_command=["python3", "main.py"],
         working_dir=base_dir / "services/vulnerable-api-service",
-        health_check_url="http://localhost:8002/health"
+        health_check_url="http://localhost:8003/health"
     )
 
-    # Health Monitoring Service (Python)
+    # Health Monitoring Service (Python) - не обязательный для основной функциональности
     health_service = ServiceConfig(
         name="health-monitoring-service",
         port=8004,
@@ -198,29 +198,29 @@ def setup_service_configs() -> List[ServiceConfig]:
         health_check_url="http://localhost:8004/health/"
     )
 
-    # Process Management Service (Python)
+    # Process Management Service (Python) - не обязательный для основной функциональности
     process_service = ServiceConfig(
         name="process-management-service",
-        port=8003,
-        startup_command=["python3", "-m", "uvicorn", "process_management_service.presentation.api:app", "--host", "0.0.0.0", "--port", "8003"],
+        port=8002,
+        startup_command=["python3", "-m", "uvicorn", "process_management_service.presentation.api:app", "--host", "0.0.0.0", "--port", "8002"],
         working_dir=base_dir / "services/process-management/src",
-        health_check_url="http://localhost:8003/health"
+        health_check_url="http://localhost:8002/health"
     )
 
-    # Flutter Web App
+    # Flutter Web App - собранная версия статических файлов
     flutter_app = ServiceConfig(
         name="flutter-web-app",
-        port=3000,
-        startup_command=["flutter", "run", "-d", "web-server", "--web-port", "3000", "--release"],
-        working_dir=base_dir / "flutter-app",
-        health_check_url="http://localhost:3000"
+        port=8080,
+        startup_command=["python3", "-m", "http.server", "8080", "--bind", "0.0.0.0"],
+        working_dir=base_dir / "flutter-app/build/web",
+        health_check_url="http://localhost:8080"
     )
 
     return [
         api_analysis_service,
         vulnerable_api_service,
-        health_service,
-        process_service,
+        # health_service,  # Отключаем необязательные сервисы
+        # process_service,
         flutter_app
     ]
 
@@ -267,11 +267,9 @@ async def main():
     try:
         # Start services in order
         startup_order = [
-            "api-analysis-service",  # Start with API analysis service
-            "vulnerable-api-service",  # Then vulnerable API for testing
-            "health-monitoring-service",  # Then health monitoring
-            "process-management-service", # Then process management
-            "flutter-web-app"  # Finally start the web app
+            "vulnerable-api-service",  # Сначала тестовый API
+            "api-analysis-service",  # Затем сервис анализа API
+            "flutter-web-app"  # Последним веб-приложение
         ]
 
         started_services = []

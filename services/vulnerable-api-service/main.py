@@ -213,7 +213,7 @@ from src.routes import *
 
 if __name__ == "__main__":
     import uvicorn
-    print("🚀 Starting Vulnerable API Service on http://localhost:8002")
+    print("🚀 Starting Vulnerable API Service on http://localhost:8003")
     print("⚠️  WARNING: This service contains intentional security vulnerabilities!")
-    print("📖 Documentation available at: http://localhost:8002/docs")
-    uvicorn.run(app, host="0.0.0.0", port=8002)
+    print("📖 Documentation available at: http://localhost:8003/docs")
+    uvicorn.run(app, host="0.0.0.0", port=8003)
