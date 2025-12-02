@@ -1,14 +1,14 @@
 import 'dart:convert';
 import 'dart:io';
 import 'package:http/http.dart' as http;
-import '../../domain/entities/api_analysis_entity.dart';
 import 'api_analysis_datasource.dart';
 
 /// Remote data source for API analysis
 class ApiAnalysisRemoteDataSource implements ApiAnalysisDataSource {
   final String _baseUrl;
 
-  ApiAnalysisRemoteDataSource({String? baseUrl}) : _baseUrl = baseUrl ?? 'http://localhost:8001';
+  ApiAnalysisRemoteDataSource({String? baseUrl})
+    : _baseUrl = baseUrl ?? 'http://localhost:8001';
 
   @override
   Future<Map<String, dynamic>> analyzeSwaggerApi(String swaggerUrl) async {
@@ -17,7 +17,11 @@ class ApiAnalysisRemoteDataSource implements ApiAnalysisDataSource {
       final response = await http.post(
         uri,
         headers: {'Content-Type': 'application/json'},
-        body: json.encode({'swagger_url': swaggerUrl, 'timeout': 30, 'enable_ai_analysis': false}),
+        body: json.encode({
+          'swagger_url': swaggerUrl,
+          'timeout': 30,
+          'enable_ai_analysis': false,
+        }),
       );
 
       if (response.statusCode == 200) {
@@ -57,7 +61,8 @@ class ApiAnalysisRemoteDataSource implements ApiAnalysisDataSource {
 
     // If URL ends with /docs, replace with /openapi.json
     if (processedUrl.endsWith('/docs')) {
-      processedUrl = processedUrl.substring(0, processedUrl.length - 5) + '/openapi.json';
+      processedUrl =
+          processedUrl.substring(0, processedUrl.length - 5) + '/openapi.json';
     }
     // If URL doesn't contain /docs and doesn't end with common OpenAPI extensions
     else if (!processedUrl.contains('/docs') &&
@@ -86,18 +91,37 @@ class ApiAnalysisRemoteDataSource implements ApiAnalysisDataSource {
   /// Get analysis statistics
   Future<Map<String, dynamic>> getAnalysisStatistics() async {
     // This endpoint doesn't exist in our API - return empty stats
-    return {'total_analyses': 0, 'successful_analyses': 0, 'failed_analyses': 0};
+    return {
+      'total_analyses': 0,
+      'successful_analyses': 0,
+      'failed_analyses': 0,
+    };
   }
 
   /// Get available security checks
   Future<List<Map<String, dynamic>>> getAvailableSecurityChecks() async {
     // This endpoint doesn't exist in our API - return default checks
     return [
-      {'name': 'Authentication', 'description': 'Check for missing authentication'},
-      {'name': 'Authorization', 'description': 'Check for missing authorization'},
-      {'name': 'Data Exposure', 'description': 'Check for sensitive data exposure'},
-      {'name': 'Input Validation', 'description': 'Check for missing input validation'},
-      {'name': 'Rate Limiting', 'description': 'Check for rate limiting implementation'},
+      {
+        'name': 'Authentication',
+        'description': 'Check for missing authentication',
+      },
+      {
+        'name': 'Authorization',
+        'description': 'Check for missing authorization',
+      },
+      {
+        'name': 'Data Exposure',
+        'description': 'Check for sensitive data exposure',
+      },
+      {
+        'name': 'Input Validation',
+        'description': 'Check for missing input validation',
+      },
+      {
+        'name': 'Rate Limiting',
+        'description': 'Check for rate limiting implementation',
+      },
     ];
   }
 
@@ -114,7 +138,8 @@ class ApiAnalysisRemoteDataSource implements ApiAnalysisDataSource {
 
   /// Simulate analysis for fallback scenarios
   Map<String, dynamic> _simulateAnalysis(String endpoint) {
-    final isSecure = !endpoint.contains('http://') && endpoint.startsWith('https://');
+    final isSecure =
+        !endpoint.contains('http://') && endpoint.startsWith('https://');
     final issues = <String>[];
     final recommendations = <String>[];
 
@@ -125,7 +150,9 @@ class ApiAnalysisRemoteDataSource implements ApiAnalysisDataSource {
 
     if (endpoint.contains('/admin')) {
       issues.add('Admin endpoint exposed');
-      recommendations.add('Implement proper authentication for admin endpoints');
+      recommendations.add(
+        'Implement proper authentication for admin endpoints',
+      );
     }
 
     return {
@@ -144,14 +171,26 @@ class ApiAnalysisRemoteDataSource implements ApiAnalysisDataSource {
         'ai_analysis_available': false,
       },
       'potential_issues': {
-        'authentication': issues.where((issue) => issue.contains('authentication')).toList(),
-        'authorization': issues.where((issue) => issue.contains('authorization')).toList(),
+        'authentication': issues
+            .where((issue) => issue.contains('authentication'))
+            .toList(),
+        'authorization': issues
+            .where((issue) => issue.contains('authorization'))
+            .toList(),
         'configuration': issues
-            .where((issue) => issue.contains('protocol') || issue.contains('HTTPS'))
+            .where(
+              (issue) => issue.contains('protocol') || issue.contains('HTTPS'),
+            )
             .toList(),
       },
       'recommendations': recommendations
-          .map((rec) => {'category': 'Security', 'priority': 'Medium', 'description': rec})
+          .map(
+            (rec) => {
+              'category': 'Security',
+              'priority': 'Medium',
+              'description': rec,
+            },
+          )
           .toList(),
     };
   }

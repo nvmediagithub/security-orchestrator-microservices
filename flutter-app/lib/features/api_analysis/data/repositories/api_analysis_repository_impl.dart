@@ -1,4 +1,3 @@
-import 'dart:convert';
 import 'dart:math';
 import '../../domain/entities/api_analysis_entity.dart';
 import '../../domain/repositories/api_analysis_repository.dart';
@@ -37,7 +36,9 @@ class ApiAnalysisRepositoryImpl implements ApiAnalysisRepository {
   /// Analyze a single API endpoint (legacy method for backward compatibility)
   Future<ApiAnalysisEntity> analyzeEndpoint(String endpoint) async {
     // For legacy compatibility, analyze the Swagger URL of the endpoint
-    final swaggerUrl = endpoint.contains('/docs') ? endpoint : '${endpoint}/docs';
+    final swaggerUrl = endpoint.contains('/docs')
+        ? endpoint
+        : '${endpoint}/docs';
 
     try {
       return await analyzeApi(swaggerUrl);
@@ -49,7 +50,8 @@ class ApiAnalysisRepositoryImpl implements ApiAnalysisRepository {
 
   ApiAnalysisEntity _simulateAnalysis(String endpoint) {
     // Simulate some basic API security analysis
-    final isSecure = !endpoint.contains('http://') && endpoint.startsWith('https://');
+    final isSecure =
+        !endpoint.contains('http://') && endpoint.startsWith('https://');
     final issues = <String>[];
     final recommendations = <String>[];
 
@@ -60,7 +62,9 @@ class ApiAnalysisRepositoryImpl implements ApiAnalysisRepository {
 
     if (endpoint.contains('/admin')) {
       issues.add('Admin endpoint exposed');
-      recommendations.add('Implement proper authentication for admin endpoints');
+      recommendations.add(
+        'Implement proper authentication for admin endpoints',
+      );
     }
 
     if (!endpoint.contains('api/v')) {
@@ -100,6 +104,7 @@ class ApiAnalysisRepositoryImpl implements ApiAnalysisRepository {
   }
 
   String _generateId() {
-    return DateTime.now().millisecondsSinceEpoch.toString() + Random().nextInt(1000).toString();
+    return DateTime.now().millisecondsSinceEpoch.toString() +
+        Random().nextInt(1000).toString();
   }
 }

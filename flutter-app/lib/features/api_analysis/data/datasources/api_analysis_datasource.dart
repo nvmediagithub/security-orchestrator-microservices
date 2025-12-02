@@ -1,5 +1,3 @@
-import '../../domain/entities/api_analysis_entity.dart';
-
 /// Data source for API analysis operations
 abstract class ApiAnalysisDataSource {
   /// Analyze a Swagger/OpenAPI specification
